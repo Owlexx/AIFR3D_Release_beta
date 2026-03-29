@@ -1,0 +1,110 @@
+set(AudioSuite_BRAND_ICON "${CMAKE_SOURCE_DIR}/assets/icons/audiosynth_logo.png")
+
+set(AUDIOSYNTH_PLUGIN_SOURCES
+    Plugin/PluginProcessor.h
+    Plugin/PluginProcessor.cpp
+    Plugin/PluginEditor.h
+    Plugin/PluginEditor.cpp
+    Plugin/Parameters.h
+    Plugin/Parameters.cpp
+    Plugin/LookAndFeel_N3L.h
+    Plugin/LookAndFeel_N3L.cpp
+    Plugin/Theme.h
+    Common/AnalysisTypes.h
+    Common/MixMetrics.h
+    Common/SimpleLockFreeQueue.h
+    Interpretation/AudioSynthReport.h
+    Interpretation/DiagnosticEngine.h
+    Interpretation/DiagnosticEngine.cpp
+    DSP/AnalysisEngine.h
+    DSP/AnalysisEngine.cpp
+    DSP/FeatureExtractor.h
+    DSP/FeatureExtractor.cpp
+    DSP/LoudnessEBUR128.h
+    DSP/LoudnessEBUR128.cpp
+    DSP/SpectrumAnalyzerFFT.h
+    DSP/SpectrumAnalyzerFFT.cpp
+    DSP/DynamicsTracker.h
+    DSP/DynamicsTracker.cpp
+    DSP/TransientDetector.h
+    DSP/TransientDetector.cpp
+    DSP/StereoAnalyzer.h
+    DSP/StereoAnalyzer.cpp
+    DSP/ReferenceModel.h
+    DSP/ReferenceModel.cpp
+    DSP/ScoringEngine.h
+    DSP/ScoringEngine.cpp
+    DSP/SnapshotManager.h
+    DSP/SnapshotManager.cpp
+    DSP/JsonReportWriter.h
+    DSP/JsonReportWriter.cpp
+    UI/UiModel.h
+    UI/UiModel.cpp
+    UI/MainView.h
+    UI/MainView.cpp
+    UI/TopBar.h
+    UI/TopBar.cpp
+    UI/MixSignatureMeter.h
+    UI/MixSignatureMeter.cpp
+    UI/ApprovalHalo.h
+    UI/ApprovalHalo.cpp
+    UI/CandleStoryline.h
+    UI/CandleStoryline.cpp
+    UI/StereoArcView.h
+    UI/StereoArcView.cpp
+    UI/FixListPanel.h
+    UI/FixListPanel.cpp
+    UI/MixTipsPanel.h
+    UI/MixTipsPanel.cpp)
+
+function(add_audiosynth_plugin_variant target suffix variant_num plugin_code)
+    juce_add_plugin(${target}
+        COMPANY_NAME "North3rnLight3r"
+        BUNDLE_ID "com.north3rnlight3r.audiosynth.${suffix}"
+        IS_SYNTH FALSE
+        NEEDS_MIDI_INPUT FALSE
+        NEEDS_MIDI_OUTPUT FALSE
+        IS_MIDI_EFFECT FALSE
+        EDITOR_WANTS_KEYBOARD_FOCUS FALSE
+        COPY_PLUGIN_AFTER_BUILD FALSE
+        PLUGIN_MANUFACTURER_CODE N3L1
+        PLUGIN_CODE ${plugin_code}
+        VERSION ${PROJECT_VERSION}
+        FORMATS VST3 Standalone
+        ICON_BIG "${AudioSuite_BRAND_ICON}"
+        ICON_SMALL "${AudioSuite_BRAND_ICON}"
+        PRODUCT_NAME "AUDIOSYNTH_${suffix}")
+
+    juce_generate_juce_header(${target})
+
+    target_sources(${target}
+        PRIVATE
+            ${AUDIOSYNTH_PLUGIN_SOURCES})
+
+    target_include_directories(${target} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+    target_compile_features(${target} PRIVATE cxx_std_20)
+
+    target_link_libraries(${target}
+        PRIVATE
+            coresynth_advisory_layer
+            nlohmann_json::nlohmann_json
+            juce::juce_dsp
+            juce::juce_audio_utils
+            juce::juce_recommended_config_flags
+            juce::juce_recommended_lto_flags
+            juce::juce_recommended_warning_flags)
+
+    target_compile_definitions(${target}
+        PUBLIC
+            JUCE_WEB_BROWSER=0
+            JUCE_USE_CURL=0
+            AUDIOSYNTH_UI_VARIANT=${variant_num})
+endfunction()
+
+add_audiosynth_plugin_variant(audiosynth_vst3_A a 1 AfdA)
+add_audiosynth_plugin_variant(audiosynth_vst3_B b 2 AfdB)
+add_audiosynth_plugin_variant(audiosynth_vst3_C c 3 AfdC)
+add_audiosynth_plugin_variant(audiosynth_vst3_D d 4 AfdD)
+
+# Compatibility aggregate target for scripts that still invoke "audiosynth_vst3".
+add_custom_target(audiosynth_vst3 DEPENDS audiosynth_vst3_A)

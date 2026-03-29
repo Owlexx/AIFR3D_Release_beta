@@ -1,0 +1,12 @@
+AudioSuite 2.2.4 Beta Function Map
+
+- Install VST
+  -> secure download: /downloads/install-vst.sh
+- Install Standalone
+  -> secure download: /downloads/install-standalone.sh
+- Installation Instructions
+  -> /assets/docs/installation-instructions-v2.2.4.txt
+- 2.2.4 Beta README
+  -> /assets/docs/readme-v2.2.4-beta.txt
+- Minimum PC Requirements
+  -> /assets/docs/minimum-pc-requirements-v2.2.4.txt

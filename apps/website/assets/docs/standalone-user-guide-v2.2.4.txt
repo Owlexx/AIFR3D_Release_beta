@@ -1,0 +1,15 @@
+AudioSuite Standalone Guide 2.2.4 Beta
+
+Linux:
+- buy standalone access
+- open Installer on the website
+- run the Linux standalone installer script
+
+Windows:
+- clone the repo on Windows
+- run ./scripts/install_windows.ps1 -Target standalone
+
+Runtime:
+- live DSP metrics drive score and fix output
+- chat history persists in-session
+- OpenAI advisory uses GPT-5.2

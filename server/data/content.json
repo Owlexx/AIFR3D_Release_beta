@@ -1,0 +1,18 @@
+{
+  "services": [
+    {
+      "title": "Mixing and Mastering",
+      "description": "Mix Intelligence | Professional Sound | Quality Focused",
+      "price": "$199.99 - $399.99/project"
+    }
+  ],
+  "products": [
+    {
+      "title": "Beat Licensing | Non-Exclusive | Exclusive | *Contact for Buy-Out options",
+      "description": "Lease a Beat Today! Non-Exclusive list for as little as $149.99",
+
+      "price": "149.99+",
+      "buy_url": "https://paypal.com"
+    }
+  ]
+}

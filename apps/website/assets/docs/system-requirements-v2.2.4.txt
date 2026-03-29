@@ -1,0 +1,16 @@
+AudioSuite 2.2.4 Beta Minimum PC Requirements
+
+Windows:
+- Windows 10/11 x64
+- 4-core CPU
+- 8 GB RAM
+- Visual Studio 2022 C++ workload
+
+Linux:
+- 64-bit Ubuntu/Debian/Arch
+- 4-core CPU
+- 8 GB RAM
+
+OpenAI:
+- internet connection
+- valid OpenAI API key

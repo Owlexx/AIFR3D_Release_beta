@@ -1,0 +1,16 @@
+AudioSuite 2.2.4 Beta Installation Instructions
+
+Linux Plugin:
+./apps/website/downloads/plugin-linux-installer.sh
+
+Linux Standalone:
+./apps/website/downloads/standalone-linux-installer.sh
+
+Windows Plugin:
+./scripts/install_windows.ps1 -Target vst
+
+Windows Standalone:
+./scripts/install_windows.ps1 -Target standalone
+
+OpenAI key path:
+/home/north3rnlight3r/Documents/API_KEY_INDEX/OpenAI API Key.txt
