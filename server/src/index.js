@@ -72,8 +72,19 @@ const DEFAULT_ONLINE_WS = DEFAULT_ONLINE_API.replace(/^https:\/\//i, "wss://").r
 const LINUX_DEB_URL = String(process.env.CORESYNTH_LINUX_DEB_URL || "").trim();
 const LINUX_ARCH_URL = String(process.env.CORESYNTH_LINUX_ARCH_URL || "").trim();
 
-const DEFAULT_OPENAI_PRIMARY_MODEL = "gpt-5.2";
-const DEFAULT_OPENAI_MODEL_ALLOWLIST = Object.freeze([DEFAULT_OPENAI_PRIMARY_MODEL]);
+const DEFAULT_OPENAI_PRIMARY_MODEL = "gpt-4.1-mini";
+const DEFAULT_OPENAI_MODEL_ALLOWLIST = Object.freeze([
+  "gpt-4.1-mini",
+  "gpt-4.1-nano",
+  "gemini-2.5-flash",
+  "claude-3-sonnet",
+  "claude-3-opus",
+  "ollama-neural-chat",
+  "ollama-mistral",
+  "ollama-llama2",
+  "openclaw-local",
+  "local-llm"
+]);
 const OPENAI_PRIMARY_KEY_FILE = "/home/north3rnlight3r/Documents/API_KEY_INDEX/OpenAI API Key.txt";
 const OPENAI_BASE_URL = "https://api.openai.com/v1/responses";
 const BETA_FREE_TRIAL_LABEL = "Free to try for a limited time";
