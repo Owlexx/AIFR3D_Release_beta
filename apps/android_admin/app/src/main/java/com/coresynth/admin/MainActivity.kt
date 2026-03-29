@@ -82,11 +82,18 @@ import java.io.FileOutputStream
 import java.util.UUID
 
 class MainActivity : ComponentActivity() {
+    private var webSocketClient: WebSocketTerminalClient? = null
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             CoreSynthAdminApp()
         }
+    }
+    
+    override fun onDestroy() {
+        super.onDestroy()
+        webSocketClient?.disconnect()
     }
 }
 

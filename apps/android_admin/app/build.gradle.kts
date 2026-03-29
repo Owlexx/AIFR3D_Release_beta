@@ -101,4 +101,16 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    
+    // Google Drive API
+    implementation("com.google.android.gms:play-services-drive:17.0.0")
+    implementation("com.google.api-client:google-api-client-android:1.32.1")
+    implementation("com.google.oauth-client:google-oauth-client-jetty:1.35.0")
+    implementation("com.google.apis:google-api-services-drive:v3-rev20240521-2.0.0")
+    
+    // JSON parsing
+    implementation("org.json:json:20231013")
+    
+    // File handling
+    implementation("commons-io:commons-io:2.11.0")
 }
