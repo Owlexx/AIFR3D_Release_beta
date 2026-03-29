@@ -1,0 +1,3 @@
+/home/north3rnlight3r/.local/opt/cmake/bin/cmake -E rm -f CMakeFiles/aifred_vst3_D_Standalone.dir/objects.a
+x86_64-w64-mingw32-ar qc CMakeFiles/aifred_vst3_D_Standalone.dir/objects.a @CMakeFiles/aifred_vst3_D_Standalone.dir/objects1.rsp
+/usr/bin/x86_64-w64-mingw32-g++ -mwindows -Wl,--whole-archive CMakeFiles/aifred_vst3_D_Standalone.dir/objects.a -Wl,--no-whole-archive -o aifred_vst3_D_artefacts/Standalone/AIFRED_d.exe -Wl,--out-implib,aifred_vst3_D_artefacts/Standalone/libAIFRED_d.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/aifred_vst3_D_Standalone.dir/linkLibs.rsp

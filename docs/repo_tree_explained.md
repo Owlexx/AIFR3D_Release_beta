@@ -1,0 +1,300 @@
+# Repo Tree Explained (Plain English)
+
+This page gives a plain-English map of the repository.
+
+## Top-level folders
+
+- `Source`
+- `apps`
+- `assets`
+- `cmake`
+- `docs`
+- `modules`
+- `scripts`
+- `templates`
+- `tests`
+
+## File-by-file index
+
+- `CMakeLists.txt` - Root build graph that wires all modules/apps together.
+- `CMakePresets.json` - Named build presets for Linux/Windows debug/release.
+- `CONTRIBUTING.md` - Contribution rules and development expectations.
+- `README.md` - Beginner-friendly project front page.
+- `Source/CMakeLists.txt` - CMake target setup for the AIFRED VST3/standalone plugin build.
+- `Source/Common/AnalysisTypes.h` - Shared real-time-safe types and queue utilities used by the VST plugin.
+- `Source/Common/SimpleLockFreeQueue.h` - Shared real-time-safe types and queue utilities used by the VST plugin.
+- `Source/DSP/AnalysisEngine.cpp` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/AnalysisEngine.h` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/DynamicsTracker.cpp` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/DynamicsTracker.h` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/FeatureExtractor.cpp` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/FeatureExtractor.h` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/JsonReportWriter.cpp` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/JsonReportWriter.h` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/LoudnessEBUR128.cpp` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/LoudnessEBUR128.h` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/ReferenceModel.cpp` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/ReferenceModel.h` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/ScoringEngine.cpp` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/ScoringEngine.h` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/SnapshotManager.cpp` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/SnapshotManager.h` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/SpectrumAnalyzerFFT.cpp` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/SpectrumAnalyzerFFT.h` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/StereoAnalyzer.cpp` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/StereoAnalyzer.h` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/TransientDetector.cpp` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/DSP/TransientDetector.h` - VST plugin DSP analysis/scoring/reference implementation source.
+- `Source/Plugin/LookAndFeel_N3L.cpp` - VST plugin processor/editor/theme/look-and-feel implementation.
+- `Source/Plugin/LookAndFeel_N3L.h` - VST plugin processor/editor/theme/look-and-feel implementation.
+- `Source/Plugin/Parameters.cpp` - VST plugin processor/editor/theme/look-and-feel implementation.
+- `Source/Plugin/Parameters.h` - VST plugin processor/editor/theme/look-and-feel implementation.
+- `Source/Plugin/PluginEditor.cpp` - VST plugin processor/editor/theme/look-and-feel implementation.
+- `Source/Plugin/PluginEditor.h` - VST plugin processor/editor/theme/look-and-feel implementation.
+- `Source/Plugin/PluginProcessor.cpp` - VST plugin processor/editor/theme/look-and-feel implementation.
+- `Source/Plugin/PluginProcessor.h` - VST plugin processor/editor/theme/look-and-feel implementation.
+- `Source/Plugin/Theme.h` - VST plugin processor/editor/theme/look-and-feel implementation.
+- `Source/UI/ApprovalHalo.cpp` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/ApprovalHalo.h` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/CandleStoryline.cpp` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/CandleStoryline.h` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/FixListPanel.cpp` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/FixListPanel.h` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/LifeMeter.cpp` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/LifeMeter.h` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/MainView.cpp` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/MainView.h` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/StereoArcView.cpp` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/StereoArcView.h` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/TopBar.cpp` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/TopBar.h` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/UiModel.cpp` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `Source/UI/UiModel.h` - Custom VST UI components (meters, storyline, halo, layout, model).
+- `apps/dawai/CMakeLists.txt` - Project file.
+- `apps/dawai/src/main.cpp` - Desktop app entry point and app bootstrap code.
+- `apps/dawai_admin_android/README.md` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/build.gradle.kts` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/proguard-rules.pro` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/AndroidManifest.xml` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/assets/brain_config.json` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/assets/dsp_math_pack_v1.md` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/assets/report.schema.json` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/assets/system_contract.json` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/java/com/dawai/admin/MainActivity.kt` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/java/com/dawai/admin/data/ChatMemoryStore.kt` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/java/com/dawai/admin/data/DaemonClient.kt` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/java/com/dawai/admin/data/TruthRepository.kt` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/java/com/dawai/admin/model/ChatModels.kt` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/java/com/dawai/admin/model/CommandCatalog.kt` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/java/com/dawai/admin/model/TruthModels.kt` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/java/com/dawai/admin/ui/AdminApp.kt` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/java/com/dawai/admin/ui/AdminViewModel.kt` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/java/com/dawai/admin/ui/theme/Color.kt` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/java/com/dawai/admin/ui/theme/Theme.kt` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/res/drawable/aifred_logo.jpg` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/res/values/strings.xml` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/app/src/main/res/values/themes.xml` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/build.gradle.kts` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/gradle.properties` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/gradle/wrapper/gradle-wrapper.jar` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/gradle/wrapper/gradle-wrapper.properties` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/gradlew` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/gradlew.bat` - Android admin app project (Compose UI, model/data bridge, assets).
+- `apps/dawai_admin_android/settings.gradle.kts` - Android admin app project (Compose UI, model/data bridge, assets).
+- `assets/README.md` - Markdown documentation file.
+- `assets/aifr3d_brain/brain_config.json` - Shared AI brain routing and model policy config.
+- `assets/icons/aifred_logo.jpg` - Project file.
+- `assets/mascot/little_guy.svg` - Project file.
+- `assets/reference_pools/archive_10x5/pool.json` - Reference pool metadata/cache used by comparison/scoring.
+- `assets/reference_pools/archive_10x5/pool_manifest.json` - Reference pool metadata/cache used by comparison/scoring.
+- `assets/reference_pools/archive_10x5/profiles/ref_10_bestnewelectrohouse2016march-best-new-electro-house-2016-march.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_11_djiconsgangstabaybeez6-gangstabaybeez6.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_12_dreamlogicc-wuvstowies-dreamlogicc-wuv-stowies-live-middle-gallery-april-25-2009.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_13_easynite-easy-nite.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_14_haveahgoodtime-have-ah-good-time.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_15_kungkillclikkino-kungkillclikkino.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_16_loko-mc-grow-loko-mc-grow.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_17_oldmanraps-old-man-raps.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_18_plugsongforcomedybangbang-56-plug-song-for-comedy-bang-bang.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_19_puntodeinicioconlocozobeplana-punto-de-inicio-con-locozobe-plan-a.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_1_01-cowfish-2-junebug-dnb-set-live-at-cowfish.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_20_quizasseaporeso-quizas-sea-por-eso.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_21_10moresongsbythemoot-10-more-songs-by-the-moot.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_22_2010-03-05liveatthejukebox-2010-03-05-live-at-the-jukebox.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_23_20140418chroniquematinorailleurs-2014-04-18-chronique-matin-orailleurs.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_24_20230112-tdc-drunken-prayer-drunken-prayer-live-from-the-double-crown.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_25_3feetuplive-3-feet-up-live.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_26_50popofeenenvelop1-12-1983-50-pop-of-een-envelop-1-12-1983.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_27_630-brianna-tam-i-am-202308-brianna-tam-i-am.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_28_7bluesky-7-bluesky.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_29_abirdseldomseen-a-bird-seldom-seen.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_2_01-turkey-day-cookin-2023-11-23-turkey-day-dnb-2023.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_30_algogss-algo-gss.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_31_380motion-thisiswhatido-124-380-motion-this-is-what-i-do.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_32_cassandrasgame-cassandra-s-game.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_33_dwandmianimalcellrap-dw-and-mi-animal-cell-rap.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_34_haveahgoodtime-have-ah-good-time.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_35_interviewmitdiedrichdietrichsenuberamerikanischenrapundbrdpunk-interview-mit-diedrich-dietrichsen-uber-amerikanischen-rap-und-brd-pun.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_36_lightsgoout-lights-go-out.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_37_oldmanraps-old-man-raps.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_38_piensa-685-piensa.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_39_plugsongforcomedybangbang-56-plug-song-for-comedy-bang-bang.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_3_10-20210927-set-album.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_40_rapdecasimirkubiacaliaskayzeekey-rap-de-casimir-kubiac-alias-kayzee-key.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_41_audiotrap-audio-trap.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_42_carnafex-mepresentoinstrumental-carnafex-me-presento-instrumental.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_43_dufflebagboizalbum2-duffle-bag-boiz-bag-up-serve-em-vol-1.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_44_fox72z-808-trap-synth-fox72z-808-trap-synth.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_45_golazomezcla1-golazo-mezcla-1.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_46_introducingcloudcitytrap-introducing-cloud-city-trap.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_47_moskonitema2final1-moskoni-puto-bala.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_48_trapbeatenventa-trap-beat-instrumental-prod-by-juan-beats-records.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_49_trapbeat-201804-trap-beat-trap-instrumental-base-rap-trap-type-beat.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_4_1996-91-7-wkdu-politics-of-dancing-with-dj-roo-1996-91-7-wkdu-politics-of-dancing-with-dj-roo.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_50_aipol-ai-music-odio-la-trap-1-odio-la-trap-1.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_5_20211128-20211128-1832-tracks-from-the-inside-il-quarto.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_6_3rd-strike-rock-april-2025-earth-day-show-3rd-strike-rock-april-2025-earth-day-show.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_7_566770-duocore.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_8_anythingbutbrokelivespringboardsouth2015-201507-anything-but-broke-live-springboard-south-2015.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/profiles/ref_9_azaelatacknoworiginalmix-azael-atack-now-original-mix.json` - Precomputed reference feature profile used for genre benchmark comparison.
+- `assets/reference_pools/archive_10x5/reference_cache.json` - Reference pool metadata/cache used by comparison/scoring.
+- `cmake/CPM.cmake` - Build system helper for third-party dependency fetching.
+- `docs/adr/0001-module-boundaries.md` - Architecture Decision Record (why a major design decision was made).
+- `docs/adr/0002-audio-engine-design.md` - Architecture Decision Record (why a major design decision was made).
+- `docs/adr/0003-metering-core.md` - Architecture Decision Record (why a major design decision was made).
+- `docs/adr/0004-reference-aware-metering.md` - Architecture Decision Record (why a major design decision was made).
+- `docs/adr/0005-aifr3d-scoring.md` - Architecture Decision Record (why a major design decision was made).
+- `docs/adr/0006-advisory-sandbox.md` - Architecture Decision Record (why a major design decision was made).
+- `docs/adr/0007-ui-theme-and-modes.md` - Architecture Decision Record (why a major design decision was made).
+- `docs/adr/0008-realtime-safety.md` - Architecture Decision Record (why a major design decision was made).
+- `docs/android_admin_app.md` - Project documentation page.
+- `docs/architecture.md` - Project documentation page.
+- `docs/build.md` - Project documentation page.
+- `docs/dsp_math_pack_v1.md` - Canonical deterministic DSP metric definitions.
+- `docs/install_for_everyone.md` - Step-by-step install instructions in plain English.
+- `docs/quickstart.md` - Project documentation page.
+- `docs/release_notes_v1.0.0-alpha.md` - Project documentation page.
+- `docs/repo_tree_explained.md` - This file; plain-English file/folder map.
+- `docs/schema/report.schema.json` - JSON schema for analysis/report output validation.
+- `docs/system_map.md` - Project documentation page.
+- `docs/threading_model.md` - Project documentation page.
+- `docs/troubleshooting.md` - Project documentation page.
+- `docs/user_manual.md` - User-facing guide for setup, run, and troubleshooting.
+- `docs/wiki/01-executive-overview.md` - Project documentation page.
+- `docs/wiki/02-runtime-architecture.md` - Project documentation page.
+- `docs/wiki/03-dsp-math-deep-dive.md` - Project documentation page.
+- `docs/wiki/04-plugin-functional-spec.md` - Project documentation page.
+- `docs/wiki/05-admin-command-reference.md` - Project documentation page.
+- `docs/wiki/06-repository-breakdown-and-due-diligence.md` - Project documentation page.
+- `docs/wiki/README.md` - Index of technical documentation pages.
+- `modules/advisory_layer/CMakeLists.txt` - Project file.
+- `modules/advisory_layer/include/dawai/advisory_layer/adviser.hpp` - Advisory layer interfaces (rule-based, local brain, Ollama adapters, memory).
+- `modules/advisory_layer/include/dawai/advisory_layer/advisory_service.hpp` - Advisory job queue and callback bridge.
+- `modules/advisory_layer/include/dawai/advisory_layer/local_brain_adviser.hpp` - OpenAI-only provider selection entry point.
+- `modules/advisory_layer/include/dawai/advisory_layer/memory_store.hpp` - Persistent session-memory interfaces.
+- `modules/advisory_layer/include/dawai/advisory_layer/openai_adviser.hpp` - GPT-5.2 request/response interface.
+- `modules/advisory_layer/src/advisory_service.cpp` - Advisory job queue implementation.
+- `modules/advisory_layer/src/local_brain_adviser.cpp` - OpenAI-only advisory path and memory enrichment.
+- `modules/advisory_layer/src/memory_store.cpp` - Persistent advisory memory implementation.
+- `modules/advisory_layer/src/openai_adviser.cpp` - GPT-5.2 normalization of live DSP evidence into structured advisory output.
+- `modules/aifr3d_core/CMakeLists.txt` - Project file.
+- `modules/aifr3d_core/include/dawai/aifr3d_core/analysis_writer.hpp` - AIFR3D core interfaces for scoring, fix lists, apply-fix, reporting.
+- `modules/aifr3d_core/include/dawai/aifr3d_core/apply_fix.hpp` - AIFR3D core interfaces for scoring, fix lists, apply-fix, reporting.
+- `modules/aifr3d_core/include/dawai/aifr3d_core/feature_ingestion.hpp` - AIFR3D core interfaces for scoring, fix lists, apply-fix, reporting.
+- `modules/aifr3d_core/include/dawai/aifr3d_core/fix_list.hpp` - AIFR3D core interfaces for scoring, fix lists, apply-fix, reporting.
+- `modules/aifr3d_core/include/dawai/aifr3d_core/reporting/mix_reporter.hpp` - AIFR3D core interfaces for scoring, fix lists, apply-fix, reporting.
+- `modules/aifr3d_core/include/dawai/aifr3d_core/scoring.hpp` - AIFR3D core interfaces for scoring, fix lists, apply-fix, reporting.
+- `modules/aifr3d_core/include/dawai/aifr3d_core/system_contract.hpp` - AIFR3D core interfaces for scoring, fix lists, apply-fix, reporting.
+- `modules/aifr3d_core/src/analysis_writer.cpp` - AIFR3D core implementation for deterministic scoring and report output.
+- `modules/aifr3d_core/src/apply_fix.cpp` - AIFR3D core implementation for deterministic scoring and report output.
+- `modules/aifr3d_core/src/feature_ingestion.cpp` - AIFR3D core implementation for deterministic scoring and report output.
+- `modules/aifr3d_core/src/fix_list.cpp` - AIFR3D core implementation for deterministic scoring and report output.
+- `modules/aifr3d_core/src/reporting/mix_reporter.cpp` - AIFR3D core implementation for deterministic scoring and report output.
+- `modules/aifr3d_core/src/scoring.cpp` - AIFR3D core implementation for deterministic scoring and report output.
+- `modules/audio_engine/CMakeLists.txt` - Project file.
+- `modules/audio_engine/include/dawai/audio_engine/audio_device_service.hpp` - Audio engine public interfaces (device, transport, tracks, plugin hosting).
+- `modules/audio_engine/include/dawai/audio_engine/lockfree_ring.hpp` - Audio engine public interfaces (device, transport, tracks, plugin hosting).
+- `modules/audio_engine/include/dawai/audio_engine/module_profiler.hpp` - Audio engine public interfaces (device, transport, tracks, plugin hosting).
+- `modules/audio_engine/include/dawai/audio_engine/playback_engine.hpp` - Audio engine public interfaces (device, transport, tracks, plugin hosting).
+- `modules/audio_engine/include/dawai/audio_engine/plugin_host/plugin_instance.hpp` - Audio engine public interfaces (device, transport, tracks, plugin hosting).
+- `modules/audio_engine/include/dawai/audio_engine/plugin_host/plugin_rack.hpp` - Audio engine public interfaces (device, transport, tracks, plugin hosting).
+- `modules/audio_engine/include/dawai/audio_engine/plugin_host/scanner.hpp` - Audio engine public interfaces (device, transport, tracks, plugin hosting).
+- `modules/audio_engine/include/dawai/audio_engine/session_serializer.hpp` - Audio engine public interfaces (device, transport, tracks, plugin hosting).
+- `modules/audio_engine/include/dawai/audio_engine/track_model.hpp` - Audio engine public interfaces (device, transport, tracks, plugin hosting).
+- `modules/audio_engine/include/dawai/audio_engine/transport_controller.hpp` - Audio engine public interfaces (device, transport, tracks, plugin hosting).
+- `modules/audio_engine/src/audio_device_service.cpp` - Audio engine implementation for playback, hosting, serialization, profiling.
+- `modules/audio_engine/src/module_profiler.cpp` - Audio engine implementation for playback, hosting, serialization, profiling.
+- `modules/audio_engine/src/playback_engine.cpp` - Audio engine implementation for playback, hosting, serialization, profiling.
+- `modules/audio_engine/src/plugin_host/plugin_instance.cpp` - Audio engine implementation for playback, hosting, serialization, profiling.
+- `modules/audio_engine/src/plugin_host/plugin_rack.cpp` - Audio engine implementation for playback, hosting, serialization, profiling.
+- `modules/audio_engine/src/plugin_host/scanner.cpp` - Audio engine implementation for playback, hosting, serialization, profiling.
+- `modules/audio_engine/src/session_serializer.cpp` - Audio engine implementation for playback, hosting, serialization, profiling.
+- `modules/audio_engine/src/transport_controller.cpp` - Audio engine implementation for playback, hosting, serialization, profiling.
+- `modules/metering/CMakeLists.txt` - Project file.
+- `modules/metering/include/dawai/metering/fft_analyzer.hpp` - Deterministic metering API interfaces and metric data structures.
+- `modules/metering/include/dawai/metering/loudness_analyzer.hpp` - Deterministic metering API interfaces and metric data structures.
+- `modules/metering/include/dawai/metering/metering_engine.hpp` - Deterministic metering API interfaces and metric data structures.
+- `modules/metering/include/dawai/metering/metrics.hpp` - Deterministic metering API interfaces and metric data structures.
+- `modules/metering/include/dawai/metering/stereo_analyzer.hpp` - Deterministic metering API interfaces and metric data structures.
+- `modules/metering/src/fft_analyzer.cpp` - Deterministic metering implementation (FFT, loudness, stereo metrics).
+- `modules/metering/src/loudness_analyzer.cpp` - Deterministic metering implementation (FFT, loudness, stereo metrics).
+- `modules/metering/src/metering_engine.cpp` - Deterministic metering implementation (FFT, loudness, stereo metrics).
+- `modules/metering/src/stereo_analyzer.cpp` - Deterministic metering implementation (FFT, loudness, stereo metrics).
+- `modules/reference_engine/CMakeLists.txt` - Project file.
+- `modules/reference_engine/include/dawai/reference_engine/ab_controller.hpp` - Reference pool/profile/cache/A-B comparison public interfaces.
+- `modules/reference_engine/include/dawai/reference_engine/pools/benchmark_pool.hpp` - Reference pool/profile/cache/A-B comparison public interfaces.
+- `modules/reference_engine/include/dawai/reference_engine/profile_cache.hpp` - Reference pool/profile/cache/A-B comparison public interfaces.
+- `modules/reference_engine/include/dawai/reference_engine/reference_library.hpp` - Reference pool/profile/cache/A-B comparison public interfaces.
+- `modules/reference_engine/include/dawai/reference_engine/reference_profile.hpp` - Reference pool/profile/cache/A-B comparison public interfaces.
+- `modules/reference_engine/include/dawai/reference_engine/reference_profiler.hpp` - Reference pool/profile/cache/A-B comparison public interfaces.
+- `modules/reference_engine/src/ab_controller.cpp` - Reference engine implementation for profiling and benchmark pool logic.
+- `modules/reference_engine/src/pools/benchmark_pool.cpp` - Reference engine implementation for profiling and benchmark pool logic.
+- `modules/reference_engine/src/profile_cache.cpp` - Reference engine implementation for profiling and benchmark pool logic.
+- `modules/reference_engine/src/reference_library.cpp` - Reference engine implementation for profiling and benchmark pool logic.
+- `modules/reference_engine/src/reference_profiler.cpp` - Reference engine implementation for profiling and benchmark pool logic.
+- `modules/ui/CMakeLists.txt` - Project file.
+- `modules/ui/include/dawai/ui/aifr3d_panel.hpp` - Shared desktop DAW UI component interfaces and theme definitions.
+- `modules/ui/include/dawai/ui/insight_panel.hpp` - Shared desktop DAW UI component interfaces and theme definitions.
+- `modules/ui/include/dawai/ui/main_view.hpp` - Shared desktop DAW UI component interfaces and theme definitions.
+- `modules/ui/include/dawai/ui/meter_panel.hpp` - Shared desktop DAW UI component interfaces and theme definitions.
+- `modules/ui/include/dawai/ui/mixer_strip.hpp` - Shared desktop DAW UI component interfaces and theme definitions.
+- `modules/ui/include/dawai/ui/theme/look_and_feel.hpp` - Shared desktop DAW UI component interfaces and theme definitions.
+- `modules/ui/include/dawai/ui/theme/theme.hpp` - Shared desktop DAW UI component interfaces and theme definitions.
+- `modules/ui/include/dawai/ui/timeline_component.hpp` - Shared desktop DAW UI component interfaces and theme definitions.
+- `modules/ui/include/dawai/ui/transport_bar.hpp` - Shared desktop DAW UI component interfaces and theme definitions.
+- `modules/ui/src/aifr3d_panel.cpp` - Shared desktop DAW UI component implementations.
+- `modules/ui/src/insight_panel.cpp` - Shared desktop DAW UI component implementations.
+- `modules/ui/src/main_view.cpp` - Shared desktop DAW UI component implementations.
+- `modules/ui/src/meter_panel.cpp` - Shared desktop DAW UI component implementations.
+- `modules/ui/src/mixer_strip.cpp` - Shared desktop DAW UI component implementations.
+- `modules/ui/src/theme/look_and_feel.cpp` - Shared desktop DAW UI component implementations.
+- `modules/ui/src/timeline_component.cpp` - Shared desktop DAW UI component implementations.
+- `modules/ui/src/transport_bar.cpp` - Shared desktop DAW UI component implementations.
+- `scripts/build_release.ps1` - Utility script for build, install, sync, or reference ingestion workflows.
+- `scripts/build_release.sh` - Utility script for build, install, sync, or reference ingestion workflows.
+- `scripts/convert_audio_tree_to_wav.py` - Utility script for build, install, sync, or reference ingestion workflows.
+- `scripts/fetch_archive_references.py` - Utility script for build, install, sync, or reference ingestion workflows.
+- `scripts/fetch_openverse_references.py` - Utility script for build, install, sync, or reference ingestion workflows.
+- `scripts/generate_repo_tree_explained.py` - Utility script for build, install, sync, or reference ingestion workflows.
+- `scripts/install_from_archive_linux.sh` - Utility script for build, install, sync, or reference ingestion workflows.
+- `scripts/install_from_archive_windows.ps1` - Utility script for build, install, sync, or reference ingestion workflows.
+- `scripts/install_local_linux.sh` - Utility script for build, install, sync, or reference ingestion workflows.
+- `scripts/install_local_windows.ps1` - Utility script for build, install, sync, or reference ingestion workflows.
+- `scripts/sync_android_truth_assets.sh` - Utility script for build, install, sync, or reference ingestion workflows.
+- `templates/Hip-Hop/template.json` - Default project template data for first-run/session bootstrapping.
+- `templates/Melodic_Bass_Hybrid_Dubstep/template.json` - Default project template data for first-run/session bootstrapping.
+- `tests/CMakeLists.txt` - Automated test source or golden expected output data.
+- `tests/ab_switch_test.cpp` - Automated test source or golden expected output data.
+- `tests/advisory_layer_test.cpp` - Automated test source or golden expected output data.
+- `tests/apply_fix_undo_test.cpp` - Automated test source or golden expected output data.
+- `tests/benchmark_pool_test.cpp` - Automated test source or golden expected output data.
+- `tests/golden/result_golden.json` - Automated test source or golden expected output data.
+- `tests/metering_signal_test.cpp` - Automated test source or golden expected output data.
+- `tests/plugin_host_smoke_test.cpp` - Automated test source or golden expected output data.
+- `tests/profile_cache_test.cpp` - Automated test source or golden expected output data.
+- `tests/report_generation_test.cpp` - Automated test source or golden expected output data.
+- `tests/scoring_json_golden_test.cpp` - Automated test source or golden expected output data.
+- `tests/session_serialization_test.cpp` - Automated test source or golden expected output data.
+- `tests/solo_logic_test.cpp` - Automated test source or golden expected output data.
+- `tests/test_utils.hpp` - Automated test source or golden expected output data.
+- `tests/transport_state_test.cpp` - Automated test source or golden expected output data.

@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

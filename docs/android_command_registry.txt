@@ -1,0 +1,190 @@
+AIFR3D ANDROID ADMIN COMMAND REGISTRY
+Generated: 2026-03-13
+
+Phone target path:
+/sdcard/Download/aifred_command_registry.txt
+
+Primary registry source:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/server/src/index.js
+
+Current registry endpoint:
+GET /api/v1/registry/actions
+
+How the Android app uses this:
+- The Commands tab loads the registry from /api/v1/registry/actions.
+- Each registry action can be run from the app as action:<command_id>.
+- Example: action:reference.pool.validate
+
+Important current behavior:
+- Not every registry entry runs a real backend command yet.
+- Commands with a mapping in ACTION_COMMANDS execute a real shell command on the backend.
+- Commands without a mapping are currently accepted and logged, but do not run extra backend work.
+- Raw shell commands are run through POST /api/v1/command/run, not through the registry itself.
+
+CURRENT COMMANDS
+
+1. session.save
+Description:
+Save current session state.
+Current behavior:
+Registry entry only. Accepted by the backend, but there is no mapped ACTION_COMMANDS shell command behind it right now.
+
+2. catalog.refresh
+Description:
+Refresh catalog from API.
+Current behavior:
+Registry entry only. Accepted by the backend, but there is no mapped ACTION_COMMANDS shell command behind it right now.
+
+3. mixer.channel.set_gain
+Description:
+Set channel gain.
+Current behavior:
+Registry entry only. Accepted by the backend, but there is no mapped ACTION_COMMANDS shell command behind it right now.
+
+4. plugin.insert
+Description:
+Insert plugin on channel.
+Current behavior:
+Registry entry only. Accepted by the backend, but there is no mapped ACTION_COMMANDS shell command behind it right now.
+
+5. analysis.run
+Description:
+Run analysis worker.
+Current behavior:
+Registry entry only. Accepted by the backend, but there is no mapped ACTION_COMMANDS shell command behind it right now.
+
+6. command.exec
+Description:
+Execute backend shell command.
+Current behavior:
+This registry entry itself is accept-only. The real shell execution path is the backend endpoint:
+POST /api/v1/command/run
+The Android app uses that endpoint when you type a shell command into the Commands tab.
+
+7. soundpack.upload
+Description:
+Upload sound pack.
+Current behavior:
+Registry entry only. Accepted by the backend, but there is no mapped ACTION_COMMANDS shell command behind it right now.
+Actual uploads use dedicated admin upload endpoints, not ACTION_COMMANDS.
+
+8. reference.pool.validate
+Description:
+Validate licensed reference pool sources and counts.
+Current behavior:
+Runs a real backend command through ACTION_COMMANDS:
+python3 scripts/validate_reference_pool_sources.py
+
+9. reference.pool.rebuild
+Description:
+Rebuild licensed reference pool from licensed intake.
+Current behavior:
+Runs a real backend command through ACTION_COMMANDS:
+python3 scripts/build_licensed_reference_pool.py
+
+10. analysis.engine.verify
+Description:
+Run analysis-engine verification tests.
+Current behavior:
+Runs a real backend command through ACTION_COMMANDS:
+ctest --test-dir build --output-on-failure -R 'profile_cache_test|genre_detector_test|aifr3d_fix_list_reactivity_smoke'
+
+FILES THAT CONTROL THE REGISTRY
+
+1. Registry definitions:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/server/src/index.js
+Block name:
+ACTION_REGISTRY
+
+2. Real shell-command mappings:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/server/src/index.js
+Block name:
+ACTION_COMMANDS
+
+3. Android app display and execution:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/apps/android_admin/app/src/main/java/com/dawai/admin/MainActivity.kt
+Relevant behavior:
+- fetches GET /api/v1/registry/actions
+- runs quick actions as action:<id>
+- runs raw commands through POST /api/v1/command/run
+
+HOW TO CHANGE A COMMAND
+
+To change the label/description shown in the app:
+1. Open:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/server/src/index.js
+2. Find ACTION_REGISTRY.
+3. Change the description text for that command ID.
+4. Restart the Node backend or redeploy the website worker/server path you are using.
+
+Example:
+Change:
+"analysis.run": { id: "analysis.run", description: "Run analysis worker" }
+To:
+"analysis.run": { id: "analysis.run", description: "Run full analyzer pipeline" }
+
+HOW TO CHANGE WHAT A COMMAND ACTUALLY RUNS
+
+If the command should execute a real shell command:
+1. Open:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/server/src/index.js
+2. Find ACTION_COMMANDS.
+3. Change the mapped shell command string for that action ID.
+4. Restart the backend.
+
+Example:
+"reference.pool.validate": "python3 scripts/validate_reference_pool_sources.py"
+
+HOW TO ADD A NEW COMMAND
+
+1. Add a new entry to ACTION_REGISTRY in:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/server/src/index.js
+
+Example:
+"deploy.website": { id: "deploy.website", description: "Deploy the website with Wrangler" }
+
+2. If the command should execute real backend work, add a matching ACTION_COMMANDS entry.
+
+Example:
+"deploy.website": "wrangler deploy"
+
+3. Restart the backend.
+
+4. Refresh the Android app Commands tab.
+
+5. Run it from the app as:
+action:deploy.website
+
+HOW TO REMOVE A COMMAND
+
+1. Delete the command entry from ACTION_REGISTRY.
+2. Delete the matching entry from ACTION_COMMANDS if one exists.
+3. Restart the backend.
+4. Refresh the Android app.
+
+If you remove it only from ACTION_COMMANDS but leave it in ACTION_REGISTRY:
+- the app will still show the command
+- the backend will still accept it
+- but it will become accept-only and stop executing real backend work
+
+HOW TO TEST COMMANDS FROM LINUX
+
+List registry:
+curl -s https://www.north3rnlight3r.com/api/v1/registry/actions
+
+Run a registry action through the command endpoint after admin auth:
+curl -s -X POST https://www.north3rnlight3r.com/api/v1/command/run \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_ADMIN_SESSION_TOKEN" \
+  -d '{"command_line":"action:reference.pool.validate"}'
+
+Run a raw command directly:
+curl -s -X POST https://www.north3rnlight3r.com/api/v1/command/run \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_ADMIN_SESSION_TOKEN" \
+  -d '{"command_line":"pwd"}'
+
+CURRENT LIMITATION
+
+The app can list and run commands, but there is not yet a full command-registry editor API for create/update/delete inside the Android UI.
+Today, add/change/remove still happens by editing the backend source in server/src/index.js and redeploying.

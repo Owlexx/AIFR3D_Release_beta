@@ -1,0 +1,607 @@
+AIFR3D WEBSITE + ANDROID ADMIN APP + CHAT
+PLAIN ENGLISH DEV LOG
+Generated: 2026-03-13
+
+This file is meant to be an easy-to-read handoff document.
+It explains:
+- what the website is
+- what the Android admin app is
+- what the chat system is
+- how they all work together
+- what was changed recently
+- what is already working
+- what still needs more work later
+
+This is written in plain English on purpose.
+It is not a source code dump.
+
+==================================================
+1. THE BIG PICTURE
+==================================================
+
+Right now the AIFR3D system is made of three main parts:
+
+1. The public website
+This is the public-facing site people visit in a browser.
+It shows your branding, products, services, beat catalog, downloads, and general public information.
+
+2. The Android admin app
+This is the private control app installed on your phone.
+It is meant for you, not for public users.
+It gives you admin tools like chat, uploads, website controls, command execution, and catalog management.
+
+3. The chat system
+This is the AI layer.
+It is powered by OpenAI through your backend and worker code.
+The public website no longer shows admin/chat UI, so the chat is now treated as an admin tool rather than a public website feature.
+
+The simple mental model is:
+
+The website is the storefront.
+The Android app is the control room.
+The chat is the assistant inside the control room.
+
+==================================================
+2. THE WEBSITE
+==================================================
+
+The website is mainly static frontend files stored here:
+
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/apps/website
+
+The important website files are:
+
+- index.html
+This is the main page structure.
+
+- app.js
+This is the main browser-side behavior.
+
+- styles.css
+This controls the visual styling.
+
+- assets/
+This holds images, audio, beat catalog JSON, branding assets, and other public files.
+
+What the website does today:
+
+- shows your public branding and product messaging
+- serves the beat catalog to visitors
+- serves your public downloads and assets
+- is deployed through Cloudflare with Wrangler
+- uses the Cloudflare Worker to connect public routes to the static assets folder
+
+What changed recently:
+
+- the public admin section was removed from the public website UI
+- the public website no longer exposes the admin/chat controls directly
+- the public website no longer includes the browser-side OpenAI admin/chat code that used to be mixed into the public app
+
+Why that matters:
+
+Before, public website code and admin behavior were mixed together.
+That was bad for security and bad for maintenance.
+Now the public site is cleaner and the admin logic is being pushed toward the admin app and backend APIs.
+
+==================================================
+3. THE CLOUDFLARE WORKER
+==================================================
+
+The live public website is deployed through this worker file:
+
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/cloudflare/website-worker.mjs
+
+Wrangler config is here:
+
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/wrangler.toml
+
+What the worker does:
+
+- serves the public website assets through the `ASSETS` binding
+- handles public and admin API routes
+- provides chat endpoints
+- provides model listing endpoints
+- provides admin OpenAI settings endpoints
+- provides chat settings endpoints
+- provides catalog, payment, and other site-support endpoints
+- handles the WebSocket chat route `/ws/chat`
+
+Important detail:
+
+The worker is the deployed edge version of the system.
+That means it is what the public domain is actually using when you run `wrangler deploy`.
+
+Current worker behavior after the recent update:
+
+- it supports chat settings
+- it supports WebSocket and HTTP chat access
+- it supports webhook settings for chat success/failure events
+- it supports reasoning effort and verbosity settings for OpenAI requests
+- it supports stateful OpenAI conversation handling through `previous_response_id` when enabled
+
+Important limitation:
+
+The worker does not currently have the same durable persistence quality as the local Node backend for chat settings.
+
+What that means in plain English:
+
+The local Node server saves chat settings to disk.
+The deployed worker currently keeps settings in memory or environment-based fallback form.
+So worker-side settings are available and usable, but not yet fully durable across every worker restart unless a real durable storage binding is added.
+
+This is one of the big remaining architecture tasks.
+
+==================================================
+4. THE LOCAL NODE BACKEND
+==================================================
+
+The local/full backend is here:
+
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/server/src/index.js
+
+What this backend is for:
+
+- local development
+- fuller persistence
+- admin APIs
+- command execution
+- uploads
+- OpenAI config persistence
+- chat settings persistence
+- memory/session management
+- registry/action handling
+
+This backend matters because it is the more complete and durable version of the API surface.
+
+Examples of things it does:
+
+- stores OpenAI config in:
+  `server/storage/openai_config.json`
+
+- stores chat settings in:
+  `server/storage/chat_settings.json`
+
+- stores memory and session files in:
+  `server/storage/`
+
+- exposes admin endpoints like:
+  `/api/v1/admin/openai/get`
+  `/api/v1/admin/openai/save`
+  `/api/v1/admin/chat/settings/save`
+  `/api/v1/command/run`
+  `/api/v1/registry/actions`
+  `/api/v1/chat/settings`
+  `/api/v1/models/list`
+
+Why both the worker and the Node server exist:
+
+Because the project is currently in a mixed state.
+Some logic is built for local/full backend behavior.
+Some logic is built for deployed Cloudflare edge behavior.
+
+This is one of the reasons the repo feels crowded.
+There are two parallel control-plane layers instead of one completely unified system.
+
+==================================================
+5. THE ANDROID ADMIN APP
+==================================================
+
+The Android app source is here:
+
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/apps/android_admin
+
+Main app file:
+
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/apps/android_admin/app/src/main/java/com/dawai/admin/MainActivity.kt
+
+Package name:
+
+com.dawai.admin
+
+Installed version on phone after the latest sideload:
+
+- versionName: 2.2.4
+- versionCode: 224
+
+What the app does today:
+
+- logs into admin endpoints
+- connects to the backend chat over WebSocket or HTTP
+- shows and sends chat prompts
+- shows the beat catalog and can play tracks
+- does lightweight playback analysis/visualizer behavior on-device
+- uploads catalog audio, reference audio, and website assets
+- runs backend commands
+- reads registry actions and exposes them as quick actions
+- reads website/admin outputs in the Commands tab
+- can save and load chat runtime settings
+
+Current app tabs today:
+
+- Chat
+- Upload
+- Command
+
+Important note:
+
+Earlier, you wanted chat, analyzer, catalog, and commands split into separate tabs.
+That full tab split has not been fully done yet.
+
+Right now the Chat tab still combines:
+
+- catalog browsing
+- track playback
+- visual analysis view
+- chat messages
+- model picker
+- chat settings
+
+So the app is better than before, but it is not yet the final clean tab architecture you described.
+
+==================================================
+6. THE CHAT SYSTEM
+==================================================
+
+The chat is the AI assistant inside the admin environment.
+It is powered by OpenAI through backend code.
+
+The public website no longer exposes the admin chat UI.
+That is intentional.
+The chat is now treated as an admin-only tool.
+
+How chat works at a high level:
+
+1. The Android app sends a prompt.
+2. The backend or worker prepares the request.
+3. The backend/worker builds a system prompt and a structured JSON payload.
+4. That request is sent to the OpenAI Responses API.
+5. The result comes back as structured data.
+6. The app displays the summary and any returned issues/actions.
+
+There are two transport modes now:
+
+- websocket
+- http
+
+What websocket mode means:
+
+The app connects to `/ws/chat`.
+The server streams tokens back piece by piece.
+This makes the chat feel more live.
+
+What http mode means:
+
+The app sends a normal POST request to `/api/v1/chat/ask`.
+The response comes back as a normal request/response instead of a live stream.
+
+This was recently made real in the Android app.
+Before, transport mode was not a real end-to-end control.
+Now the app actually switches behavior based on the selected transport setting.
+
+==================================================
+7. NEW CHAT SETTINGS THAT WERE JUST ADDED
+==================================================
+
+A large part of the recent work was adding runtime settings for the admin chat.
+
+These settings now exist in the Node backend, the Cloudflare worker, and the Android app UI.
+
+The app can now fetch current settings from:
+
+GET /api/v1/chat/settings
+
+And save settings through:
+
+POST /api/v1/admin/chat/settings/save
+
+The settings categories are:
+
+1. Transport mode
+- websocket
+- http
+
+2. Webhooks
+- enabled or disabled
+- webhook URL
+- webhook secret
+- webhook events
+
+3. Context management
+- use `previous_response_id` or not
+- memory window size
+- summary item count
+- max prompt character limit
+- compaction threshold
+
+4. Prompt settings
+- tone
+- personality mode
+- system prefix
+- system suffix
+
+5. Reasoning settings
+- enabled or disabled
+- effort level
+
+6. Response settings
+- verbosity
+- max output tokens
+
+Why this matters:
+
+Before, chat behavior was mostly hardcoded.
+Now you can shape the chat behavior from the Android app without editing code every time.
+
+==================================================
+8. WHAT "TONE", "REASONING", AND "VERBOSITY" MEAN HERE
+==================================================
+
+These can be confusing, so here is the plain-English version.
+
+Tone:
+
+Tone is not a native OpenAI API field in this implementation.
+So it is handled by system-prompt instructions.
+
+That means:
+
+- direct = blunt and plain
+- calm = steadier and softer
+- technical = more engineering-focused
+- executive = more concise and decision-focused
+- creative = more expansive and idea-friendly
+
+Reasoning:
+
+Reasoning controls how much internal reasoning effort the model is allowed to use when the Responses API supports it.
+This is sent as reasoning effort in the OpenAI request body.
+
+Verbosity:
+
+Verbosity controls how brief or detailed the model should be in the actual output.
+This is now sent in the OpenAI request body when using Responses mode.
+
+==================================================
+9. HOW CHAT MEMORY WORKS NOW
+==================================================
+
+There are two layers of memory here:
+
+1. Local app-visible conversation behavior
+The app keeps the chat UI history for the current session.
+
+2. Backend/worker session memory
+The backend or worker keeps a rolling session memory with recent interactions.
+
+New behavior that was added:
+
+- `previous_response_id` can now be used for stateful OpenAI conversation chaining
+- compaction is now part of the chat settings concept
+- summary item count is configurable
+- memory window size is configurable
+
+Plain English version:
+
+You now have more control over how much old conversation is remembered, how much gets summarized, and how much gets sent back to OpenAI on the next turn.
+
+==================================================
+10. HOW WEBHOOKS WORK NOW
+==================================================
+
+Chat webhooks were also added as part of the recent update.
+
+The idea is:
+
+When chat finishes successfully or fails, the backend can send a webhook event to another URL you choose.
+
+Current event types:
+
+- chat.completed
+- chat.failed
+
+If you set a webhook secret, the code also signs the webhook body so the receiving system can verify it.
+
+What this is useful for:
+
+- logging
+- automation
+- external admin monitoring
+- later integration into a larger admin/control system
+
+==================================================
+11. HOW THE ANDROID APP, WEBSITE, AND CHAT WORK TOGETHER
+==================================================
+
+This is the most important section.
+
+The easiest way to understand the system is this:
+
+The website is public.
+The Android app is private.
+The chat is a private admin assistant that talks to the same backend/control surface used by the website.
+
+The actual flow looks like this:
+
+Public website flow:
+- a user visits the site
+- Cloudflare serves the website assets
+- the worker handles public routes and site APIs
+- the user sees branding, products, catalog, and downloads
+
+Admin app flow:
+- you open the Android admin app
+- the app talks to the same base domain/API
+- the app authenticates as admin
+- the app can run admin endpoints, upload files, run commands, and control chat settings
+
+Chat flow:
+- the app sends a prompt
+- the backend/worker builds the OpenAI request
+- the backend/worker sends it to OpenAI
+- the result comes back to the app
+- webhook/logging/state update can happen after the response
+
+In other words:
+
+The website and the app are two different front doors into the same larger system.
+The difference is that the public website should stay limited and safe, while the admin app is the high-power control interface.
+
+==================================================
+12. HOW WEBSITE UPDATES REACH THE LIVE SITE
+==================================================
+
+Current deploy path:
+
+1. Code changes are made locally in the repo.
+2. The repo is committed and pushed.
+3. Wrangler deploy is run from the repo root.
+4. Cloudflare uploads the changed website assets and deploys the worker.
+5. The public domain begins serving the updated site.
+
+In the most recent deploy:
+
+- index.html was updated
+- app.js was updated
+- the worker was deployed successfully
+
+Plain English version:
+
+Your site is updated by shipping the repo state to Cloudflare.
+The worker plus assets folder become the live website.
+
+==================================================
+13. HOW THE ADMIN APP CURRENTLY UPDATES
+==================================================
+
+Current app update path:
+
+1. Build the Android app with Gradle.
+2. Produce a debug or release APK.
+3. Use ADB to uninstall the current version if needed.
+4. Use ADB to install the new APK.
+
+That is what was done in the latest update cycle.
+
+So right now the app update flow is still a sideload/developer flow, not a polished store-style distribution flow.
+
+==================================================
+14. WHAT WAS CHANGED IN THE MOST RECENT WORK
+==================================================
+
+Recent changes already completed:
+
+1. Public admin/chat UI removed from the website.
+
+2. Browser-side public OpenAI/admin code removed from the website frontend.
+
+3. Server parse errors fixed so the backend can run cleanly.
+
+4. OpenAI model list behavior improved so the app is not locked to one hardcoded model in the UI.
+
+5. Chat settings system added across:
+- Node backend
+- Cloudflare worker
+- Android app
+
+6. WebSocket versus HTTP transport is now a real switch in the app.
+
+7. Chat webhook support added.
+
+8. Stateful context management support added through `previous_response_id`.
+
+9. Android app rebuilt and reinstalled on your phone.
+
+10. Website redeployed through Wrangler.
+
+==================================================
+15. WHAT IS STILL NOT FULLY FINISHED
+==================================================
+
+This section is important because it keeps the dev log honest.
+
+Things that still need more work later:
+
+1. Full repo separation
+You wanted a cleaner split between:
+- public product repo
+- private website/admin/app repo
+
+That architecture plan was documented, but the actual full repo split has not yet been fully carried out.
+
+2. Durable worker-side settings storage
+The worker-side chat settings still need a truly durable binding like KV, D1, or R2-backed config if you want them to persist reliably through every worker restart.
+
+3. Cleaner Android tab split
+The app still combines too much into the Chat tab.
+You previously asked for cleaner tab separation for:
+- chat
+- analyzer
+- beat catalog
+- commands
+
+That full cleanup is still a future task.
+
+4. Full command-registry editor
+The Android app can read and run commands, but full in-app create/edit/delete registry management is not finished as a proper backend-admin feature yet.
+
+5. Termux-like full shell behavior
+The app can run backend commands, but true unrestricted Termux-style phone shell behavior is a separate problem and is not magically provided just by OpenAI integration.
+
+6. Full private/public repo restructuring
+The docs for the split exist, but the actual codebase still lives together right now.
+
+==================================================
+16. CURRENT FILES THAT MATTER MOST
+==================================================
+
+If you need to understand the system quickly, these are the key files:
+
+Public website:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/apps/website/index.html
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/apps/website/app.js
+
+Deployed website worker:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/cloudflare/website-worker.mjs
+
+Full local backend:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/server/src/index.js
+
+Android admin app:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/apps/android_admin/app/src/main/java/com/dawai/admin/MainActivity.kt
+
+Architecture planning docs:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/docs/private_admin_mcp_architecture.md
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/docs/private_repo_split_blueprint.md
+
+Command registry handoff:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/docs/android_command_registry.txt
+
+==================================================
+17. CURRENT DEPLOYED/INSTALLED STATE
+==================================================
+
+As of this dev log:
+
+- the Android admin app is installed on the connected phone
+- package name is com.dawai.admin
+- versionName is 2.2.4
+- the public website was deployed through Wrangler
+- public website routes are live through Cloudflare
+- admin/chat UI is hidden from the public website
+- the admin app can read live chat settings and save them back
+- the chat supports transport mode, webhook settings, reasoning effort, verbosity, and context settings
+
+==================================================
+18. SIMPLE FINAL SUMMARY
+==================================================
+
+If someone asked, "What does this system look like right now?" the shortest honest answer would be:
+
+AIFR3D currently has a public website served by Cloudflare, a private Android admin app for control tasks, and an OpenAI-powered admin chat that runs through backend APIs.
+
+The public site is now cleaner and no longer exposes admin/chat UI.
+The Android app is the main private control interface.
+The chat is now configurable with real runtime settings.
+The architecture is better than before, but the repo still needs more cleanup and final separation work later.
+
+End of document.

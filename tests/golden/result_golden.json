@@ -1,0 +1,12 @@
+{
+  "overall_rating": 0.0,
+  "category_scores": [
+    {"category": "Low End"},
+    {"category": "Low-Mids"},
+    {"category": "Mids/Presence"},
+    {"category": "High End"},
+    {"category": "Loudness/Headroom"},
+    {"category": "Width/Depth"},
+    {"category": "Dynamics/Impact"}
+  ]
+}

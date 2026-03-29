@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/tools/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/tools/modules/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/tools/extras/Build/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/tools/extras/Build/juceaide/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,28 @@
+name = "dawai-security-gateway"
+main = "src/index.js"
+compatibility_date = "2026-03-02"
+workers_dev = true
+
+[observability.logs]
+enabled = true
+
+[vars]
+DOWNLOAD_TOKEN_TTL_SECONDS = "600"
+RATE_LIMIT_WINDOW_SECONDS = "60"
+RATE_LIMIT_MAX_REQUESTS = "30"
+
+[[kv_namespaces]]
+binding = "ENTITLEMENTS"
+id = "REPLACE_WITH_ENTITLEMENTS_KV_ID"
+
+[[kv_namespaces]]
+binding = "DOWNLOAD_NONCES"
+id = "REPLACE_WITH_DOWNLOAD_NONCES_KV_ID"
+
+[[kv_namespaces]]
+binding = "WEBHOOK_EVENTS"
+id = "REPLACE_WITH_WEBHOOK_EVENTS_KV_ID"
+
+[[r2_buckets]]
+binding = "DOWNLOADS"
+bucket_name = "dawai-downloads"

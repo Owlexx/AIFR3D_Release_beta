@@ -1,0 +1,1764 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/bin/"
+    searched_directories:
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/uname"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/uname"
+      - "/home/north3rnlight3r/.local/bin/uname"
+      - "/usr/local/sbin/uname"
+      - "/usr/local/bin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:207 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The target system is: Windows -  - 
+      The host system is: Linux - 6.19.6-zen1-1-zen - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/gmake"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/gmake"
+      - "/home/north3rnlight3r/.local/bin/gmake"
+      - "/usr/local/sbin/gmake"
+      - "/usr/local/bin/gmake"
+      - "/usr/bin/gmake"
+      - "/opt/android-sdk/platform-tools/gmake"
+      - "/usr/lib/jvm/default/bin/gmake"
+      - "/usr/bin/site_perl/gmake"
+      - "/usr/bin/vendor_perl/gmake"
+      - "/usr/bin/core_perl/gmake"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/make"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/make"
+      - "/home/north3rnlight3r/.local/bin/make"
+      - "/usr/local/sbin/make"
+      - "/usr/local/bin/make"
+    found: "/usr/bin/make"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:67 (_cmake_find_compiler_path)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-gcc"
+    candidate_directories:
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc"
+    found: "/usr/bin/x86_64-w64-mingw32-gcc"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/"
+    found: "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/x86_64-w64-mingw32-gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/4.2.3/CompilerIdC/a.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-strip"
+      - "strip"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/x86_64-w64-mingw32-strip"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-ld"
+      - "ld"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/x86_64-w64-mingw32-ld"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-nm"
+      - "nm"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/x86_64-w64-mingw32-nm"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-objdump"
+      - "objdump"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/x86_64-w64-mingw32-objdump"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-objcopy"
+      - "objcopy"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/x86_64-w64-mingw32-objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-readelf"
+      - "readelf"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/x86_64-w64-mingw32-readelf"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-dlltool"
+      - "dlltool"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/x86_64-w64-mingw32-dlltool"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-addr2line"
+      - "addr2line"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/x86_64-w64-mingw32-addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-tapi"
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/bin/x86_64-w64-mingw32-tapi"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-tapi"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-tapi"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-tapi"
+      - "/usr/local/sbin/x86_64-w64-mingw32-tapi"
+      - "/usr/local/bin/x86_64-w64-mingw32-tapi"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-tapi"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-tapi"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-tapi"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-tapi"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-tapi"
+      - "/usr/bin/tapi"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/tapi"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/tapi"
+      - "/home/north3rnlight3r/.local/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/opt/android-sdk/platform-tools/tapi"
+      - "/usr/lib/jvm/default/bin/tapi"
+      - "/usr/bin/site_perl/tapi"
+      - "/usr/bin/vendor_perl/tapi"
+      - "/usr/bin/core_perl/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-gcc-ar-15.2"
+      - "x86_64-w64-mingw32-gcc-ar-15"
+      - "x86_64-w64-mingw32-gcc-ar15"
+      - "x86_64-w64-mingw32-gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar-15"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc-ar-15"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc-ar-15"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar-15"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar15"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc-ar15"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc-ar15"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc-ar15"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ar15"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar15"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-gcc-ar15"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-gcc-ar15"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ar15"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ar15"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ar15"
+    found: "/usr/bin/x86_64-w64-mingw32-gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "x86_64-w64-mingw32-gcc-ranlib-15"
+      - "x86_64-w64-mingw32-gcc-ranlib15"
+      - "x86_64-w64-mingw32-gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ranlib15"
+    found: "/usr/bin/x86_64-w64-mingw32-gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:71 (_cmake_find_compiler_path)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-g++"
+    candidate_directories:
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-g++"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-g++"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-g++"
+      - "/usr/local/sbin/x86_64-w64-mingw32-g++"
+      - "/usr/local/bin/x86_64-w64-mingw32-g++"
+    found: "/usr/bin/x86_64-w64-mingw32-g++"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/"
+    found: "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/x86_64-w64-mingw32-g++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/4.2.3/CompilerIdCXX/a.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-gcc-ar-15.2"
+      - "x86_64-w64-mingw32-gcc-ar-15"
+      - "x86_64-w64-mingw32-gcc-ar15"
+      - "x86_64-w64-mingw32-gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ar-15.2"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar-15"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc-ar-15"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc-ar-15"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar-15"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ar-15"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar15"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc-ar15"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc-ar15"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc-ar15"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ar15"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar15"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-gcc-ar15"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-gcc-ar15"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ar15"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ar15"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ar15"
+    found: "/usr/bin/x86_64-w64-mingw32-gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "x86_64-w64-mingw32-gcc-ranlib-15"
+      - "x86_64-w64-mingw32-gcc-ranlib15"
+      - "x86_64-w64-mingw32-gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/"
+      - "/home/north3rnlight3r/.local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/opt/android-sdk/platform-tools/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ranlib-15.2"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ranlib-15"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/home/north3rnlight3r/.local/bin/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/usr/local/sbin/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/opt/android-sdk/platform-tools/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/usr/lib/jvm/default/bin/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/usr/bin/site_perl/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/usr/bin/vendor_perl/x86_64-w64-mingw32-gcc-ranlib15"
+      - "/usr/bin/core_perl/x86_64-w64-mingw32-gcc-ranlib15"
+    found: "/usr/bin/x86_64-w64-mingw32-gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/north3rnlight3r/.codex/tmp/arg0/codex-arg0blbClU"
+        - "/home/north3rnlight3r/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/home/north3rnlight3r/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/opt/android-sdk/platform-tools"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/opt/android-sdk/platform-tools"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-AlWJ37"
+      binary: "/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-AlWJ37"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-AlWJ37'
+        
+        Run Build Command(s): /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8f9bb/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_8f9bb.dir/build.make CMakeFiles/cmTC_8f9bb.dir/build
+        make[1]: Entering directory '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-AlWJ37'
+        Building C object CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.obj
+        /usr/bin/x86_64-w64-mingw32-gcc   -v -o CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.obj -c /home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-gcc
+        Target: x86_64-w64-mingw32
+        Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8f9bb.dir/'
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/cc1 -quiet -v -D_REENTRANT /home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8f9bb.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccuEIONT.s
+        GNU C23 (GCC) version 15.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 15.2.1 20250813, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/sys-include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        Compiler executable checksum: 003230cb0a938dd94f2d2010112235a1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8f9bb.dir/'
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as -v -o CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.obj /tmp/ccuEIONT.s
+        GNU assembler version 2.45.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.45.1
+        COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_8f9bb.exe
+        /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f9bb.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-gcc
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper
+        Target: x86_64-w64-mingw32
+        Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.0 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8f9bb.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8f9bb.'
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/collect2 -plugin /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFDd83J.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_8f9bb.exe /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0 -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -v --whole-archive CMakeFiles/cmTC_8f9bb.dir/objects.a --no-whole-archive --out-implib libcmTC_8f9bb.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        collect2 version 15.2.0
+        /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld -plugin /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFDd83J.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_8f9bb.exe /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0 -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -v --whole-archive CMakeFiles/cmTC_8f9bb.dir/objects.a --no-whole-archive --out-implib libcmTC_8f9bb.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        GNU ld (GNU Binutils) 2.45.1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8f9bb.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8f9bb.'
+        /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E rm -f CMakeFiles/cmTC_8f9bb.dir/objects.a
+        x86_64-w64-mingw32-ar qc CMakeFiles/cmTC_8f9bb.dir/objects.a @CMakeFiles/cmTC_8f9bb.dir/objects1.rsp
+        /usr/bin/x86_64-w64-mingw32-gcc  -v -Wl,-v -Wl,--whole-archive CMakeFiles/cmTC_8f9bb.dir/objects.a -Wl,--no-whole-archive -o cmTC_8f9bb.exe -Wl,--out-implib,libcmTC_8f9bb.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        make[1]: Leaving directory '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-AlWJ37'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include] ==> [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed] ==> [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include] ==> [/usr/x86_64-w64-mingw32/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include;/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed;/usr/x86_64-w64-mingw32/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-AlWJ37']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8f9bb/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_8f9bb.dir/build.make CMakeFiles/cmTC_8f9bb.dir/build]
+        ignore line: [make[1]: Entering directory '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-AlWJ37']
+        ignore line: [Building C object CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [/usr/bin/x86_64-w64-mingw32-gcc   -v -o CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.obj -c /home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-gcc]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=ada c c++ fortran lto objc obj-c++ --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8f9bb.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/cc1 -quiet -v -D_REENTRANT /home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8f9bb.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccuEIONT.s]
+        ignore line: [GNU C23 (GCC) version 15.2.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 15.2.1 20250813  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/sys-include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 003230cb0a938dd94f2d2010112235a1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8f9bb.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as -v -o CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.obj /tmp/ccuEIONT.s]
+        ignore line: [GNU assembler version 2.45.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.45.1]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8f9bb.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_8f9bb.exe]
+        ignore line: [/home/north3rnlight3r/.local/opt/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f9bb.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-gcc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=ada c c++ fortran lto objc obj-c++ --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8f9bb.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8f9bb.']
+        link line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/collect2 -plugin /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFDd83J.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_8f9bb.exe /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0 -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -v --whole-archive CMakeFiles/cmTC_8f9bb.dir/objects.a --no-whole-archive --out-implib libcmTC_8f9bb.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccFDd83J.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_8f9bb.exe] ==> ignore
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0] ==> dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0]
+          arg [-L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-v] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles/cmTC_8f9bb.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_8f9bb.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o] ==> obj [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [collect2 version 15.2.0]
+        ignore line: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld -plugin /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFDd83J.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_8f9bb.exe /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0 -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -v --whole-archive CMakeFiles/cmTC_8f9bb.dir/objects.a --no-whole-archive --out-implib libcmTC_8f9bb.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        linker tool for 'C': /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld
+        remove lib [gcc_eh]
+        remove lib [msvcrt]
+        remove lib [gcc_eh]
+        remove lib [msvcrt]
+        collapse obj [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> [/usr/x86_64-w64-mingw32/lib/crt2.o]
+        collapse library dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0] ==> [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0]
+        collapse library dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [/usr/x86_64-w64-mingw32/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> [/usr/x86_64-w64-mingw32/lib]
+        implicit libs: [mingw32;gcc;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;mingwex;kernel32]
+        implicit objs: [/usr/x86_64-w64-mingw32/lib/crt2.o;/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o;/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0;/usr/x86_64-w64-mingw32/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld" "-v"
+      GNU ld (GNU Binutils) 2.45.1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-Q83DdQ"
+      binary: "/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-Q83DdQ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-Q83DdQ'
+        
+        Run Build Command(s): /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_74d77/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_74d77.dir/build.make CMakeFiles/cmTC_74d77.dir/build
+        make[1]: Entering directory '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-Q83DdQ'
+        Building CXX object CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.obj
+        /usr/bin/x86_64-w64-mingw32-g++   -v -o CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.obj -c /home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-g++
+        Target: x86_64-w64-mingw32
+        Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_74d77.dir/'
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/cc1plus -quiet -v -D_REENTRANT /home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_74d77.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccgb2Qss.s
+        GNU C++17 (GCC) version 15.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 15.2.1 20250813, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/sys-include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include/c++/15.2.0
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include/c++/15.2.0/x86_64-w64-mingw32
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include/c++/15.2.0/backward
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        Compiler executable checksum: 94e2fcf38c2dc7c6120bcf1bc489aca0
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_74d77.dir/'
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as -v -o CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccgb2Qss.s
+        GNU assembler version 2.45.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.45.1
+        COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_74d77.exe
+        /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74d77.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-g++
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper
+        Target: x86_64-w64-mingw32
+        Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.0 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_74d77.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_74d77.'
+         /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/collect2 -plugin /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxHxiCg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_74d77.exe /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0 -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -v --whole-archive CMakeFiles/cmTC_74d77.dir/objects.a --no-whole-archive --out-implib libcmTC_74d77.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        collect2 version 15.2.0
+        /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld -plugin /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxHxiCg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_74d77.exe /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0 -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -v --whole-archive CMakeFiles/cmTC_74d77.dir/objects.a --no-whole-archive --out-implib libcmTC_74d77.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        GNU ld (GNU Binutils) 2.45.1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_74d77.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_74d77.'
+        /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E rm -f CMakeFiles/cmTC_74d77.dir/objects.a
+        x86_64-w64-mingw32-ar qc CMakeFiles/cmTC_74d77.dir/objects.a @CMakeFiles/cmTC_74d77.dir/objects1.rsp
+        /usr/bin/x86_64-w64-mingw32-g++  -v -Wl,-v -Wl,--whole-archive CMakeFiles/cmTC_74d77.dir/objects.a -Wl,--no-whole-archive -o cmTC_74d77.exe -Wl,--out-implib,libcmTC_74d77.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        make[1]: Leaving directory '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-Q83DdQ'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include/c++/15.2.0]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include/c++/15.2.0/x86_64-w64-mingw32]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include/c++/15.2.0/backward]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+          add: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include/c++/15.2.0] ==> [/usr/x86_64-w64-mingw32/include/c++/15.2.0]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include/c++/15.2.0/x86_64-w64-mingw32] ==> [/usr/x86_64-w64-mingw32/include/c++/15.2.0/x86_64-w64-mingw32]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include/c++/15.2.0/backward] ==> [/usr/x86_64-w64-mingw32/include/c++/15.2.0/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include] ==> [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed] ==> [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+        collapse include dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include] ==> [/usr/x86_64-w64-mingw32/include]
+        implicit include dirs: [/usr/x86_64-w64-mingw32/include/c++/15.2.0;/usr/x86_64-w64-mingw32/include/c++/15.2.0/x86_64-w64-mingw32;/usr/x86_64-w64-mingw32/include/c++/15.2.0/backward;/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include;/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed;/usr/x86_64-w64-mingw32/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-Q83DdQ']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_74d77/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_74d77.dir/build.make CMakeFiles/cmTC_74d77.dir/build]
+        ignore line: [make[1]: Entering directory '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-Q83DdQ']
+        ignore line: [Building CXX object CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [/usr/bin/x86_64-w64-mingw32-g++   -v -o CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.obj -c /home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-g++]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=ada c c++ fortran lto objc obj-c++ --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_74d77.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/cc1plus -quiet -v -D_REENTRANT /home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_74d77.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccgb2Qss.s]
+        ignore line: [GNU C++17 (GCC) version 15.2.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 15.2.1 20250813  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/sys-include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include/c++/15.2.0]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include/c++/15.2.0/x86_64-w64-mingw32]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include/c++/15.2.0/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 94e2fcf38c2dc7c6120bcf1bc489aca0]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_74d77.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as -v -o CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccgb2Qss.s]
+        ignore line: [GNU assembler version 2.45.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.45.1]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_74d77.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_74d77.exe]
+        ignore line: [/home/north3rnlight3r/.local/opt/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74d77.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-g++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: /build/mingw-w64-gcc/src/gcc/configure --prefix=/usr --libexecdir=/usr/lib --target=x86_64-w64-mingw32 --with-bugurl=https://bugs.archlinux.org/ --enable-languages=ada c c++ fortran lto objc obj-c++ --enable-shared --enable-static --enable-threads=posix --enable-fully-dynamic-string --enable-libstdcxx-time=yes --enable-libstdcxx-filesystem-ts=yes --with-system-zlib --enable-cloog-backend=isl --enable-lto --enable-libgomp --disable-multilib --enable-checking=release --disable-sjlj-exceptions --with-dwarf2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_74d77.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_74d77.']
+        link line: [ /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/collect2 -plugin /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxHxiCg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_74d77.exe /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0 -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -v --whole-archive CMakeFiles/cmTC_74d77.dir/objects.a --no-whole-archive --out-implib libcmTC_74d77.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccxHxiCg.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_74d77.exe] ==> ignore
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0] ==> dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0]
+          arg [-L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-v] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles/cmTC_74d77.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_74d77.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o] ==> obj [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [collect2 version 15.2.0]
+        ignore line: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld -plugin /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxHxiCg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_74d77.exe /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0 -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -v --whole-archive CMakeFiles/cmTC_74d77.dir/objects.a --no-whole-archive --out-implib libcmTC_74d77.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        linker tool for 'CXX': /usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld
+        remove lib [msvcrt]
+        remove lib [msvcrt]
+        collapse obj [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> [/usr/x86_64-w64-mingw32/lib/crt2.o]
+        collapse library dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0] ==> [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0]
+        collapse library dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [/usr/x86_64-w64-mingw32/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib] ==> [/usr/x86_64-w64-mingw32/lib]
+        implicit libs: [stdc++;mingw32;gcc_s;gcc;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;mingwex;kernel32]
+        implicit objs: [/usr/x86_64-w64-mingw32/lib/crt2.o;/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o;/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-w64-mingw32/15.2.0;/usr/x86_64-w64-mingw32/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld" "-v"
+      GNU ld (GNU Binutils) 2.45.1
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/catch2-src/CMake/CatchMiscFunctions.cmake:12 (check_cxx_compiler_flag)"
+      - "build/_deps/catch2-src/CMake/CatchMiscFunctions.cmake:120 (add_cxx_flag_if_supported_to_targets)"
+      - "build/_deps/catch2-src/src/CMakeLists.txt:352 (add_build_reproducibility_settings)"
+    checks:
+      - "Performing Test HAVE_FLAG__ffile_prefix_map__home_north3rnlight3r_Projects_AifredVst_2_2_4_beta_build__deps_catch2_src__"
+    directories:
+      source: "/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-2y8ECg"
+      binary: "/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-2y8ECg"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build/_deps/catch2-src/extras;/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build/_deps/catch2-src/CMake"
+    buildResult:
+      variable: "HAVE_FLAG__ffile_prefix_map__home_north3rnlight3r_Projects_AifredVst_2_2_4_beta_build__deps_catch2_src__"
+      cached: true
+      stdout: |
+        Change Dir: '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-2y8ECg'
+        
+        Run Build Command(s): /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ddd29/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_ddd29.dir/build.make CMakeFiles/cmTC_ddd29.dir/build
+        make[1]: Entering directory '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-2y8ECg'
+        Building CXX object CMakeFiles/cmTC_ddd29.dir/src.cxx.obj
+        /usr/bin/x86_64-w64-mingw32-g++ -DHAVE_FLAG__ffile_prefix_map__home_north3rnlight3r_Projects_AifredVst_2_2_4_beta_build__deps_catch2_src__  -std=c++20   -ffile-prefix-map=/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build/_deps/catch2-src/= -o CMakeFiles/cmTC_ddd29.dir/src.cxx.obj -c /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-2y8ECg/src.cxx
+        Linking CXX executable cmTC_ddd29.exe
+        /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddd29.dir/link.txt --verbose=1
+        /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E rm -f CMakeFiles/cmTC_ddd29.dir/objects.a
+        x86_64-w64-mingw32-ar qc CMakeFiles/cmTC_ddd29.dir/objects.a @CMakeFiles/cmTC_ddd29.dir/objects1.rsp
+        /usr/bin/x86_64-w64-mingw32-g++ -Wl,--whole-archive CMakeFiles/cmTC_ddd29.dir/objects.a -Wl,--no-whole-archive -o cmTC_ddd29.exe -Wl,--out-implib,libcmTC_ddd29.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_ddd29.dir/linkLibs.rsp
+        make[1]: Leaving directory '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-2y8ECg'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "build/_deps/juce-src/extras/Build/CMake/JUCEModuleSupport.cmake:63 (try_compile)"
+      - "build/_deps/juce-src/extras/Build/CMake/JUCEModuleSupport.cmake:75 (_juce_find_target_architecture)"
+      - "build/_deps/juce-src/CMakeLists.txt:50 (include)"
+    directories:
+      source: "/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/CMakeFiles/CMakeTmp"
+      binary: "/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "compile_result"
+      cached: true
+      stdout: |
+        Change Dir: '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_84ac7/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_84ac7.dir/build.make CMakeFiles/cmTC_84ac7.dir/build
+        make[1]: Entering directory '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_84ac7.dir/juce_runtime_arch_detection.cpp.obj
+        /usr/bin/x86_64-w64-mingw32-g++   -std=c++20 -o CMakeFiles/cmTC_84ac7.dir/juce_runtime_arch_detection.cpp.obj -c /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build/_deps/juce-src/extras/Build/CMake/juce_runtime_arch_detection.cpp
+        /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build/_deps/juce-src/extras/Build/CMake/juce_runtime_arch_detection.cpp:56:4: error: #error JUCE_ARCH x86_64
+           56 |   #error JUCE_ARCH x86_64
+              |    ^~~~~
+        make[1]: *** [CMakeFiles/cmTC_84ac7.dir/build.make:81: CMakeFiles/cmTC_84ac7.dir/juce_runtime_arch_detection.cpp.obj] Error 1
+        make[1]: Leaving directory '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/CMakeFiles/CMakeTmp'
+        make: *** [Makefile:134: cmTC_84ac7/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/FindThreads.cmake:160 (check_c_source_compiles)"
+      - "/home/north3rnlight3r/.local/opt/cmake/share/cmake-4.2/Modules/FindThreads.cmake:226 (_threads_check_libc)"
+      - "build/_deps/juce-src/extras/Build/CMake/JUCEUtils.cmake:1057 (find_package)"
+      - "build/_deps/juce-src/extras/Build/CMake/JUCEUtils.cmake:1098 (_juce_add_vst3_manifest_helper_target)"
+      - "build/_deps/juce-src/extras/Build/CMake/JUCEUtils.cmake:1234 (juce_enable_vst3_manifest_step)"
+      - "build/_deps/juce-src/extras/Build/CMake/JUCEUtils.cmake:1452 (_juce_set_plugin_target_properties)"
+      - "build/_deps/juce-src/extras/Build/CMake/JUCEUtils.cmake:1589 (_juce_link_plugin_wrapper)"
+      - "build/_deps/juce-src/extras/Build/CMake/JUCEUtils.cmake:2182 (_juce_configure_plugin_targets)"
+      - "Source/CMakeLists.txt:61 (juce_add_plugin)"
+      - "Source/CMakeLists.txt:104 (add_aifred_plugin_variant)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-JoFYE2"
+      binary: "/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-JoFYE2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-JoFYE2'
+        
+        Run Build Command(s): /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e8511/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_e8511.dir/build.make CMakeFiles/cmTC_e8511.dir/build
+        make[1]: Entering directory '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-JoFYE2'
+        Building C object CMakeFiles/cmTC_e8511.dir/src.c.obj
+        /usr/bin/x86_64-w64-mingw32-gcc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_e8511.dir/src.c.obj -c /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-JoFYE2/src.c
+        Linking C executable cmTC_e8511.exe
+        /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e8511.dir/link.txt --verbose=1
+        /home/north3rnlight3r/.local/opt/cmake/bin/cmake -E rm -f CMakeFiles/cmTC_e8511.dir/objects.a
+        x86_64-w64-mingw32-ar qc CMakeFiles/cmTC_e8511.dir/objects.a @CMakeFiles/cmTC_e8511.dir/objects1.rsp
+        /usr/bin/x86_64-w64-mingw32-gcc -Wl,--whole-archive CMakeFiles/cmTC_e8511.dir/objects.a -Wl,--no-whole-archive -o cmTC_e8511.exe -Wl,--out-implib,libcmTC_e8511.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_e8511.dir/linkLibs.rsp
+        make[1]: Leaving directory '/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/CMakeFiles/CMakeScratch/TryCompile-JoFYE2'
+        
+      exitCode: 0
+...

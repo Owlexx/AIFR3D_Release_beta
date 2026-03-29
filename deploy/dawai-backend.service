@@ -1,0 +1,20 @@
+[Unit]
+Description=DawAI Ecosystem Backend Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=north3rnlight3r
+WorkingDirectory=/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta
+ExecStart=/usr/bin/bash /home/north3rnlight3r/Projects/AifredVst-2.2.4/scripts/run_backend_production.sh
+Restart=on-failure
+RestartSec=3
+Environment=PORT=8787
+Environment=PAYPAL_ENV=live
+Environment=DAWAI_DEFAULT_API_URL=http://127.0.0.1:8787
+StandardOutput=append:/home/north3rnlight3r/Documents/DawAI_Ecosystem/logs/backend_service.log
+StandardError=append:/home/north3rnlight3r/Documents/DawAI_Ecosystem/logs/backend_service.err
+
+[Install]
+WantedBy=multi-user.target

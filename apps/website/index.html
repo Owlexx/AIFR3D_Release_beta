@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>North3rnLight3r | AIFR3D Mix Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260314-1" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="brand-wrap">
+        <img src="assets/brand/hero_mascot.png" alt="North3rnLight3r Mascot" class="brand-logo" />
+        <div>
+          <p id="brand-title" class="brand-title">NORTH3RNLIGHT3R</p>
+          <p id="brand-sub" class="brand-sub">AIFR3D | Mix Intelligence | Licensing</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#beats">Beats</a>
+        <a href="#services">Services</a>
+        <a href="#store">Store</a>
+        <a href="#education">Education</a>
+        <a href="#soundpacks">Packs</a>
+        <a href="#support">Contact</a>
+        <a href="#policy">Policy</a>
+        <button id="enable-notifications" class="nav-notify-btn" type="button">Notifications: Off</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero panel">
+        <div class="hero-copy-wrap">
+          <p id="hero-eyebrow" class="eyebrow">North3rnLight3r Official</p>
+          <h1 id="hero-title">Professional mix analysis, direct licensing, and premium releases in one system.</h1>
+          <p id="hero-copy" class="hero-copy">AIFR3D combines live diagnostics, reference matching, stereo field intelligence, tonal balance insight, loudness control, and Aifred Mix Tips inside one focused North3rnLight3r workflow for artists, producers, and engineers.</p>
+          <div class="row hero-actions">
+            <a id="hero-primary-cta" class="btn" href="#beats">Launch Beat Player</a>
+            <a id="hero-secondary-cta" class="btn ghost" href="#services">Book Diagnostics</a>
+          </div>
+          <div class="hero-chip-row" aria-label="Website highlights">
+            <span class="hero-chip">Live diagnostics</span>
+            <span class="hero-chip">Reference matching</span>
+            <span class="hero-chip">Stereo field intelligence</span>
+            <span class="hero-chip">Direct licensing</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <article class="hero-showcase-card">
+            <div class="hero-cover-frame">
+              <img src="assets/brand/hero_mascot.png" alt="North3rnLight3r mascot" class="hero-logo-art hero-front-art" />
+            </div>
+            <div class="hero-showcase-copy">
+              <p class="eyebrow">AIFR3D Identity</p>
+              <h3>Aifred and North3rnLight3r anchor the product family.</h3>
+              <p class="hero-showcase-text">The public site now leads with the real mascot, real album art, and a single premium visual direction instead of repeated placeholder graphics or mockup clutter.</p>
+              <a class="hero-source-link" href="assets/brand/North3rnLight3rrMascot.xcf" target="_blank" rel="noreferrer">Open mascot source file</a>
+            </div>
+            <div class="hero-brand-strip">
+              <img src="assets/brand/north3rnlight3r_album_art.png" alt="North3rnLight3r album art" class="hero-brand-thumb" />
+              <img src="assets/brand/album_art_concept.png" alt="North3rnLight3r concept art" class="hero-brand-thumb" />
+            </div>
+          </article>
+        </div>
+        <div class="hero-metrics">
+          <article class="counter-card hero-metric-card">
+            <p class="counter-label">Live Catalog</p>
+            <p id="count-beat-catalog" class="counter-value">0</p>
+          </article>
+          <article class="counter-card hero-metric-card">
+            <p class="counter-label">Client Services</p>
+            <p id="count-services" class="counter-value">0</p>
+          </article>
+          <article class="counter-card hero-metric-card">
+            <p class="counter-label">Digital Products</p>
+            <p id="count-products" class="counter-value">0</p>
+          </article>
+          <article class="counter-card hero-note-card">
+            <p class="counter-label">Surface</p>
+            <p class="hero-note-copy">AIFR3D VST3, standalone diagnostics, digital releases, and direct services under one coherent release surface.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="beats" class="panel">
+        <div class="panel-head row section-headline">
+          <div>
+            <p id="catalog-eyebrow" class="eyebrow">Beat Catalog</p>
+            <h2 id="catalog-title">Audition the catalog through one stable player</h2>
+            <p id="catalog-copy" class="section-copy">Every beat now opens inside the on-page player so playback, transport, visualizer, and checkout all stay in one controlled signal path.</p>
+          </div>
+          <button id="catalog-toggle" class="btn ghost" type="button" aria-expanded="false">Open Catalog</button>
+        </div>
+        <div id="catalog-wrap" class="beats-layout" hidden>
+          <div class="player-shell">
+            <div class="player-now">
+              <div>
+                <p class="eyebrow player-eyebrow">Now Selected</p>
+                <h3 id="now-title">Select a beat</h3>
+                <p id="now-meta" class="muted">BPM --</p>
+              </div>
+              <img src="assets/brand/album_art_concept.png" alt="North3rnLight3r beat artwork" class="player-side-art" />
+            </div>
+            <canvas id="audio-spectrum" class="audio-spectrum" width="1280" height="240" aria-label="Frequency response visualizer"></canvas>
+            <audio id="audio-player" class="audio-element" controls preload="auto"></audio>
+            <div class="player-controls row">
+              <button id="prev-track" class="btn ghost" type="button">Prev</button>
+              <button id="toggle-track" class="btn" type="button">Play</button>
+              <button id="stop-track" class="btn ghost" type="button">Stop</button>
+              <button id="next-track" class="btn ghost" type="button">Next</button>
+              <a id="buy-track" class="btn" href="https://www.paypal.com/cgi-bin/webscr" target="_blank" rel="noreferrer">Buy</a>
+            </div>
+            <div class="player-progress-row">
+              <span id="audio-current-time" class="player-time">0:00</span>
+              <input id="audio-progress" class="audio-progress" type="range" min="0" max="1000" step="1" value="0" />
+              <span id="audio-duration" class="player-time">0:00</span>
+            </div>
+          </div>
+          <article class="support-card beats-side-card">
+            <img src="assets/brand/north3rnlight3r_album_art.png" alt="North3rnLight3r catalog art" class="beats-side-cover" />
+            <h3>Catalog Playback</h3>
+            <p class="muted">North3rnLight3r releases stream through the same premium player so clients can preview, compare, and license without losing context.</p>
+          </article>
+          <div id="catalog-list" class="catalog-list"></div>
+        </div>
+      </section>
+
+      <section id="services" class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Direct Services</h2>
+            <p class="section-copy">Focused mix analysis, reference-aware direction, and release finishing services built around the same AIFR3D diagnostic language used in the software.</p>
+          </div>
+        </div>
+        <div id="services-grid" class="store-grid"></div>
+      </section>
+
+      <section id="store" class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>AIFR3D Software</h2>
+            <p class="section-copy">Download the current Linux beta, review the release documents, and follow the install path for the VST3 and standalone builds.</p>
+          </div>
+        </div>
+        <article class="software-showcase-card">
+          <img src="assets/brand/album_art_concept.png" alt="AIFR3D software artwork" class="software-art" />
+          <div class="software-copy">
+            <p class="eyebrow">Release Candidate Surface</p>
+            <h3>AIFR3D VST3 + standalone diagnostics for real mix decisions.</h3>
+            <p class="muted">The current beta focuses on live analysis, reference matching, stereo field intelligence, tonal balance guidance, loudness structure, and actionable Aifred Mix Tips.</p>
+          </div>
+        </article>
+
+        <div id="install-grid" class="store-grid"></div>
+        <div id="store-grid" class="store-grid"></div>
+      </section>
+
+      <section id="education" class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Aifred Mix Tips / Mix Intelligence</h2>
+            <p class="muted">AIFR3D explains measured, derived, and judged mix behavior in plain language so producers can move from fast reads to deeper technical decisions without losing trust.</p>
+          </div>
+        </div>
+        <div class="education-gallery">
+          <article class="gallery-card">
+            <img src="assets/brand/album_art_concept.png" alt="AIFR3D tonal balance artwork" />
+            <h3>Tonal Balance</h3>
+            <p>Use the same AIFR3D thinking for low-end weight, low-mid congestion, harshness control, and top-end translation.</p>
+          </article>
+          <article class="gallery-card">
+            <img src="assets/brand/north3rnlight3r_album_art.png" alt="AIFR3D stereo field artwork" />
+            <h3>Stereo Field</h3>
+            <p>Read width, center strength, side energy, correlation, and low-end mono integrity as one coherent spatial story.</p>
+          </article>
+          <article class="gallery-card gallery-card-source">
+            <img src="assets/brand/hero_mascot.png" alt="AIFR3D mascot tile" />
+            <h3>Brand Source</h3>
+            <p>North3rnLight3r mascot source artwork used for the live product identity and website brand system.</p>
+            <a class="hero-source-link" href="assets/brand/North3rnLight3rrMascot.xcf" target="_blank" rel="noreferrer">Download design source</a>
+          </article>
+        </div>
+        <div class="education-shell">
+          <div id="education-tabs" class="education-tabs"></div>
+          <article class="support-card education-card">
+            <div class="education-legend">
+              <span><i class="education-dot dot-blue"></i>Under</span>
+              <span><i class="education-dot dot-cyan"></i>Good</span>
+              <span><i class="education-dot dot-green"></i>Target</span>
+              <span><i class="education-dot dot-yellow"></i>Risk</span>
+              <span><i class="education-dot dot-red"></i>Problem</span>
+            </div>
+            <h3 id="education-title">Frequency Balance</h3>
+            <p id="education-description" class="muted"></p>
+            <div id="education-body" class="education-body"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="soundpacks" class="panel">
+        <div class="panel-head">
+          <h2>Sound / MIDI / Drum / Sample Packs</h2>
+        </div>
+        <div id="soundpack-list" class="catalog-list"></div>
+      </section>
+
+      <section id="support" class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Contact & Aifred Support</h2>
+            <p class="section-copy">Use the contact form for services, licensing, and product questions.</p>
+          </div>
+        </div>
+
+        <div class="support-grid">
+          <article class="support-card">
+            <h3>Inquiries</h3>
+            <p><a class="email-link" href="mailto:north3rnlight3rofficial@outlook.com">north3rnlight3rofficial@outlook.com</a></p>
+            <form id="support-form">
+              <label for="support-name">Name</label>
+              <input id="support-name" type="text" required />
+              <label for="support-email">Email</label>
+              <input id="support-email" type="email" required />
+              <label for="support-message">Message</label>
+              <textarea id="support-message" rows="5" required></textarea>
+              <button class="btn" type="submit">Send</button>
+            </form>
+            <p id="support-status" class="muted"></p>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="policy" class="panel">
+        <div class="panel-head">
+          <h2>Purchase & Refund Policy</h2>
+        </div>
+        <div class="policy-copy">
+          <p>Licenses are non-exclusive unless a written agreement states otherwise. Each purchase grants the usage rights defined by the selected tier. Resale, redistribution, or ownership claims outside that license are prohibited.</p>
+          <p>Digital products, beats, packs, and software are final once delivery is confirmed, except for verified file-access or corruption issues. Qualified delivery problems are replaced promptly.</p>
+          <p>Service bookings, diagnostics, and AIFR3D-driven feedback begin after payment confirmation. Delivery targets can extend up to 48 hours per track depending on queue depth and scope.</p>
+          <p>Refund reviews are reserved for duplicate billing or undelivered work. Approved refunds return to the original payment method after verification.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>&copy; <span id="year"></span> North3rnLight3r / AIFR3D</p>
+    </footer>
+
+    <script src="config.js?v=20260314-1"></script>
+    <script src="app.js?v=20260314-1"></script>
+  </body>
+</html>

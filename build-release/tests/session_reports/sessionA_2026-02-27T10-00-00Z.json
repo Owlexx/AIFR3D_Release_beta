@@ -1,0 +1,26 @@
+{
+  "fix_list": [
+    {
+      "category": "Low End",
+      "confidence": 1.0,
+      "options": [
+        "Safe",
+        "Bold"
+      ],
+      "priority": 1,
+      "reference_delta": 0.0,
+      "reference_severity": 0.0,
+      "score": 0.0,
+      "signal_clarity": 0.7,
+      "target_delta": 0.0,
+      "target_severity": 0.0,
+      "what_changed": "Changed",
+      "what_to_do_next": "Trim boom",
+      "where_you_stand": "Outside"
+    }
+  ],
+  "rating": 8.2,
+  "reference_used": "ref1",
+  "session_name": "sessionA",
+  "timestamp_utc": "2026-02-27T10-00-00Z"
+}

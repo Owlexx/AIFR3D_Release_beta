@@ -1,0 +1,58 @@
+{
+  "Name": "AIFRED_a",
+  "Version": "2.2.4",
+  "Factory Info": {
+    "Vendor": "North3rnLight3r",
+    "URL": "",
+    "E-Mail": "",
+    "Flags": {
+      "Unicode": true,
+      "Classes Discardable": false,
+      "Component Non Discardable": false,
+    },
+  },
+  "Classes": [
+    {
+      "CID": "565354416664416169667265645F6100",
+      "Category": "Audio Module Class",
+      "Name": "AIFRED_a",
+      "Vendor": "North3rnLight3r",
+      "Version": "2.2.4",
+      "SDKVersion": "VST 3.7.12",
+      "Sub Categories": [
+        "Fx",
+      ],
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+    {
+      "CID": "565345416664416169667265645F6100",
+      "Category": "Component Controller Class",
+      "Name": "AIFRED_a",
+      "Vendor": "North3rnLight3r",
+      "Version": "2.2.4",
+      "SDKVersion": "VST 3.7.12",
+      "Sub Categories": [
+        "Fx",
+      ],
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+    {
+      "CID": "ABCDEF01C0DEF00D4E334C3141666441",
+      "Category": "Plugin Compatibility Class",
+      "Name": "AIFRED_a",
+      "Vendor": "North3rnLight3r",
+      "Version": "2.2.4",
+      "SDKVersion": "VST 3.7.12",
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+  ],
+}

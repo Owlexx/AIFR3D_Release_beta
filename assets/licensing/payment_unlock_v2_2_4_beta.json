@@ -1,0 +1,18 @@
+{
+  "build": "2.2.4 Beta",
+  "code": "N3LMIX",
+  "entitlement_type": "payment_unlock",
+  "payment_verified": true,
+  "payment_bypass": false,
+  "lifetime": true,
+  "session_limits": {
+    "analyze": 0,
+    "compare": 0,
+    "reference": 0
+  },
+  "products": [
+    "vst",
+    "standalone"
+  ],
+  "note": "Packaged proof-of-payment unlock for AIFR3D 2.2.4 Beta installers."
+}

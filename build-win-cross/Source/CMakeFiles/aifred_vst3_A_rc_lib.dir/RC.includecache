@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/Source/aifred_vst3_A_artefacts/JuceLibraryCode/aifred_vst3_A_resources.rc
+windows.h
+-
+

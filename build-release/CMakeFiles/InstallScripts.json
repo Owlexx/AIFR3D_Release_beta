@@ -1,0 +1,22 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/_deps/json-build/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/_deps/catch2-build/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/_deps/catch2-build/src/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/_deps/juce-build/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/_deps/juce-build/modules/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/_deps/juce-build/extras/Build/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/_deps/juce-build/extras/Build/juceaide/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/modules/reference_engine/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/modules/aifr3d_core/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/modules/advisory_layer/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/modules/audio_engine/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/modules/ui/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/apps/dawai/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/Source/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-release/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

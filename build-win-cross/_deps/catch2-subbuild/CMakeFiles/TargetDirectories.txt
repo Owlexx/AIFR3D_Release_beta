@@ -1,0 +1,3 @@
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/catch2-subbuild/CMakeFiles/catch2-populate.dir
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/catch2-subbuild/CMakeFiles/edit_cache.dir
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/catch2-subbuild/CMakeFiles/rebuild_cache.dir

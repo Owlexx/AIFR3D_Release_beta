@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdawai_aifr3d_core.a CMakeFiles/dawai_aifr3d_core.dir/src/feature_ingestion.cpp.o CMakeFiles/dawai_aifr3d_core.dir/src/scoring.cpp.o CMakeFiles/dawai_aifr3d_core.dir/src/fix_list.cpp.o CMakeFiles/dawai_aifr3d_core.dir/src/analysis_writer.cpp.o CMakeFiles/dawai_aifr3d_core.dir/src/apply_fix.cpp.o CMakeFiles/dawai_aifr3d_core.dir/src/session_store.cpp.o CMakeFiles/dawai_aifr3d_core.dir/src/reporting/mix_reporter.cpp.o
+/usr/bin/ranlib libdawai_aifr3d_core.a

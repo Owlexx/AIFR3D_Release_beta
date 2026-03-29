@@ -1,0 +1,2 @@
+x86_64-w64-mingw32-ar qc libdawai_advisory_layer.a CMakeFiles/dawai_advisory_layer.dir/src/api_key_store.cpp.obj CMakeFiles/dawai_advisory_layer.dir/src/analysis_sandbox.cpp.obj CMakeFiles/dawai_advisory_layer.dir/src/openai_adviser.cpp.obj CMakeFiles/dawai_advisory_layer.dir/src/local_brain_adviser.cpp.obj CMakeFiles/dawai_advisory_layer.dir/src/memory_store.cpp.obj CMakeFiles/dawai_advisory_layer.dir/src/advisory_service.cpp.obj
+x86_64-w64-mingw32-ranlib libdawai_advisory_layer.a

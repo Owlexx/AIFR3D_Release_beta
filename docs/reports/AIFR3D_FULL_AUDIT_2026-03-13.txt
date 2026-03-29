@@ -1,0 +1,1379 @@
+AIFR3D FULL AUDIT LOG
+Date: 2026-03-13
+Repo: C:\Users\North\Documents\AifredVst-2.2.4-beta-clone
+Branch at audit start: Aifred-Vst-Beta-2.2.4
+Remote: origin -> https://github.com/kaeganscott26/AifredVst-2.2.4-beta.git
+
+=====================================================================
+1. AUDIT SCOPE
+=====================================================================
+This audit covers the repo state, build status, DSP paths, metering, scoring,
+analysis, reference handling, fix-list generation, advisory/chat paths, UI
+meter behavior, scripted fallback behavior, and repo organization risks.
+
+This audit is based on local source inspection and local command execution.
+A fresh Windows build could not be completed on this machine because no C/C++
+compiler was available in PATH at audit time.
+
+Important limitation:
+- Existing generated build folders exist in the repo, but they are not a valid
+  substitute for a fresh verified local build.
+
+=====================================================================
+2. CURRENT GIT / BUILD STATE
+=====================================================================
+Current branch:
+- Aifred-Vst-Beta-2.2.4
+
+Current remote-tracking state:
+- local branch tracks origin/Aifred-Vst-Beta-2.2.4
+- origin/HEAD points to origin/Aifred-Vst-Beta-2.2.4
+
+Working tree state at audit time:
+- modified: scripts/install_windows.ps1
+- untracked: .vs/
+- untracked: build-audit/
+- untracked: scripts/build_windows_release.cmd
+
+Fresh configure/build status on this Windows machine:
+- cmake configure attempt failed because CMAKE_C_COMPILER was not found
+- cmake configure attempt failed because CMAKE_CXX_COMPILER was not found
+- cl not found
+- clang++ not found
+- g++ not found
+
+Build truth right now:
+- The repo contains past/generated build outputs, but the current source tree is
+  not freshly build-verified on this machine.
+- Any claim that the current repo is build-clean would be inaccurate.
+
+=====================================================================
+3. REPO SHAPE SUMMARY
+=====================================================================
+Top-level repo structure has four real product surfaces plus generated build
+artifacts:
+- Source/ = canonical JUCE plugin/desktop analyzer path
+- modules/ = second analyzer/app architecture with duplicate DSP, UI, scoring,
+  and advisory pieces
+- apps/ = standalone desktop launcher, website assets, android admin app
+- server/ and cloudflare/ = remote chat and web control surfaces
+- assets/ = reference pools, branding, brain config
+- docs/ = contracts, guides, ADRs, specs
+- tests/ = smoke tests and unit tests
+- build-* and .vs/ = generated or environment-specific artifacts
+
+Architectural reality:
+- There are two analyzer stacks in this repo.
+- They do not implement the same math.
+- They do not present the same truth.
+- They should not both remain authoritative.
+
+=====================================================================
+4. PRIMARY ARCHITECTURE CONFLICT
+=====================================================================
+There are two different analysis/metering systems in active code:
+
+A. Canonical plugin path
+- Source/DSP/*
+- Source/UI/*
+- Source/Plugin/*
+- Source/Interpretation/*
+
+B. Modular/standalone path
+- modules/metering/*
+- modules/reference_engine/*
+- modules/aifr3d_core/*
+- modules/ui/*
+- apps/dawai/*
+
+Problem:
+- Path A is closer to real engineering measurement.
+- Path B still contains approximations, fake reference fallbacks, proxy candles,
+  and preset/action behavior.
+- This means the repo cannot honestly behave like one coherent instrument.
+
+Required direction:
+- Declare one canonical DSP/metering path.
+- All products must consume the same analyzer math and the same reference data
+  contracts.
+- Advisory/chat may interpret measurements, but it must not replace them.
+
+=====================================================================
+5. MOST IMPORTANT FAILURES: PLUGIN BREAKS / TRUST BREAKS
+=====================================================================
+These are the highest-priority issues because they break measurement truth,
+reference truth, or user trust.
+
+5.1 Mid-only activity detection can hide valid stereo content
+Files:
+- Source/DSP/FeatureExtractor.cpp
+- Source/DSP/AnalysisEngine.cpp
+Issue:
+- Feature extraction computes RMS/peak from Mid only.
+- Analysis activity gating then uses those values to decide if input is active.
+Why it happens:
+- Side-dominant or anti-phase material can produce low Mid energy while still
+  containing real audio.
+Impact:
+- Valid content can be treated as silence.
+- Live analysis, scoring, and UI can freeze or under-report wide stereo material.
+Fix:
+- Base activity detection on max energy across L, R, Mid, and Side or on channel
+  pair energy, not Mid alone.
+
+5.2 Crest factor is mislabeled as dynamic range
+Files:
+- Source/DSP/AnalysisEngine.cpp
+Issue:
+- crestFactorDb and dynamicRangeDb are both assigned from the same crest value.
+Why it happens:
+- The output layer collapses two separate concepts into one number.
+Impact:
+- Any UI or AI statement about dynamic range is technically wrong.
+Fix:
+- Split crest factor and dynamic range into separate measurements and labels.
+
+5.3 Live vs reference frequency-balance math is inconsistent
+Files:
+- Source/DSP/AnalysisEngine.cpp
+- Source/DSP/ReferenceModel.cpp
+Issue:
+- Live frequency-balance normalization and reference frequency-balance
+  normalization use different dB-to-linear conversions.
+Why it happens:
+- One side uses 10^(db/20) and the other side uses 10^(db/10) for conceptually
+  related feature normalization.
+Impact:
+- Reference comparisons can drift even when live and reference tonal balance are
+  actually similar.
+Fix:
+- Standardize one domain for band-energy comparison and keep it consistent in
+  live, stored reference, and scoring paths.
+
+5.4 Standalone UI fabricates fallback reference data
+Files:
+- modules/ui/src/main_view.cpp
+Issue:
+- When reference lookup fails, the code creates a fake reference from the live
+  snapshot with arbitrary offsets.
+Why it happens:
+- The standalone path tries to keep the interface populated even without a real
+  pool match.
+Impact:
+- The user is shown a false target.
+- Meter color states and scoring become invented.
+- This directly violates the requirement that measured metrics remain true.
+Fix:
+- Remove fake fallback reference creation.
+- If no valid reference exists, show live-only meters with neutral evaluation
+  state and explicit "reference unavailable" messaging.
+
+5.5 Standalone session candles are not real loudness candles
+Files:
+- modules/ui/src/main_view.cpp
+Issue:
+- Session candles are generated from alignment/signature proxy values instead of
+  real LUFS open/high/low/close.
+Why it happens:
+- The candle engine was built around score-like proxies, not engineering units.
+Impact:
+- Candle charts look active but do not reflect actual loudness history.
+Fix:
+- Store real LUFS-based OHLC values for realtime and session candles.
+
+5.6 Modular loudness path is explicitly approximate
+Files:
+- modules/metering/src/loudness_analyzer.cpp
+Issue:
+- Loudness conversion is approximate, not standards-grade BS.1770 behavior.
+Why it happens:
+- The path uses simplified energy conversion without full K-weighting/gating.
+Impact:
+- It cannot match Youlean-level measurement agreement.
+Fix:
+- Replace with a proper BS.1770-4 implementation or reuse the canonical
+  loudness engine everywhere.
+
+5.7 Modular true peak is fake
+Files:
+- modules/metering/src/loudness_analyzer.cpp
+Issue:
+- "True peak" is estimated from adjacent samples instead of oversampling.
+Why it happens:
+- The implementation does not perform inter-sample peak detection.
+Impact:
+- Inter-sample peaks are missed.
+- True peak readouts are not trustworthy.
+Fix:
+- Implement calibrated oversampling, minimum 4x, with max abs across the
+  oversampled waveform.
+
+5.8 Modular FFT analyzer is not production-grade
+Files:
+- modules/metering/src/fft_analyzer.cpp
+Issue:
+- Uses a naive O(N^2) DFT on the current block only.
+Why it happens:
+- No rolling analysis buffer, no proper FFT engine, no overlap handling.
+Impact:
+- jumpy spectrum
+- poor low-end stability
+- poor realtime performance
+Fix:
+- Replace with a proper FFT path, rolling window, overlap, Hann window, and
+  power-domain smoothing.
+
+5.9 Modular stereo width math is wrong for the target contract
+Files:
+- modules/metering/src/stereo_analyzer.cpp
+Issue:
+- Width is computed as sideEnergy / (midEnergy + epsilon) and clamped 0..2.
+Why it happens:
+- The path uses a ratio that can exceed normalized bounds.
+Impact:
+- Width values do not match the required 0..1 contract.
+Fix:
+- Use sideEnergy / (midEnergy + sideEnergy) in the canonical path.
+
+5.10 Server/admin chat path is not grounded in live DSP by default
+Files:
+- server/src/index.js
+Issue:
+- /api/v1/chat/ask uses prompt plus memory summary, but not a live analysis
+  payload from the mix engine by default.
+Why it happens:
+- The remote chat route is structured like a generic assistant endpoint.
+Impact:
+- Admin/web chat can produce valid structured responses that are not actually
+  tied to live meter truth.
+Fix:
+- Add mandatory analysis payload ingestion for mix-analysis requests or separate
+  generic admin chat from mix-grounded advisory.
+
+5.11 Preset/action logic exists and can manipulate session state
+Files:
+- modules/aifr3d_core/src/apply_fix.cpp
+- modules/ui/src/main_view.cpp
+- tests/apply_fix_undo_test.cpp
+Issue:
+- The repo still contains preset-generation and action/undo logic.
+- The standalone UI can apply a conservative level move and preview by soloing a
+  track.
+Why it happens:
+- AIFR3D core still includes a "fix apply" concept.
+Impact:
+- This conflicts directly with the stated requirement that AIFR3D must not
+  generate presets or manipulate the host/session as part of advisory behavior.
+Fix:
+- Remove AI-driven action generation and session-manipulation pathways from the
+  product contract.
+- If any manual tooling remains, it must be explicit, separate, and not driven by
+  chat output.
+
+=====================================================================
+6. DSP / METERING AUDIT
+=====================================================================
+6.1 Canonical DSP path: closer to correct, but still not finished
+Relevant files:
+- Source/DSP/LoudnessEBUR128.cpp
+- Source/DSP/SpectrumAnalyzerFFT.cpp
+- Source/DSP/StereoAnalyzer.cpp
+- Source/DSP/FeatureExtractor.cpp
+- Source/DSP/AnalysisEngine.cpp
+- Source/Common/MixMetrics.h
+- Source/Common/AnalysisTypes.h
+
+Findings:
+- The canonical path is the correct place to concentrate future work.
+- It already separates analysis, UI, and interpretation better than the modular
+  path.
+- It still has trust-breaking issues: mid-only gating, crest/dynamic label
+  collision, inconsistent reference normalization, and some UI proxy layers.
+
+6.2 Modular meter path: should not remain an equal authority
+Relevant files:
+- modules/metering/include/dawai/metering/metering_engine.hpp
+- modules/metering/src/loudness_analyzer.cpp
+- modules/metering/src/fft_analyzer.cpp
+- modules/metering/src/stereo_analyzer.cpp
+
+Findings:
+- approximate loudness
+- fake true peak
+- block-local DFT
+- wrong width normalization
+- sample-rate-dependent short-term window bug
+- simplified band grouping and tilt proxies
+
+Conclusion:
+- This path should be retired, replaced, or turned into a thin wrapper over the
+  canonical analyzer.
+
+6.3 Meter agreement target vs Youlean
+Requested target:
+- within about plus/minus 0.03 dB for relevant measurements
+
+Current state:
+- The repo does not currently prove that level of agreement.
+- The modular path cannot realistically achieve it.
+- The canonical path may get close after cleanup, but it still lacks a golden
+  calibration harness.
+
+To reach that target, the repo needs:
+- one canonical loudness engine only
+- BS.1770-4 K-weighting
+- correct gating behavior
+- exact sample-rate-dependent windows
+- calibrated 4x or higher true-peak oversampling
+- dedicated offline validation renders against reference-grade analyzers
+- hard tolerances in tests
+
+=====================================================================
+7. UI / METER BEHAVIOR AUDIT
+=====================================================================
+7.1 Meters are too jumpy because the repo mixes bad analysis cadence and generic smoothing
+Relevant files:
+- Source/UI/UiModel.cpp
+- modules/ui/src/main_view.cpp
+- modules/ui/src/meter_panel.cpp
+
+Findings:
+- Generic SmoothedValue ramps are used where instrument ballistics should exist.
+- The standalone path only runs higher-level analysis every few UI ticks.
+- The modular FFT sees only the current block.
+- Proxy-based candles and score-based motion amplify instability.
+
+Why the meters "jump all over the place":
+- The underlying measurement path is unstable in the modular stack.
+- The smoothing strategy is not meter-specific.
+- Some UI animation layers are ornamental rather than strictly informative.
+
+Required meter-ballistics model:
+- Sample peak / true peak:
+  - instant attack
+  - hold peak briefly
+  - fixed dB-per-second release
+- Momentary LUFS:
+  - let the 400 ms window do most of the smoothing
+  - only light display smoothing if needed
+- Short-term LUFS:
+  - almost no added display smoothing
+- Integrated LUFS:
+  - no cosmetic smoothing beyond the real computation
+- Correlation / width / phase:
+  - 150-300 ms EMA or equivalent
+- Spectrum:
+  - overlap FFT
+  - power-domain smoothing
+  - optional peak-hold overlay instead of hiding movement
+
+7.2 Candles must be rebuilt in real units
+Plugin path files:
+- Source/UI/UiModel.cpp
+- Source/UI/CandleStoryline.cpp
+Standalone path files:
+- modules/ui/src/main_view.cpp
+- modules/ui/src/candlestick_panel.cpp
+
+Current problem:
+- multiple candle systems store normalized prices or signature proxies
+- they are not faithful loudness OHLC instruments
+
+Required fix:
+- Realtime candle mode = actual loudness window OHLC
+- Session candle mode = actual session start/end integrated LUFS plus short-term
+  high/low behavior
+- No score-derived candle body values
+
+7.3 Color logic needs separation by mode
+Current issue:
+- Analyze, Compare, and Reference overlap visually and semantically.
+- Some color/animation behavior is decorative.
+
+Required separation:
+- Analyze mode:
+  - pure instrument palette
+  - live-buffer truth only
+- Reference mode:
+  - corridor/deviation palette only when valid reference exists
+- Compare mode:
+  - A/B delta palette only
+
+7.4 Decorative pulse/glow must not imply fake measurement changes
+Relevant files:
+- Source/UI/ApprovalHalo.cpp
+- Source/UI/TopBar.cpp
+- Source/UI/CandleStoryline.cpp
+- Source/UI/UiModel.cpp
+- modules/ui/src/aifr3d_panel.cpp
+
+Current state:
+- decorative motion exists in several places
+- this is acceptable only if it never drives values or replaces real signal
+
+Required rule:
+- keep decoration secondary and obviously secondary
+- do not use decorative motion to stand in for signal behavior
+
+=====================================================================
+8. REFERENCE POOL AUDIT
+=====================================================================
+8.1 Reference pool must be first-class and truthful
+Relevant files:
+- Source/DSP/ReferenceModel.cpp
+- docs/licensed_reference_pool_workflow_v2.2.4.md
+- assets/reference_pools/*
+- modules/reference_engine/src/reference_profiler.cpp
+- modules/reference_engine/src/genre_detector.cpp
+
+Good news:
+- The repo does contain a real reference-pool concept and stored profiles.
+- The user request to make reference pools first is correct.
+
+Bad news:
+- The modular profiler maps some bands incorrectly.
+- The standalone UI fakes reference data when detection fails.
+- Some docs still describe fixed plus/minus target windows that may not align
+  with future corridor logic.
+
+Required order of operations:
+1. lock one canonical reference profile schema
+2. validate pool loading and corruption handling
+3. remove fake fallback reference creation
+4. align live/reference math to the same analyzer units
+5. only then repair scoring and advisory on top of that truth
+
+=====================================================================
+9. SCORING / FIX-LIST AUDIT
+=====================================================================
+Relevant files:
+- Source/DSP/ScoringEngine.cpp
+- modules/aifr3d_core/src/scoring.cpp
+- modules/aifr3d_core/src/feature_ingestion.cpp
+- modules/aifr3d_core/src/fix_list.cpp
+- modules/aifr3d_core/src/analysis_writer.cpp
+- modules/aifr3d_core/src/reporting/mix_reporter.cpp
+- Source/Interpretation/DiagnosticEngine.cpp
+
+Findings:
+- Deterministic scoring is acceptable as interpretation, not as measurement.
+- Several thresholds are heuristic and fixed.
+- The standalone fix-list generator sorts category deviations and emits machine-
+  like text fields, but leaves action text empty.
+- The plugin DiagnosticEngine applies hard-coded issue thresholds and labels.
+
+What is acceptable to keep:
+- deterministic interpretation layer
+- issue ranking
+- evidence packaging
+- plain-English translation of measured facts
+
+What must change:
+- scoring cannot masquerade as measurement
+- issue generation must cite metric evidence consistently
+- AI summary must be grounded in live buffer + valid reference context only
+- fixed scripted issue text should become a structured interpretation layer, not
+  the only product voice
+
+=====================================================================
+10. AIFR3D BRAIN / CHAT / PREDETERMINED BEHAVIOR AUDIT
+=====================================================================
+Relevant files:
+- modules/advisory_layer/src/local_brain_adviser.cpp
+- modules/advisory_layer/src/openai_adviser.cpp
+- modules/advisory_layer/src/memory_store.cpp
+- apps/dawai/src/daemon_server.cpp
+- server/src/index.js
+- cloudflare/website-worker.mjs
+- assets/aifr3d_brain/brain_config.json
+- docs/aifred_guardrails.md
+- docs/aifred_output_contract.json
+- docs/aifred_identity.yaml
+- docs/AI_ROUTER_SPEC.md
+- Source/UI/MainView.cpp
+- Source/UI/FixListPanel.cpp
+
+10.1 The OpenAI path is not fully deleted
+Finding:
+- There is still OpenAI advisory code in the repo.
+- It exists in both C++ advisory modules and Node/Cloudflare server surfaces.
+Meaning:
+- The system is recoverable.
+- The problem is not total absence.
+- The problem is fragmentation, inconsistent grounding, and conflicting specs.
+
+10.2 There are still canned failure phrases
+Examples:
+- "OpenAI API key missing - AIFR3D chat unavailable"
+- "OpenAI request failed - AIFR3D chat unavailable"
+- daemon text variants that say install key / connect to internet
+Impact:
+- Failure handling is scripted and repeated across plugin, standalone, and daemon.
+This is acceptable for error messaging, but not as a substitute for advisory
+logic.
+
+10.3 Chat voice is partly configurable and partly predetermined
+Relevant files:
+- assets/aifr3d_brain/brain_config.json
+- docs/aifred_identity.yaml
+- server/src/index.js
+- cloudflare/website-worker.mjs
+- modules/advisory_layer/src/openai_adviser.cpp
+
+Finding:
+- The system prompt defines identity, tone preset, personality mode, and voice.
+- server/worker also allow system_prefix and system_suffix.
+Impact:
+- Style is partly predetermined by config.
+- That is acceptable only for personality and output format, not for the actual
+  content of mix analysis.
+
+10.4 There is a hard conflict in repo policy about offline fallback
+Conflict files:
+- docs/aifred_guardrails.md
+- assets/aifr3d_brain/brain_config.json
+- docs/aifred_identity.yaml
+- docs/AI_ROUTER_SPEC.md
+
+Conflict:
+- guardrails and brain config say no offline/local fallback in production
+- AI router spec still defines OFFLINE_LLAMA fallback behavior
+Impact:
+- The repo contains mutually conflicting AI product rules.
+Required resolution:
+- pick one production contract and delete the conflicting spec paths
+- based on user direction, production should be OpenAI-grounded with no scripted
+  offline fallback for mix-analysis behavior
+
+10.5 Desktop/plugin advisory is more grounded than server/admin advisory
+Plugin path:
+- Source/UI/MainView.cpp builds a live analysis JSON payload from current frame
+  metrics and sends it through the local adviser
+Server/admin path:
+- server/src/index.js /api/v1/chat/ask accepts prompt and memory but not live
+  DSP mix data by default
+Impact:
+- the desktop/plugin path can be mix-grounded
+- the admin/web path can become generic chat instead of mix-grounded analysis
+Fix:
+- separate generic admin support chat from mix-analysis chat
+- for mix-analysis chat, require structured live analysis/reference evidence
+
+10.6 Preset generation and action application must be removed from the AIFR3D brain contract
+Relevant files:
+- modules/aifr3d_core/src/apply_fix.cpp
+- modules/ui/src/main_view.cpp
+- tests/apply_fix_undo_test.cpp
+
+Reason:
+- User requirement explicitly says:
+  - no preset generation
+  - no host manipulation
+- The code currently still contains those capabilities.
+Required action:
+- remove from production behavior
+- keep only evidence, explanations, and optional manual user workflows outside AI
+  authority if needed later
+
+=====================================================================
+11. CURRENT FILE CATEGORIES
+=====================================================================
+Category 1: MOST IMPORTANT / PLUGIN BREAKS / TRUST BREAKS
+These files directly affect measurement truth, reference truth, or live product
+trust and should be treated as priority-one code.
+- Source/DSP/AnalysisEngine.cpp
+- Source/DSP/FeatureExtractor.cpp
+- Source/DSP/LoudnessEBUR128.cpp
+- Source/DSP/SpectrumAnalyzerFFT.cpp
+- Source/DSP/StereoAnalyzer.cpp
+- Source/DSP/ReferenceModel.cpp
+- Source/DSP/ScoringEngine.cpp
+- Source/Common/MixMetrics.h
+- Source/Common/AnalysisTypes.h
+- Source/Interpretation/DiagnosticEngine.cpp
+- Source/UI/UiModel.cpp
+- Source/UI/MainView.cpp
+- modules/metering/src/loudness_analyzer.cpp
+- modules/metering/src/fft_analyzer.cpp
+- modules/metering/src/stereo_analyzer.cpp
+- modules/reference_engine/src/reference_profiler.cpp
+- modules/reference_engine/src/genre_detector.cpp
+- modules/ui/src/main_view.cpp
+- modules/aifr3d_core/src/feature_ingestion.cpp
+- modules/aifr3d_core/src/scoring.cpp
+- modules/aifr3d_core/src/fix_list.cpp
+- modules/aifr3d_core/src/apply_fix.cpp
+- modules/advisory_layer/src/openai_adviser.cpp
+- server/src/index.js
+- cloudflare/website-worker.mjs
+
+Category 2: NEED TO KEEP BUT CAN CHANGE
+These files define product surface, UI structure, build path, docs, and API
+contracts. They should remain but are valid refactor targets.
+- Source/UI/ApprovalHalo.cpp
+- Source/UI/CandleStoryline.cpp
+- Source/UI/FixListPanel.cpp
+- Source/UI/MixSignatureMeter.cpp
+- Source/UI/MixTipsPanel.cpp
+- Source/UI/StereoArcView.cpp
+- Source/UI/TopBar.cpp
+- Source/Plugin/PluginProcessor.cpp
+- Source/Plugin/Parameters.h
+- modules/ui/src/aifr3d_panel.cpp
+- modules/ui/src/meter_panel.cpp
+- modules/ui/src/insight_panel.cpp
+- modules/ui/src/candlestick_panel.cpp
+- apps/dawai/src/main.cpp
+- apps/dawai/src/daemon_server.cpp
+- apps/android_admin/**
+- apps/website/**
+- docs/**
+- tests/**
+- scripts/**
+
+Category 3: USEFUL BUT REDUNDANT / SHOULD BE CONSOLIDATED
+These files contain duplicated analyzer logic, stale product rules, or overlap
+that should be merged into one canonical path.
+- modules/metering/**
+- modules/reference_engine/**
+- modules/aifr3d_core/**
+- docs/AI_ROUTER_SPEC.md
+- docs/adr/0005-aifr3d-scoring.md
+- docs/standalone_user_guide_v2.2.4.md
+- docs/vst_user_guide_v2.2.4.md
+- docs/wiki/* where behavior describes outdated fallback/default paths
+
+Category 4: NOT IMPORTANT TO PRESERVE / GENERATED / SAFE TO DISCARD OR REBUILD
+These are not source-of-truth files.
+- .vs/**
+- build-audit/**
+- build-release/**
+- build-win/**
+- build-win-cross/**
+- build-local-cache/**
+
+=====================================================================
+12. WHAT SHOULD STAY PREDETERMINED VS WHAT MUST NOT
+=====================================================================
+Allowed predetermined elements:
+- DSP formulas and analysis contracts
+- reference-pool schema and curated intake rules
+- output JSON schema
+- guardrails that prevent fake claims and destructive actions
+- consistent assistant personality style
+
+Not allowed to remain predetermined in production mix analysis:
+- fake meters
+- fake reference values
+- score-derived candle proxies posing as loudness data
+- canned issue output pretending to be unique analysis
+- generic admin chat pretending to be mix-grounded analysis
+- preset generation
+- host/session manipulation by AI
+- offline scripted fallback that pretends to be a real mix analyst
+
+=====================================================================
+13. COMPLETE EXECUTION PLAN TO FIX THE REPO
+=====================================================================
+Phase 0: Branch and repo organization
+Goal:
+- establish one stable branch model before major code movement
+Tasks:
+- create main from current stable baseline
+- create dev from main
+- create vst-standalone from dev
+- create website-admin from dev
+- move active future work to short-lived child branches
+Exit criteria:
+- no more direct feature work on release/integration branches
+
+Phase 1: Reference pool first
+Goal:
+- make reference handling real before scoring or AI cleanup
+Tasks:
+- lock canonical pool path and schema
+- validate assets/reference_pools/canonical_25x5 or replace with the intended
+  canonical pool
+- remove fake fallback reference creation in standalone path
+- repair reference profiling band mapping
+- repair live/reference normalization mismatch
+Exit criteria:
+- missing reference shows explicit live-only mode, never fabricated target data
+
+Phase 2: Canonicalize DSP and metering
+Goal:
+- one measurement engine only
+Tasks:
+- choose Source/DSP as canonical analyzer
+- retire or wrap modules/metering behind canonical implementations
+- repair true peak
+- repair LUFS
+- repair width/correlation math
+- repair transient and crest handling
+- repair activity gating
+Exit criteria:
+- one code path computes the truth for all products
+
+Phase 3: Rebuild meter behavior and UI ballistics
+Goal:
+- accurate but readable meters
+Tasks:
+- implement per-meter attack/release ballistics
+- remove generic over-smoothing for engineering meters
+- update UI cadence so analysis and display are stable
+- rebuild candles in real units
+- ensure mode-specific colors are truthful
+Exit criteria:
+- meters are readable without losing engineering accuracy
+
+Phase 4: Repair scoring and interpretation layering
+Goal:
+- interpretation sits on top of truth instead of replacing it
+Tasks:
+- keep deterministic interpretation layer separate from measurement layer
+- clearly mark what is measured vs inferred
+- revise fix-list generation to always attach evidence and plain-English
+  interpretation
+- remove empty or machine-like placeholders from fix outputs
+Exit criteria:
+- scoring is advisory only and grounded in validated metrics
+
+Phase 5: Repair AIFR3D brain and chat architecture
+Goal:
+- one real OpenAI-grounded advisory system with no fake offline analyst mode
+Tasks:
+- keep OpenAI structured-output path
+- remove preset/action generation from production contract
+- split generic admin assistant from mix-grounded assistant
+- require live analysis payloads for mix-analysis chat
+- unify desktop daemon, server, and Cloudflare prompt contracts
+- remove conflicting offline-fallback spec from production docs
+- preserve memory and webhook support, but keep them evidence-bound
+Exit criteria:
+- the assistant can answer uniquely per mix because it is fed real live metrics,
+  valid reference context, and bounded memory, not canned scripts
+
+Phase 6: Test and calibration harness
+Goal:
+- prove the meter math instead of trusting it
+Tasks:
+- add golden WAV fixtures
+- compare integrated LUFS, short-term LUFS, true peak, RMS, and selected spectral
+  outputs against known references
+- add tolerance checks targeted at Youlean-style agreement
+- add regression tests for no-reference behavior, phase-heavy stereo, and wide
+  material
+Exit criteria:
+- automated tests fail when meter truth drifts beyond tolerance
+
+Phase 7: Product integration and release discipline
+Goal:
+- merge cleanly upward through branches
+Tasks:
+- merge work branches into product branches
+- run product-specific validation
+- merge product branches into dev
+- run full validation
+- merge dev into main only after clean results
+Exit criteria:
+- main is always newest known-good state
+
+=====================================================================
+14. RECOMMENDED BRANCH MAP GOING FORWARD
+=====================================================================
+Correct model:
+- main
+  - release branch
+- dev
+  - main integration branch
+- vst-standalone
+  - plugin + standalone + DSP + desktop advisory
+- website-admin
+  - website + admin app + server + webhooks + cloud surfaces
+
+Child branch examples:
+- fix/vst-standalone/true-peak-oversampling
+- fix/vst-standalone/remove-fake-reference-fallback
+- refactor/vst-standalone/canonical-metering-only
+- feat/website-admin/openai-chat-grounding
+- fix/website-admin/webhook-signing
+- refactor/dev/repo-branch-reorg
+
+Merge order:
+- child branch -> matching product branch
+- product branch -> dev
+- dev -> main
+
+Build/test gate order:
+- build and test product branch first
+- then merge into dev
+- then run integration validation on dev
+- then promote to main
+
+=====================================================================
+15. FINAL CONCLUSION
+=====================================================================
+The repo is recoverable, but it is not one coherent product yet.
+
+What is already real:
+- there is a real canonical DSP path in Source/
+- there is a real reference-pool concept
+- there is still an OpenAI advisory path in both C++ and server/cloud surfaces
+- there is enough structure here to build a serious analyzer
+
+What is currently blocking trust:
+- duplicate analyzer stacks
+- approximate metering in the modular path
+- fake fallback references
+- proxy candles
+- predetermined scoring/fix logic presented too close to measurement truth
+- AI paths that are not consistently grounded in live DSP
+- preset/action code that conflicts with the stated product contract
+- no fresh local build verification on this machine
+
+Immediate recommendation:
+- do not start by polishing visuals
+- do not start by expanding chat features
+- start by locking the canonical reference pool and canonical measurement engine
+- then fix meter truth and ballistics
+- then rebuild AI grounding on top of those real measurements
+
+=====================================================================
+16. APPENDIX: GENERATED / DERIVED DIRECTORIES PRESENT IN REPO
+=====================================================================
+These directories exist but are not source-of-truth:
+- build-release/
+- build-win/
+- build-win-cross/
+- build-audit/
+- build-local-cache/
+- .vs/
+
+They should not be used as proof that the current repo is healthy.
+
+=====================================================================
+17. TOP-LEVEL FILE COUNTS (EXCLUDING BUILD-* AND .VS)
+=====================================================================
+
+assets	119
+modules	92
+apps	91
+docs	58
+Source	56
+scripts	29
+tests	19
+server	6
+cpp	4
+workers	3
+media	2
+deploy	2
+CANONICAL_BUILD.md	1
+AGENTS.md	1
+CMakePresets.json	1
+CMakeLists.txt	1
+agent.md	1
+package-lock.json	1
+cmake	1
+cloudflare	1
+wrangler.toml	1
+README.md	1
+package.json	1
+workers.md	1
+
+=====================================================================
+18. FULL NON-GENERATED FILE INVENTORY
+=====================================================================
+
+agent.md
+AGENTS.md
+apps\android_admin\app\build.gradle.kts
+apps\android_admin\app\src\main\AndroidManifest.xml
+apps\android_admin\app\src\main\java\com\dawai\admin\MainActivity.kt
+apps\android_admin\app\src\main\res\drawable\mascot_logo.png
+apps\android_admin\app\src\main\res\values\strings.xml
+apps\android_admin\build.gradle.kts
+apps\android_admin\gradle.properties
+apps\android_admin\gradle\wrapper\gradle-wrapper.jar
+apps\android_admin\gradle\wrapper\gradle-wrapper.properties
+apps\android_admin\gradlew
+apps\android_admin\gradlew.bat
+apps\android_admin\settings.gradle.kts
+apps\dawai\CMakeLists.txt
+apps\dawai\src\daemon_server.cpp
+apps\dawai\src\daemon_server.hpp
+apps\dawai\src\main.cpp
+apps\dawai_standalone\main.cpp
+apps\dawai_vst3_stub\main.cpp
+apps\website\app.js
+apps\website\assets\audio\catalog\3amDrill.mp3
+apps\website\assets\audio\catalog\3amDrillinst.mp3
+apps\website\assets\audio\catalog\3peattype.mp3
+apps\website\assets\audio\catalog\astromaster.mp3
+apps\website\assets\audio\catalog\Bazar.mp3
+apps\website\assets\audio\catalog\Bergundy Remix North3rnLight3r.mp3
+apps\website\assets\audio\catalog\Celestial Prequal.mp3
+apps\website\assets\audio\catalog\Cocaina Remix.mp3
+apps\website\assets\audio\catalog\Color of Your Soul Remix North3rnLight3er.mp3
+apps\website\assets\audio\catalog\coolvoxboombapbeat.mp3
+apps\website\assets\audio\catalog\coolvoxboombapbeatmaster.mp3
+apps\website\assets\audio\catalog\Dope prod North3rnLight3r.mp3
+apps\website\assets\audio\catalog\gucciplukcs.mp3
+apps\website\assets\audio\catalog\infinite prod. North3rnLight3r.mp3
+apps\website\assets\audio\catalog\IzotopeMix.mp3
+apps\website\assets\audio\catalog\june27remixwav.mp3
+apps\website\assets\audio\catalog\Knockin Knoggins Rmix.mp3
+apps\website\assets\audio\catalog\LIfe is Reluctant - North3rn Light3r version.mp3
+apps\website\assets\audio\catalog\LiquidBeat.mp3
+apps\website\assets\audio\catalog\losing faith premaster.mp3
+apps\website\assets\audio\catalog\Lullaby.mp3
+apps\website\assets\audio\catalog\Mongolia Throat Beat.mp3
+apps\website\assets\audio\catalog\newtrapshit2.mp3
+apps\website\assets\audio\catalog\No Complaints.mp3
+apps\website\assets\audio\catalog\No Complaintsinst.mp3
+apps\website\assets\audio\catalog\North3rnLight3r instru.mp3
+apps\website\assets\audio\catalog\Northernlighterbeatmastewr.mp3
+apps\website\assets\audio\catalog\Phantom Dear mixed by North3rnLight3r.mp3
+apps\website\assets\audio\catalog\Pink Floyd Money North3rnLight3r Flip.mp3
+apps\website\assets\audio\catalog\Put It Downprev.mp3
+apps\website\assets\audio\catalog\REVENANTpremaster.mp3
+apps\website\assets\audio\catalog\rnbINST.mp3
+apps\website\assets\audio\catalog\Rude Boy remix.mp3
+apps\website\assets\audio\catalog\SickAF beat prod by North3rnLight3r.mp3
+apps\website\assets\audio\catalog\Sierra Leone Remix prod. North3rnLight3r.mp3
+apps\website\assets\audio\catalog\smokin green screwed instrummp3.mp3
+apps\website\assets\audio\catalog\sound of my dreams dubstep.mp3
+apps\website\assets\audio\catalog\sound of my dreams master dubstep.mp3
+apps\website\assets\audio\catalog\spacemaster.mp3
+apps\website\assets\audio\catalog\SpanishMoss master.mp3
+apps\website\assets\audio\catalog\sugarplum beat.mp3
+apps\website\assets\audio\catalog\suicideboystypewav.mp3
+apps\website\assets\audio\catalog\swingtrap.mp3
+apps\website\assets\audio\catalog\take off.mp3
+apps\website\assets\audio\catalog\Televeve Remix.mp3
+apps\website\assets\audio\catalog\timeforthatmp3.mp3
+apps\website\assets\audio\catalog\TrapDubMix.mp3
+apps\website\assets\audio\catalog\Turn The Page cover.mp3
+apps\website\assets\audio\catalog\uoeno.mp3
+apps\website\assets\audio\catalog\weendinstrumental.mp3
+apps\website\assets\audio\catalog\When Im With You prod. North3rnLight3r.mp3
+apps\website\assets\audio\catalog\yothisbeatiscrazy.mp3
+apps\website\assets\brand\album_art_concept.png
+apps\website\assets\brand\hero_mascot.png
+apps\website\assets\brand\north3rnlight3r_album_art.png
+apps\website\assets\brand\North3rnLight3rrMascot.xcf
+apps\website\assets\data\analysis_metric_catalog.json
+apps\website\assets\data\beat_catalog.json
+apps\website\assets\docs\function-map-v2.2.4.txt
+apps\website\assets\docs\installation-instructions-v2.2.4.txt
+apps\website\assets\docs\minimum-pc-requirements-v2.2.4.txt
+apps\website\assets\docs\readme-v2.2.4-beta.txt
+apps\website\assets\docs\release-notes-v2.2.4.txt
+apps\website\assets\docs\standalone-user-guide-v2.2.4.txt
+apps\website\assets\docs\system-requirements-v2.2.4.txt
+apps\website\assets\docs\user-manual-v2.2.4.txt
+apps\website\assets\docs\vst-user-guide-v2.2.4.txt
+apps\website\config.js
+apps\website\downloads\plugin-linux-installer.sh
+apps\website\downloads\standalone-linux-installer.sh
+apps\website\index.html
+apps\website\styles.css
+assets\aifr3d_brain\brain_config.json
+assets\branding\mascot_splash_2_2_4_beta.png
+assets\branding\north3rnlight3r_mascot.png
+assets\icons\aifred_logo.jpg
+assets\icons\aifred_logo.png
+assets\licensing\payment_unlock_v2_2_4_beta.json
+assets\mascot\little_guy.svg
+assets\README.md
+assets\reference_intake\analysis_metric_catalog.json
+assets\reference_intake\licensed_audio\.gitkeep
+assets\reference_intake\licensed_pool_config.template.json
+assets\reference_pools\archive_10x5\DEPRECATED.md
+assets\reference_pools\archive_10x5\pool.json
+assets\reference_pools\archive_10x5\pool_manifest.json
+assets\reference_pools\archive_10x5\profiles\ref_1_01-cowfish-2-junebug-dnb-set-live-at-cowfish.json
+assets\reference_pools\archive_10x5\profiles\ref_10_bestnewelectrohouse2016march-best-new-electro-house-2016-march.json
+assets\reference_pools\archive_10x5\profiles\ref_11_djiconsgangstabaybeez6-gangstabaybeez6.json
+assets\reference_pools\archive_10x5\profiles\ref_12_dreamlogicc-wuvstowies-dreamlogicc-wuv-stowies-live-middle-gallery-april-25-2009.json
+assets\reference_pools\archive_10x5\profiles\ref_13_easynite-easy-nite.json
+assets\reference_pools\archive_10x5\profiles\ref_14_haveahgoodtime-have-ah-good-time.json
+assets\reference_pools\archive_10x5\profiles\ref_15_kungkillclikkino-kungkillclikkino.json
+assets\reference_pools\archive_10x5\profiles\ref_16_loko-mc-grow-loko-mc-grow.json
+assets\reference_pools\archive_10x5\profiles\ref_17_oldmanraps-old-man-raps.json
+assets\reference_pools\archive_10x5\profiles\ref_18_plugsongforcomedybangbang-56-plug-song-for-comedy-bang-bang.json
+assets\reference_pools\archive_10x5\profiles\ref_19_puntodeinicioconlocozobeplana-punto-de-inicio-con-locozobe-plan-a.json
+assets\reference_pools\archive_10x5\profiles\ref_2_01-turkey-day-cookin-2023-11-23-turkey-day-dnb-2023.json
+assets\reference_pools\archive_10x5\profiles\ref_20_quizasseaporeso-quizas-sea-por-eso.json
+assets\reference_pools\archive_10x5\profiles\ref_21_10moresongsbythemoot-10-more-songs-by-the-moot.json
+assets\reference_pools\archive_10x5\profiles\ref_22_2010-03-05liveatthejukebox-2010-03-05-live-at-the-jukebox.json
+assets\reference_pools\archive_10x5\profiles\ref_23_20140418chroniquematinorailleurs-2014-04-18-chronique-matin-orailleurs.json
+assets\reference_pools\archive_10x5\profiles\ref_24_20230112-tdc-drunken-prayer-drunken-prayer-live-from-the-double-crown.json
+assets\reference_pools\archive_10x5\profiles\ref_25_3feetuplive-3-feet-up-live.json
+assets\reference_pools\archive_10x5\profiles\ref_26_50popofeenenvelop1-12-1983-50-pop-of-een-envelop-1-12-1983.json
+assets\reference_pools\archive_10x5\profiles\ref_27_630-brianna-tam-i-am-202308-brianna-tam-i-am.json
+assets\reference_pools\archive_10x5\profiles\ref_28_7bluesky-7-bluesky.json
+assets\reference_pools\archive_10x5\profiles\ref_29_abirdseldomseen-a-bird-seldom-seen.json
+assets\reference_pools\archive_10x5\profiles\ref_3_10-20210927-set-album.json
+assets\reference_pools\archive_10x5\profiles\ref_30_algogss-algo-gss.json
+assets\reference_pools\archive_10x5\profiles\ref_31_380motion-thisiswhatido-124-380-motion-this-is-what-i-do.json
+assets\reference_pools\archive_10x5\profiles\ref_32_cassandrasgame-cassandra-s-game.json
+assets\reference_pools\archive_10x5\profiles\ref_33_dwandmianimalcellrap-dw-and-mi-animal-cell-rap.json
+assets\reference_pools\archive_10x5\profiles\ref_34_haveahgoodtime-have-ah-good-time.json
+assets\reference_pools\archive_10x5\profiles\ref_35_interviewmitdiedrichdietrichsenuberamerikanischenrapundbrdpunk-interview-mit-diedrich-dietrichsen-uber-amerikanischen-rap-und-brd-pun.json
+assets\reference_pools\archive_10x5\profiles\ref_36_lightsgoout-lights-go-out.json
+assets\reference_pools\archive_10x5\profiles\ref_37_oldmanraps-old-man-raps.json
+assets\reference_pools\archive_10x5\profiles\ref_38_piensa-685-piensa.json
+assets\reference_pools\archive_10x5\profiles\ref_39_plugsongforcomedybangbang-56-plug-song-for-comedy-bang-bang.json
+assets\reference_pools\archive_10x5\profiles\ref_4_1996-91-7-wkdu-politics-of-dancing-with-dj-roo-1996-91-7-wkdu-politics-of-dancing-with-dj-roo.json
+assets\reference_pools\archive_10x5\profiles\ref_40_rapdecasimirkubiacaliaskayzeekey-rap-de-casimir-kubiac-alias-kayzee-key.json
+assets\reference_pools\archive_10x5\profiles\ref_41_audiotrap-audio-trap.json
+assets\reference_pools\archive_10x5\profiles\ref_42_carnafex-mepresentoinstrumental-carnafex-me-presento-instrumental.json
+assets\reference_pools\archive_10x5\profiles\ref_43_dufflebagboizalbum2-duffle-bag-boiz-bag-up-serve-em-vol-1.json
+assets\reference_pools\archive_10x5\profiles\ref_44_fox72z-808-trap-synth-fox72z-808-trap-synth.json
+assets\reference_pools\archive_10x5\profiles\ref_45_golazomezcla1-golazo-mezcla-1.json
+assets\reference_pools\archive_10x5\profiles\ref_46_introducingcloudcitytrap-introducing-cloud-city-trap.json
+assets\reference_pools\archive_10x5\profiles\ref_47_moskonitema2final1-moskoni-puto-bala.json
+assets\reference_pools\archive_10x5\profiles\ref_48_trapbeatenventa-trap-beat-instrumental-prod-by-juan-beats-records.json
+assets\reference_pools\archive_10x5\profiles\ref_49_trapbeat-201804-trap-beat-trap-instrumental-base-rap-trap-type-beat.json
+assets\reference_pools\archive_10x5\profiles\ref_5_20211128-20211128-1832-tracks-from-the-inside-il-quarto.json
+assets\reference_pools\archive_10x5\profiles\ref_50_aipol-ai-music-odio-la-trap-1-odio-la-trap-1.json
+assets\reference_pools\archive_10x5\profiles\ref_6_3rd-strike-rock-april-2025-earth-day-show-3rd-strike-rock-april-2025-earth-day-show.json
+assets\reference_pools\archive_10x5\profiles\ref_7_566770-duocore.json
+assets\reference_pools\archive_10x5\profiles\ref_8_anythingbutbrokelivespringboardsouth2015-201507-anything-but-broke-live-springboard-south-2015.json
+assets\reference_pools\archive_10x5\profiles\ref_9_azaelatacknoworiginalmix-azael-atack-now-original-mix.json
+assets\reference_pools\archive_10x5\reference_cache.json
+assets\reference_pools\canonical_25x5\pool.json
+assets\reference_pools\canonical_25x5\pool_manifest.json
+assets\reference_pools\canonical_25x5\profiles\ref_1_01-cowfish-2-junebug-dnb-set-live-at-cowfish.json
+assets\reference_pools\canonical_25x5\profiles\ref_11_djiconsgangstabaybeez6-gangstabaybeez6.json
+assets\reference_pools\canonical_25x5\profiles\ref_12_dreamlogicc-wuvstowies-dreamlogicc-wuv-stowies-live-middle-gallery-april-25-2009.json
+assets\reference_pools\canonical_25x5\profiles\ref_13_easynite-easy-nite.json
+assets\reference_pools\canonical_25x5\profiles\ref_14_haveahgoodtime-have-ah-good-time.json
+assets\reference_pools\canonical_25x5\profiles\ref_15_kungkillclikkino-kungkillclikkino.json
+assets\reference_pools\canonical_25x5\profiles\ref_2_01-turkey-day-cookin-2023-11-23-turkey-day-dnb-2023.json
+assets\reference_pools\canonical_25x5\profiles\ref_21_10moresongsbythemoot-10-more-songs-by-the-moot.json
+assets\reference_pools\canonical_25x5\profiles\ref_22_2010-03-05liveatthejukebox-2010-03-05-live-at-the-jukebox.json
+assets\reference_pools\canonical_25x5\profiles\ref_23_20140418chroniquematinorailleurs-2014-04-18-chronique-matin-orailleurs.json
+assets\reference_pools\canonical_25x5\profiles\ref_24_20230112-tdc-drunken-prayer-drunken-prayer-live-from-the-double-crown.json
+assets\reference_pools\canonical_25x5\profiles\ref_25_3feetuplive-3-feet-up-live.json
+assets\reference_pools\canonical_25x5\profiles\ref_3_10-20210927-set-album.json
+assets\reference_pools\canonical_25x5\profiles\ref_31_380motion-thisiswhatido-124-380-motion-this-is-what-i-do.json
+assets\reference_pools\canonical_25x5\profiles\ref_32_cassandrasgame-cassandra-s-game.json
+assets\reference_pools\canonical_25x5\profiles\ref_33_dwandmianimalcellrap-dw-and-mi-animal-cell-rap.json
+assets\reference_pools\canonical_25x5\profiles\ref_34_haveahgoodtime-have-ah-good-time.json
+assets\reference_pools\canonical_25x5\profiles\ref_35_interviewmitdiedrichdietrichsenuberamerikanischenrapundbrdpunk-interview-mit-diedrich-dietrichsen-uber-amerikanischen-rap-und-brd-pun.json
+assets\reference_pools\canonical_25x5\profiles\ref_4_1996-91-7-wkdu-politics-of-dancing-with-dj-roo-1996-91-7-wkdu-politics-of-dancing-with-dj-roo.json
+assets\reference_pools\canonical_25x5\profiles\ref_41_audiotrap-audio-trap.json
+assets\reference_pools\canonical_25x5\profiles\ref_42_carnafex-mepresentoinstrumental-carnafex-me-presento-instrumental.json
+assets\reference_pools\canonical_25x5\profiles\ref_43_dufflebagboizalbum2-duffle-bag-boiz-bag-up-serve-em-vol-1.json
+assets\reference_pools\canonical_25x5\profiles\ref_44_fox72z-808-trap-synth-fox72z-808-trap-synth.json
+assets\reference_pools\canonical_25x5\profiles\ref_45_golazomezcla1-golazo-mezcla-1.json
+assets\reference_pools\canonical_25x5\profiles\ref_5_20211128-20211128-1832-tracks-from-the-inside-il-quarto.json
+assets\reference_pools\pro_25x6\pool.json
+assets\reference_pools\pro_25x6\pool_manifest.json
+assets\reference_pools\pro_25x6\profiles\ref_1_01-cowfish-2-junebug-dnb-set-live-at-cowfish.json
+assets\reference_pools\pro_25x6\profiles\ref_10_bestnewelectrohouse2016march-best-new-electro-house-2016-march.json
+assets\reference_pools\pro_25x6\profiles\ref_11_djiconsgangstabaybeez6-gangstabaybeez6.json
+assets\reference_pools\pro_25x6\profiles\ref_12_dreamlogicc-wuvstowies-dreamlogicc-wuv-stowies-live-middle-gallery-april-25-2009.json
+assets\reference_pools\pro_25x6\profiles\ref_13_easynite-easy-nite.json
+assets\reference_pools\pro_25x6\profiles\ref_14_haveahgoodtime-have-ah-good-time.json
+assets\reference_pools\pro_25x6\profiles\ref_2_01-turkey-day-cookin-2023-11-23-turkey-day-dnb-2023.json
+assets\reference_pools\pro_25x6\profiles\ref_21_10moresongsbythemoot-10-more-songs-by-the-moot.json
+assets\reference_pools\pro_25x6\profiles\ref_22_2010-03-05liveatthejukebox-2010-03-05-live-at-the-jukebox.json
+assets\reference_pools\pro_25x6\profiles\ref_25_3feetuplive-3-feet-up-live.json
+assets\reference_pools\pro_25x6\profiles\ref_27_630-brianna-tam-i-am-202308-brianna-tam-i-am.json
+assets\reference_pools\pro_25x6\profiles\ref_29_abirdseldomseen-a-bird-seldom-seen.json
+assets\reference_pools\pro_25x6\profiles\ref_3_10-20210927-set-album.json
+assets\reference_pools\pro_25x6\profiles\ref_31_380motion-thisiswhatido-124-380-motion-this-is-what-i-do.json
+assets\reference_pools\pro_25x6\profiles\ref_32_cassandrasgame-cassandra-s-game.json
+assets\reference_pools\pro_25x6\profiles\ref_33_dwandmianimalcellrap-dw-and-mi-animal-cell-rap.json
+assets\reference_pools\pro_25x6\profiles\ref_34_haveahgoodtime-have-ah-good-time.json
+assets\reference_pools\pro_25x6\profiles\ref_35_interviewmitdiedrichdietrichsenuberamerikanischenrapundbrdpunk-interview-mit-diedrich-dietrichsen-uber-amerikanischen-rap-und-brd-pun.json
+assets\reference_pools\pro_25x6\profiles\ref_41_audiotrap-audio-trap.json
+assets\reference_pools\pro_25x6\profiles\ref_44_fox72z-808-trap-synth-fox72z-808-trap-synth.json
+assets\reference_pools\pro_25x6\profiles\ref_46_introducingcloudcitytrap-introducing-cloud-city-trap.json
+assets\reference_pools\pro_25x6\profiles\ref_49_trapbeat-201804-trap-beat-trap-instrumental-base-rap-trap-type-beat.json
+assets\reference_pools\pro_25x6\profiles\ref_6_3rd-strike-rock-april-2025-earth-day-show-3rd-strike-rock-april-2025-earth-day-show.json
+assets\reference_pools\pro_25x6\profiles\ref_7_566770-duocore.json
+assets\reference_pools\pro_25x6\profiles\ref_8_anythingbutbrokelivespringboardsouth2015-201507-anything-but-broke-live-springboard-south-2015.json
+CANONICAL_BUILD.md
+cloudflare\website-worker.mjs
+cmake\CPM.cmake
+CMakeLists.txt
+CMakePresets.json
+cpp\include\dawai\dsp_math.hpp
+cpp\include\dawai\engine.hpp
+cpp\src\dsp_math.cpp
+cpp\src\engine.cpp
+deploy\Caddyfile.north3rnlight3r.example
+deploy\dawai-backend.service
+docs\adr\0001-module-boundaries.md
+docs\adr\0002-audio-engine-design.md
+docs\adr\0003-metering-core.md
+docs\adr\0004-reference-aware-metering.md
+docs\adr\0005-aifr3d-scoring.md
+docs\adr\0006-advisory-sandbox.md
+docs\adr\0007-ui-theme-and-modes.md
+docs\adr\0008-realtime-safety.md
+docs\AI_ROUTER_SPEC.md
+docs\AI_TIER_PLAN.md
+docs\aifred_guardrails.md
+docs\aifred_identity.yaml
+docs\aifred_output_contract.json
+docs\android_admin_app.md
+docs\android_admin_user_guide_v2.2.4.md
+docs\android-admin-app-guide.md
+docs\android-admin-command-list.txt
+docs\api_limits_log.md
+docs\architecture.md
+docs\AUTOMATION_OVERVIEW.md
+docs\build.md
+docs\dsp_math_pack_v1.md
+docs\dsp_metric_registry_v2.2.4_beta.md
+docs\function_map.yaml
+docs\function_map_android.yaml
+docs\function_map_standalone.yaml
+docs\GUI_MAP_AIFREDa.md
+docs\GUI_MAP_AIFREDb.md
+docs\GUI_MAP_AIFREDc.md
+docs\GUI_MAP_AIFREDd.md
+docs\https_backend_setup.md
+docs\install_for_everyone.md
+docs\installation_instructions_v2.2.4_beta.md
+docs\licensed_reference_pool_workflow_v2.2.4.md
+docs\private_admin_mcp_architecture.md
+docs\private_repo_split_blueprint.md
+docs\quickstart.md
+docs\release_log_v2.2.4_beta.md
+docs\repo_tree_explained.md
+docs\reports\AIFR3D_FULL_AUDIT_2026-03-13.txt
+docs\schema\report.schema.json
+docs\SECURITY_THREAT_MODEL.md
+docs\session-change-log-2026-03-09.md
+docs\standalone_user_guide_v2.2.4.md
+docs\system_map.md
+docs\system_requirements_v2.2.4.md
+docs\threading_model.md
+docs\troubleshooting.md
+docs\user_manual.md
+docs\vst_user_guide_v2.2.4.md
+docs\wiki\01-executive-overview.md
+docs\wiki\02-runtime-architecture.md
+docs\wiki\03-dsp-math-deep-dive.md
+docs\wiki\04-plugin-functional-spec.md
+docs\wiki\05-admin-command-reference.md
+docs\wiki\06-repository-breakdown-and-due-diligence.md
+docs\wiki\README.md
+docs\windows_build_guide_v2.2.4_beta.md
+media\catalog\.gitkeep
+media\soundpacks\.gitkeep
+modules\advisory_layer\CMakeLists.txt
+modules\advisory_layer\include\dawai\advisory_layer\adviser.hpp
+modules\advisory_layer\include\dawai\advisory_layer\advisory_service.hpp
+modules\advisory_layer\include\dawai\advisory_layer\api_key_store.hpp
+modules\advisory_layer\include\dawai\advisory_layer\local_brain_adviser.hpp
+modules\advisory_layer\include\dawai\advisory_layer\memory_store.hpp
+modules\advisory_layer\include\dawai\advisory_layer\openai_adviser.hpp
+modules\advisory_layer\src\advisory_service.cpp
+modules\advisory_layer\src\analysis_sandbox.cpp
+modules\advisory_layer\src\api_key_store.cpp
+modules\advisory_layer\src\local_brain_adviser.cpp
+modules\advisory_layer\src\memory_store.cpp
+modules\advisory_layer\src\openai_adviser.cpp
+modules\aifr3d_core\CMakeLists.txt
+modules\aifr3d_core\include\dawai\aifr3d_core\analysis_writer.hpp
+modules\aifr3d_core\include\dawai\aifr3d_core\apply_fix.hpp
+modules\aifr3d_core\include\dawai\aifr3d_core\feature_ingestion.hpp
+modules\aifr3d_core\include\dawai\aifr3d_core\fix_list.hpp
+modules\aifr3d_core\include\dawai\aifr3d_core\reporting\mix_reporter.hpp
+modules\aifr3d_core\include\dawai\aifr3d_core\scoring.hpp
+modules\aifr3d_core\include\dawai\aifr3d_core\session_store.hpp
+modules\aifr3d_core\include\dawai\aifr3d_core\system_contract.hpp
+modules\aifr3d_core\include\dawai\aifr3d_core\version.hpp
+modules\aifr3d_core\src\analysis_writer.cpp
+modules\aifr3d_core\src\apply_fix.cpp
+modules\aifr3d_core\src\feature_ingestion.cpp
+modules\aifr3d_core\src\fix_list.cpp
+modules\aifr3d_core\src\reporting\mix_reporter.cpp
+modules\aifr3d_core\src\scoring.cpp
+modules\aifr3d_core\src\session_store.cpp
+modules\audio_engine\CMakeLists.txt
+modules\audio_engine\include\dawai\audio_engine\audio_device_service.hpp
+modules\audio_engine\include\dawai\audio_engine\lockfree_ring.hpp
+modules\audio_engine\include\dawai\audio_engine\module_profiler.hpp
+modules\audio_engine\include\dawai\audio_engine\playback_engine.hpp
+modules\audio_engine\include\dawai\audio_engine\plugin_host\plugin_instance.hpp
+modules\audio_engine\include\dawai\audio_engine\plugin_host\plugin_rack.hpp
+modules\audio_engine\include\dawai\audio_engine\plugin_host\scanner.hpp
+modules\audio_engine\include\dawai\audio_engine\session_serializer.hpp
+modules\audio_engine\include\dawai\audio_engine\track_model.hpp
+modules\audio_engine\include\dawai\audio_engine\transport_controller.hpp
+modules\audio_engine\src\audio_device_service.cpp
+modules\audio_engine\src\module_profiler.cpp
+modules\audio_engine\src\playback_engine.cpp
+modules\audio_engine\src\plugin_host\plugin_instance.cpp
+modules\audio_engine\src\plugin_host\plugin_rack.cpp
+modules\audio_engine\src\plugin_host\scanner.cpp
+modules\audio_engine\src\session_serializer.cpp
+modules\audio_engine\src\transport_controller.cpp
+modules\metering\include\dawai\metering\fft_analyzer.hpp
+modules\metering\include\dawai\metering\loudness_analyzer.hpp
+modules\metering\include\dawai\metering\metering_engine.hpp
+modules\metering\include\dawai\metering\metrics.hpp
+modules\metering\include\dawai\metering\stereo_analyzer.hpp
+modules\metering\src\fft_analyzer.cpp
+modules\metering\src\loudness_analyzer.cpp
+modules\metering\src\metering_engine.cpp
+modules\metering\src\stereo_analyzer.cpp
+modules\reference_engine\CMakeLists.txt
+modules\reference_engine\include\dawai\reference_engine\ab_controller.hpp
+modules\reference_engine\include\dawai\reference_engine\genre_detector.hpp
+modules\reference_engine\include\dawai\reference_engine\pools\benchmark_pool.hpp
+modules\reference_engine\include\dawai\reference_engine\profile_cache.hpp
+modules\reference_engine\include\dawai\reference_engine\reference_library.hpp
+modules\reference_engine\include\dawai\reference_engine\reference_profile.hpp
+modules\reference_engine\include\dawai\reference_engine\reference_profiler.hpp
+modules\reference_engine\src\ab_controller.cpp
+modules\reference_engine\src\genre_detector.cpp
+modules\reference_engine\src\pools\benchmark_pool.cpp
+modules\reference_engine\src\profile_cache.cpp
+modules\reference_engine\src\reference_library.cpp
+modules\reference_engine\src\reference_profiler.cpp
+modules\ui\CMakeLists.txt
+modules\ui\include\dawai\ui\aifr3d_panel.hpp
+modules\ui\include\dawai\ui\candlestick_panel.hpp
+modules\ui\include\dawai\ui\insight_panel.hpp
+modules\ui\include\dawai\ui\main_view.hpp
+modules\ui\include\dawai\ui\meter_panel.hpp
+modules\ui\include\dawai\ui\mixer_strip.hpp
+modules\ui\include\dawai\ui\theme\look_and_feel.hpp
+modules\ui\include\dawai\ui\theme\theme.hpp
+modules\ui\include\dawai\ui\timeline_component.hpp
+modules\ui\include\dawai\ui\transport_bar.hpp
+modules\ui\src\aifr3d_panel.cpp
+modules\ui\src\candlestick_panel.cpp
+modules\ui\src\insight_panel.cpp
+modules\ui\src\main_view.cpp
+modules\ui\src\meter_panel.cpp
+modules\ui\src\mixer_strip.cpp
+modules\ui\src\theme\look_and_feel.cpp
+modules\ui\src\timeline_component.cpp
+modules\ui\src\transport_bar.cpp
+package.json
+package-lock.json
+README.md
+scripts\bootstrap_canonical_linux.sh
+scripts\bootstrap_canonical_windows.cmd
+scripts\build_desktop_reference_pool.py
+scripts\build_licensed_reference_pool.py
+scripts\build_windows_one_click_exe.ps1
+scripts\build_windows_release.cmd
+scripts\create_linux_packages.sh
+scripts\desktop_gui_function_check_10x.sh
+scripts\exhaustive_ecosystem_sweep.sh
+scripts\generate_beat_catalog_metadata_and_artwork.py
+scripts\generate_external_promo_inventory.py
+scripts\install_android.sh
+scripts\install_arch.sh
+scripts\install_local_linux.sh
+scripts\install_standalone_linux.sh
+scripts\install_standalone_windows.ps1
+scripts\install_vst_linux.sh
+scripts\install_vst_windows.ps1
+scripts\install_windows.ps1
+scripts\run_analysis.py
+scripts\run_backend_production.sh
+scripts\stage_catalog_audio_assets.sh
+scripts\stage_flstudio_bottle_release_installer.sh
+scripts\sync_website_catalog_audio.sh
+scripts\upload_catalog_to_cloudflare_r2.sh
+scripts\ux_qa_android.sh
+scripts\ux_qa_website.js
+scripts\validate_25_passes.sh
+scripts\validate_reference_pool_sources.py
+server\data\catalog.json
+server\data\content.json
+server\data\sessions.json
+server\src\index.js
+server\storage\receipts\.gitkeep
+server\storage\uploads\.gitkeep
+Source\CMakeLists.txt
+Source\Common\AnalysisTypes.h
+Source\Common\MixMetrics.h
+Source\Common\SimpleLockFreeQueue.h
+Source\DSP\AnalysisEngine.cpp
+Source\DSP\AnalysisEngine.h
+Source\DSP\DynamicsTracker.cpp
+Source\DSP\DynamicsTracker.h
+Source\DSP\FeatureExtractor.cpp
+Source\DSP\FeatureExtractor.h
+Source\DSP\JsonReportWriter.cpp
+Source\DSP\JsonReportWriter.h
+Source\DSP\LoudnessEBUR128.cpp
+Source\DSP\LoudnessEBUR128.h
+Source\DSP\ReferenceModel.cpp
+Source\DSP\ReferenceModel.h
+Source\DSP\ScoringEngine.cpp
+Source\DSP\ScoringEngine.h
+Source\DSP\SnapshotManager.cpp
+Source\DSP\SnapshotManager.h
+Source\DSP\SpectrumAnalyzerFFT.cpp
+Source\DSP\SpectrumAnalyzerFFT.h
+Source\DSP\StereoAnalyzer.cpp
+Source\DSP\StereoAnalyzer.h
+Source\DSP\TransientDetector.cpp
+Source\DSP\TransientDetector.h
+Source\Interpretation\AifredReport.h
+Source\Interpretation\DiagnosticEngine.cpp
+Source\Interpretation\DiagnosticEngine.h
+Source\Plugin\LookAndFeel_N3L.cpp
+Source\Plugin\LookAndFeel_N3L.h
+Source\Plugin\Parameters.cpp
+Source\Plugin\Parameters.h
+Source\Plugin\PluginEditor.cpp
+Source\Plugin\PluginEditor.h
+Source\Plugin\PluginProcessor.cpp
+Source\Plugin\PluginProcessor.h
+Source\Plugin\Theme.h
+Source\UI\ApprovalHalo.cpp
+Source\UI\ApprovalHalo.h
+Source\UI\CandleStoryline.cpp
+Source\UI\CandleStoryline.h
+Source\UI\FixListPanel.cpp
+Source\UI\FixListPanel.h
+Source\UI\MainView.cpp
+Source\UI\MainView.h
+Source\UI\MixSignatureMeter.cpp
+Source\UI\MixSignatureMeter.h
+Source\UI\MixTipsPanel.cpp
+Source\UI\MixTipsPanel.h
+Source\UI\StereoArcView.cpp
+Source\UI\StereoArcView.h
+Source\UI\TopBar.cpp
+Source\UI\TopBar.h
+Source\UI\UiModel.cpp
+Source\UI\UiModel.h
+tests\ab_switch_test.cpp
+tests\advisory_layer_test.cpp
+tests\aifred_canonical_pipeline_smoke.cpp
+tests\apply_fix_undo_test.cpp
+tests\benchmark_pool_test.cpp
+tests\CMakeLists.txt
+tests\fix_list_reactivity_smoke.cpp
+tests\genre_detector_test.cpp
+tests\golden\result_golden.json
+tests\metering_signal_test.cpp
+tests\plugin_host_smoke_test.cpp
+tests\plugin_spectral_pipeline_smoke.cpp
+tests\profile_cache_test.cpp
+tests\report_generation_test.cpp
+tests\scoring_json_golden_test.cpp
+tests\session_serialization_test.cpp
+tests\solo_logic_test.cpp
+tests\test_utils.hpp
+tests\transport_state_test.cpp
+workers.md
+workers\security-gateway\package.json
+workers\security-gateway\src\index.js
+workers\security-gateway\wrangler.toml
+wrangler.toml

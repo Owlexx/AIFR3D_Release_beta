@@ -1,0 +1,20 @@
+{
+  "name": "dawai-ecosystem",
+  "private": true,
+  "version": "2.2.4-abcd",
+  "description": "Canonical DawAI rebuild",
+  "scripts": {
+    "dev": "node server/src/index.js",
+    "start": "node server/src/index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^2.1.1",
+    "ws": "^8.18.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.58.2"
+  }
+}

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdawai_advisory_layer.a CMakeFiles/dawai_advisory_layer.dir/src/api_key_store.cpp.o CMakeFiles/dawai_advisory_layer.dir/src/analysis_sandbox.cpp.o CMakeFiles/dawai_advisory_layer.dir/src/openai_adviser.cpp.o CMakeFiles/dawai_advisory_layer.dir/src/local_brain_adviser.cpp.o CMakeFiles/dawai_advisory_layer.dir/src/memory_store.cpp.o CMakeFiles/dawai_advisory_layer.dir/src/advisory_service.cpp.o
+/usr/bin/ranlib libdawai_advisory_layer.a

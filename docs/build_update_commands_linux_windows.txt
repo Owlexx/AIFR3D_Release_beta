@@ -1,0 +1,382 @@
+AIFR3D BUILD + INSTALL + UPDATE COMMANDS
+Generated: 2026-03-13
+
+This file is a copy-paste command guide.
+It covers:
+- building the VST on Linux
+- installing the VST on Linux
+- updating the installed VST on Linux
+- building the VST on Windows
+- installing the VST on Windows
+- updating the installed VST on Windows
+- updating website information
+- deploying the website
+- building and reinstalling the Android admin app
+
+Repo root used in the Linux examples:
+/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta
+
+==================================================
+1. LINUX VST BUILD AND INSTALL
+==================================================
+
+Build all four current VST variants:
+
+cd /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta
+
+cmake -S . -B build/baseline-vst-release \
+  -G Ninja \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DDAWAI_BUILD_APP=OFF \
+  -DDAWAI_ENABLE_TESTS=OFF \
+  -DDAWAI_BUILD_AIFRED_PLUGIN=ON
+
+cmake --build build/baseline-vst-release \
+  --target aifred_vst3_A aifred_vst3_B aifred_vst3_C aifred_vst3_D \
+  --parallel 8
+
+cmake --build build/baseline-vst-release \
+  --target aifred_vst3_A_VST3 aifred_vst3_B_VST3 aifred_vst3_C_VST3 aifred_vst3_D_VST3 \
+  --parallel 8
+
+Install the built VST variants to the Linux user VST3 folder:
+
+mkdir -p "$HOME/.vst3"
+
+cp -a build/baseline-vst-release/Source/aifred_vst3_A_artefacts/Release/VST3/AIFRED_a.vst3 "$HOME/.vst3/AIFRED_v2.2.4a.vst3"
+cp -a build/baseline-vst-release/Source/aifred_vst3_B_artefacts/Release/VST3/AIFRED_b.vst3 "$HOME/.vst3/AIFRED_v2.2.4b.vst3"
+cp -a build/baseline-vst-release/Source/aifred_vst3_C_artefacts/Release/VST3/AIFRED_c.vst3 "$HOME/.vst3/AIFRED_v2.2.4c.vst3"
+cp -a build/baseline-vst-release/Source/aifred_vst3_D_artefacts/Release/VST3/AIFRED_d.vst3 "$HOME/.vst3/AIFRED_v2.2.4d.vst3"
+
+==================================================
+2. LINUX VST UPDATE COMMANDS
+==================================================
+
+Rebuild the installed VSTs after source changes:
+
+cd /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta
+
+cmake --build build/baseline-vst-release \
+  --target aifred_vst3_A_VST3 aifred_vst3_B_VST3 aifred_vst3_C_VST3 aifred_vst3_D_VST3 \
+  --parallel 8
+
+Replace the installed copies:
+
+find "$HOME/.vst3/AIFRED_v2.2.4a.vst3" \
+     "$HOME/.vst3/AIFRED_v2.2.4b.vst3" \
+     "$HOME/.vst3/AIFRED_v2.2.4c.vst3" \
+     "$HOME/.vst3/AIFRED_v2.2.4d.vst3" \
+     -depth -delete 2>/dev/null
+
+cp -a build/baseline-vst-release/Source/aifred_vst3_A_artefacts/Release/VST3/AIFRED_a.vst3 "$HOME/.vst3/AIFRED_v2.2.4a.vst3"
+cp -a build/baseline-vst-release/Source/aifred_vst3_B_artefacts/Release/VST3/AIFRED_b.vst3 "$HOME/.vst3/AIFRED_v2.2.4b.vst3"
+cp -a build/baseline-vst-release/Source/aifred_vst3_C_artefacts/Release/VST3/AIFRED_c.vst3 "$HOME/.vst3/AIFRED_v2.2.4c.vst3"
+cp -a build/baseline-vst-release/Source/aifred_vst3_D_artefacts/Release/VST3/AIFRED_d.vst3 "$HOME/.vst3/AIFRED_v2.2.4d.vst3"
+
+==================================================
+3. WINDOWS VST BUILD AND INSTALL
+==================================================
+
+Run these in PowerShell:
+
+cd C:\path\to\AifredVst-2.2.4-beta
+
+cmake -S . -B build\baseline-vst-release `
+  -G "Visual Studio 17 2022" `
+  -A x64 `
+  -DDAWAI_BUILD_APP=OFF `
+  -DDAWAI_ENABLE_TESTS=OFF `
+  -DDAWAI_BUILD_AIFRED_PLUGIN=ON
+
+cmake --build build\baseline-vst-release --config Release --target aifred_vst3_A aifred_vst3_B aifred_vst3_C aifred_vst3_D
+cmake --build build\baseline-vst-release --config Release --target aifred_vst3_A_VST3 aifred_vst3_B_VST3 aifred_vst3_C_VST3 aifred_vst3_D_VST3
+
+$Vst3Dir = Join-Path $env:CommonProgramFiles "VST3"
+New-Item -ItemType Directory -Force -Path $Vst3Dir | Out-Null
+
+Copy-Item -Recurse -Force .\build\baseline-vst-release\Source\aifred_vst3_A_artefacts\Release\VST3\AIFRED_a.vst3 "$Vst3Dir\AIFRED_v2.2.4a.vst3"
+Copy-Item -Recurse -Force .\build\baseline-vst-release\Source\aifred_vst3_B_artefacts\Release\VST3\AIFRED_b.vst3 "$Vst3Dir\AIFRED_v2.2.4b.vst3"
+Copy-Item -Recurse -Force .\build\baseline-vst-release\Source\aifred_vst3_C_artefacts\Release\VST3\AIFRED_c.vst3 "$Vst3Dir\AIFRED_v2.2.4c.vst3"
+Copy-Item -Recurse -Force .\build\baseline-vst-release\Source\aifred_vst3_D_artefacts\Release\VST3\AIFRED_d.vst3 "$Vst3Dir\AIFRED_v2.2.4d.vst3"
+
+==================================================
+4. WINDOWS VST UPDATE COMMANDS
+==================================================
+
+Rebuild updated plugin code:
+
+cd C:\path\to\AifredVst-2.2.4-beta
+
+cmake --build build\baseline-vst-release --config Release --target aifred_vst3_A_VST3 aifred_vst3_B_VST3 aifred_vst3_C_VST3 aifred_vst3_D_VST3
+
+Replace the installed VST3 folders:
+
+$Vst3Dir = Join-Path $env:CommonProgramFiles "VST3"
+
+Remove-Item -Recurse -Force "$Vst3Dir\AIFRED_v2.2.4a.vst3","$Vst3Dir\AIFRED_v2.2.4b.vst3","$Vst3Dir\AIFRED_v2.2.4c.vst3","$Vst3Dir\AIFRED_v2.2.4d.vst3" -ErrorAction SilentlyContinue
+
+Copy-Item -Recurse -Force .\build\baseline-vst-release\Source\aifred_vst3_A_artefacts\Release\VST3\AIFRED_a.vst3 "$Vst3Dir\AIFRED_v2.2.4a.vst3"
+Copy-Item -Recurse -Force .\build\baseline-vst-release\Source\aifred_vst3_B_artefacts\Release\VST3\AIFRED_b.vst3 "$Vst3Dir\AIFRED_v2.2.4b.vst3"
+Copy-Item -Recurse -Force .\build\baseline-vst-release\Source\aifred_vst3_C_artefacts\Release\VST3\AIFRED_c.vst3 "$Vst3Dir\AIFRED_v2.2.4c.vst3"
+Copy-Item -Recurse -Force .\build\baseline-vst-release\Source\aifred_vst3_D_artefacts\Release\VST3\AIFRED_d.vst3 "$Vst3Dir\AIFRED_v2.2.4d.vst3"
+
+==================================================
+5. LINUX WEBSITE INFORMATION UPDATE
+==================================================
+
+These are the main public website files you edit:
+
+- apps/website/index.html
+- apps/website/app.js
+- apps/website/styles.css
+- apps/website/assets/data/beat_catalog.json
+
+Example commands to open/edit them:
+
+cd /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta
+
+nano apps/website/index.html
+nano apps/website/app.js
+nano apps/website/styles.css
+nano apps/website/assets/data/beat_catalog.json
+
+Quick check after editing:
+
+node --check apps/website/app.js
+node --check server/src/index.js
+node --check cloudflare/website-worker.mjs
+
+Deploy the website after editing:
+
+wrangler deploy
+
+Quick live verification:
+
+curl -I https://www.north3rnlight3r.com
+curl -I https://www.north3rnlight3r.com/app.js
+
+==================================================
+6. WINDOWS WEBSITE INFORMATION UPDATE
+==================================================
+
+PowerShell version:
+
+cd C:\path\to\AifredVst-2.2.4-beta
+
+notepad .\apps\website\index.html
+notepad .\apps\website\app.js
+notepad .\apps\website\styles.css
+notepad .\apps\website\assets\data\beat_catalog.json
+
+Deploy after editing:
+
+wrangler deploy
+
+Quick live verification:
+
+curl.exe -I https://www.north3rnlight3r.com
+curl.exe -I https://www.north3rnlight3r.com/app.js
+
+==================================================
+7. LINUX ANDROID ADMIN APP BUILD + REINSTALL
+==================================================
+
+Build the Android app:
+
+cd /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/apps/android_admin
+
+ANDROID_HOME="$HOME/Android/Sdk" ANDROID_SDK_ROOT="$HOME/Android/Sdk" ./gradlew :app:assembleDebug
+
+Optional clean uninstall first:
+
+adb uninstall com.dawai.admin
+
+Install or update the APK:
+
+adb install -r -t app/build/outputs/apk/debug/app-debug.apk
+
+Verify install:
+
+adb shell dumpsys package com.dawai.admin | rg "versionName|versionCode"
+
+==================================================
+8. WINDOWS ANDROID ADMIN APP BUILD + REINSTALL
+==================================================
+
+PowerShell version:
+
+cd C:\path\to\AifredVst-2.2.4-beta\apps\android_admin
+
+$env:ANDROID_HOME="$env:LOCALAPPDATA\Android\Sdk"
+$env:ANDROID_SDK_ROOT="$env:LOCALAPPDATA\Android\Sdk"
+.\gradlew.bat :app:assembleDebug
+
+Optional clean uninstall first:
+
+adb uninstall com.dawai.admin
+
+Install or update:
+
+adb install -r -t app\build\outputs\apk\debug\app-debug.apk
+
+Verify install:
+
+adb shell dumpsys package com.dawai.admin | findstr version
+
+==================================================
+9. HOW TO UPDATE WEBSITE INFORMATION ONLY
+==================================================
+
+If you are only changing text, services, catalog data, or branding on the public site, the usual flow is:
+
+Linux:
+
+cd /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta
+
+nano apps/website/index.html
+nano apps/website/app.js
+nano apps/website/assets/data/beat_catalog.json
+
+git status
+git add apps/website/index.html apps/website/app.js apps/website/assets/data/beat_catalog.json
+git commit -m "Update website content"
+git push origin Aifred-Vst-Beta-2.2.4
+wrangler deploy
+
+Windows PowerShell:
+
+cd C:\path\to\AifredVst-2.2.4-beta
+
+notepad .\apps\website\index.html
+notepad .\apps\website\app.js
+notepad .\apps\website\assets\data\beat_catalog.json
+
+git status
+git add .\apps\website\index.html .\apps\website\app.js .\apps\website\assets\data\beat_catalog.json
+git commit -m "Update website content"
+git push origin Aifred-Vst-Beta-2.2.4
+wrangler deploy
+
+==================================================
+10. HOW TO UPDATE ANDROID APP INFORMATION ONLY
+==================================================
+
+If you are only changing admin app behavior, text, or controls, the main source file is:
+
+apps/android_admin/app/src/main/java/com/dawai/admin/MainActivity.kt
+
+Linux:
+
+cd /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta
+
+nano apps/android_admin/app/src/main/java/com/dawai/admin/MainActivity.kt
+
+git status
+git add apps/android_admin/app/src/main/java/com/dawai/admin/MainActivity.kt
+git commit -m "Update Android admin app"
+git push origin Aifred-Vst-Beta-2.2.4
+
+cd apps/android_admin
+ANDROID_HOME="$HOME/Android/Sdk" ANDROID_SDK_ROOT="$HOME/Android/Sdk" ./gradlew :app:assembleDebug
+adb install -r -t app/build/outputs/apk/debug/app-debug.apk
+
+Windows PowerShell:
+
+cd C:\path\to\AifredVst-2.2.4-beta
+
+notepad .\apps\android_admin\app\src\main\java\com\dawai\admin\MainActivity.kt
+
+git status
+git add .\apps\android_admin\app\src\main\java\com\dawai\admin\MainActivity.kt
+git commit -m "Update Android admin app"
+git push origin Aifred-Vst-Beta-2.2.4
+
+cd .\apps\android_admin
+$env:ANDROID_HOME="$env:LOCALAPPDATA\Android\Sdk"
+$env:ANDROID_SDK_ROOT="$env:LOCALAPPDATA\Android\Sdk"
+.\gradlew.bat :app:assembleDebug
+adb install -r -t app\build\outputs\apk\debug\app-debug.apk
+
+==================================================
+11. HOW TO UPDATE WEBSITE WORKER / API LOGIC
+==================================================
+
+If you change the worker/API logic, the main files are:
+
+- cloudflare/website-worker.mjs
+- server/src/index.js
+
+Linux:
+
+cd /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta
+
+nano cloudflare/website-worker.mjs
+nano server/src/index.js
+
+node --check cloudflare/website-worker.mjs
+node --check server/src/index.js
+
+git add cloudflare/website-worker.mjs server/src/index.js
+git commit -m "Update worker and backend logic"
+git push origin Aifred-Vst-Beta-2.2.4
+wrangler deploy
+
+Windows PowerShell:
+
+cd C:\path\to\AifredVst-2.2.4-beta
+
+notepad .\cloudflare\website-worker.mjs
+notepad .\server\src\index.js
+
+git add .\cloudflare\website-worker.mjs .\server\src\index.js
+git commit -m "Update worker and backend logic"
+git push origin Aifred-Vst-Beta-2.2.4
+wrangler deploy
+
+==================================================
+12. QUICK REAL-WORLD UPDATE FLOWS
+==================================================
+
+Case A: I changed website text and want it live.
+
+Commands:
+
+cd /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta
+nano apps/website/index.html
+git add apps/website/index.html
+git commit -m "Update homepage text"
+git push origin Aifred-Vst-Beta-2.2.4
+wrangler deploy
+
+Case B: I changed Android admin app chat UI and want it on my phone.
+
+Commands:
+
+cd /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta
+git add apps/android_admin/app/src/main/java/com/dawai/admin/MainActivity.kt
+git commit -m "Update admin chat UI"
+git push origin Aifred-Vst-Beta-2.2.4
+
+cd apps/android_admin
+ANDROID_HOME="$HOME/Android/Sdk" ANDROID_SDK_ROOT="$HOME/Android/Sdk" ./gradlew :app:assembleDebug
+adb install -r -t app/build/outputs/apk/debug/app-debug.apk
+
+Case C: I changed plugin code and want the new VST installed.
+
+Commands:
+
+cd /home/north3rnlight3r/Projects/AifredVst-2.2.4-beta
+git add Source modules CMakeLists.txt
+git commit -m "Update VST behavior"
+git push origin Aifred-Vst-Beta-2.2.4
+
+cmake --build build/baseline-vst-release \
+  --target aifred_vst3_A_VST3 aifred_vst3_B_VST3 aifred_vst3_C_VST3 aifred_vst3_D_VST3 \
+  --parallel 8
+
+cp -a build/baseline-vst-release/Source/aifred_vst3_A_artefacts/Release/VST3/AIFRED_a.vst3 "$HOME/.vst3/AIFRED_v2.2.4a.vst3"
+cp -a build/baseline-vst-release/Source/aifred_vst3_B_artefacts/Release/VST3/AIFRED_b.vst3 "$HOME/.vst3/AIFRED_v2.2.4b.vst3"
+cp -a build/baseline-vst-release/Source/aifred_vst3_C_artefacts/Release/VST3/AIFRED_c.vst3 "$HOME/.vst3/AIFRED_v2.2.4c.vst3"
+cp -a build/baseline-vst-release/Source/aifred_vst3_D_artefacts/Release/VST3/AIFRED_d.vst3 "$HOME/.vst3/AIFRED_v2.2.4d.vst3"
+
+End of file.

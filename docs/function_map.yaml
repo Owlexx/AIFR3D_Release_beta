@@ -1,0 +1,44 @@
+build: "2.2.4 Beta"
+surfaces:
+  desktop_vst:
+    guides:
+      - docs/vst_user_guide_v2.2.4.md
+    key_functions:
+      - realtime spectral analysis
+      - live score routing
+      - persistent fix list
+      - OpenAI chat panel
+  desktop_standalone:
+    guides:
+      - docs/standalone_user_guide_v2.2.4.md
+    key_functions:
+      - realtime playback and analysis
+      - session history
+      - persistent advisory history
+      - OpenAI chat access
+  website:
+    docs:
+      - apps/website/assets/docs/installation-instructions-v2.2.4.txt
+      - apps/website/assets/docs/readme-v2.2.4-beta.txt
+      - apps/website/assets/docs/minimum-pc-requirements-v2.2.4.txt
+      - apps/website/assets/docs/release-notes-v2.2.4.txt
+      - apps/website/assets/docs/vst-user-guide-v2.2.4.txt
+      - apps/website/assets/docs/standalone-user-guide-v2.2.4.txt
+    install_routes:
+      - /downloads/install-vst.sh
+      - /downloads/install-standalone.sh
+  android_admin:
+    key_functions:
+      - OpenAI chat
+      - admin upload
+      - command registry buttons
+      - ADMINLOG-backed command trail
+api:
+  routes:
+    - /api/v1/health
+    - /api/v1/chat/ask
+    - /api/v1/registry/actions
+    - /api/v1/command/run
+    - /api/v1/admin/openai/get
+    - /api/v1/admin/openai/save
+    - /api/v1/admin/logs/list

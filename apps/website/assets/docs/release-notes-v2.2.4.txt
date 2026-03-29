@@ -1,0 +1,16 @@
+AIFR3D 2.2.4 Beta Release Log
+
+Desktop:
+- live spectral scoring is active again
+- dominant issue ranking now changes with EQ abuse and stereo collapse
+- chat and fix-list history persist in-session
+
+Website:
+- only 2.2.4 Beta release material is shown
+- Linux install links point to tracked repo files
+- Windows package download links are removed
+
+Android Admin:
+- OpenAI-only chat path
+- registered command buttons
+- command trail written to ADMINLOG

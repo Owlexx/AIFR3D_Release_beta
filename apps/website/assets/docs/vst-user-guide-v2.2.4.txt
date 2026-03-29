@@ -1,0 +1,15 @@
+AIFR3D VST3 Guide 2.2.4 Beta
+
+Linux:
+- buy plugin access
+- open Installer on the website
+- run the Linux plugin installer script
+
+Windows:
+- clone the repo on Windows
+- run ./scripts/install_windows.ps1 -Target vst
+
+Live behavior:
+- live spectral, stereo, loudness, and dynamics metrics affect score
+- fix-list output persists in-session
+- OpenAI advisory uses GPT-5.2

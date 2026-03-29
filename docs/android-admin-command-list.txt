@@ -1,0 +1,48 @@
+AIFR3D Android Admin — Command List
+Build: 2.2.4 Beta
+
+Registered action commands
+
+action:session.save
+  Save current session state.
+
+action:catalog.refresh
+  Refresh catalog from API.
+
+action:mixer.channel.set_gain
+  Registered backend action for channel gain tasks.
+
+action:plugin.insert
+  Registered backend action for plugin insert tasks.
+
+action:analysis.run
+  Registered backend action for analysis worker tasks.
+
+action:command.exec
+  Registered backend action for backend command tasks.
+
+action:soundpack.upload
+  Registered backend action for upload tasks.
+
+action:reference.pool.validate
+  Validate licensed reference sources and count targets.
+
+action:reference.pool.rebuild
+  Rebuild the licensed reference pool after new uploads.
+
+action:analysis.engine.verify
+  Run the current analysis verification tests.
+
+Useful direct command examples
+
+curl -s https://www.north3rnlight3r.com/api/v1/health
+  Show live site health.
+
+action:reference.pool.validate
+  Check that reference sources and counts are valid.
+
+action:reference.pool.rebuild
+  Rebuild the licensed reference pool.
+
+action:analysis.engine.verify
+  Run analyzer verification tests.

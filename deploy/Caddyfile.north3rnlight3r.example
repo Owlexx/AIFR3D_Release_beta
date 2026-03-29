@@ -1,0 +1,14 @@
+north3rnlight3r.com, www.north3rnlight3r.com {
+  encode zstd gzip
+  root * /home/north3rnlight3r/Documents/DawAI_Ecosystem/apps/website
+
+  @backend path /api/* /ws/chat /downloads/* /media/* /receipts/*
+  reverse_proxy @backend 127.0.0.1:8787
+
+  file_server
+}
+
+api.north3rnlight3r.com {
+  encode zstd gzip
+  reverse_proxy 127.0.0.1:8787
+}

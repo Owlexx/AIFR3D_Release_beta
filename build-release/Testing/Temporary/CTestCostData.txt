@@ -1,0 +1,5 @@
+dawai_tests 6 0.0850262
+aifred_spectral_pipeline_smoke 7 0.0560672
+aifred_canonical_pipeline_smoke 6 0.0636017
+aifr3d_fix_list_reactivity_smoke 7 0.00609169
+---

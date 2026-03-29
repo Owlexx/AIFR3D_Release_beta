@@ -1,0 +1,2 @@
+x86_64-w64-mingw32-ar qc libdawai_aifr3d_core.a CMakeFiles/dawai_aifr3d_core.dir/src/feature_ingestion.cpp.obj CMakeFiles/dawai_aifr3d_core.dir/src/scoring.cpp.obj CMakeFiles/dawai_aifr3d_core.dir/src/fix_list.cpp.obj CMakeFiles/dawai_aifr3d_core.dir/src/analysis_writer.cpp.obj CMakeFiles/dawai_aifr3d_core.dir/src/apply_fix.cpp.obj CMakeFiles/dawai_aifr3d_core.dir/src/session_store.cpp.obj CMakeFiles/dawai_aifr3d_core.dir/src/reporting/mix_reporter.cpp.obj
+x86_64-w64-mingw32-ranlib libdawai_aifr3d_core.a

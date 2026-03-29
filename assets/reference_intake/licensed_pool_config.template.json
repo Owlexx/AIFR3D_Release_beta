@@ -1,0 +1,54 @@
+{
+  "pool_id": "licensed_reference_pool",
+  "pool_name": "Licensed Reference Pool",
+  "tolerances": {
+    "integrated_lufs": 3.0,
+    "true_peak_dbtp": 3.0,
+    "crest_factor_db": 3.0,
+    "band_average_db": 3.0
+  },
+  "genre_aliases": {
+    "hip hop": "hip-hop",
+    "hiphop": "hip-hop",
+    "trap": "dubstep"
+  },
+  "metric_catalog": "assets/reference_intake/analysis_metric_catalog.json",
+  "genres": [
+    {
+      "genre": "rap",
+      "input_dir": "assets/reference_intake/licensed_audio/rap",
+      "count_target": 100,
+      "strict_count": true
+    },
+    {
+      "genre": "hip-hop",
+      "input_dir": "assets/reference_intake/licensed_audio/hip-hop",
+      "count_target": 100,
+      "strict_count": true
+    },
+    {
+      "genre": "edm",
+      "input_dir": "assets/reference_intake/licensed_audio/edm",
+      "count_target": 100,
+      "strict_count": true
+    },
+    {
+      "genre": "dubstep",
+      "input_dir": "assets/reference_intake/licensed_audio/dubstep",
+      "count_target": 100,
+      "strict_count": true
+    },
+    {
+      "genre": "pop",
+      "input_dir": "assets/reference_intake/licensed_audio/pop",
+      "count_target": 100,
+      "strict_count": true
+    },
+    {
+      "genre": "rock",
+      "input_dir": "assets/reference_intake/licensed_audio/rock",
+      "count_target": 100,
+      "strict_count": true
+    }
+  ]
+}

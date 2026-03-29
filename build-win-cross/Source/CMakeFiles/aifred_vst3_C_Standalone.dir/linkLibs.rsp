@@ -1,0 +1,1 @@
+ aifred_vst3_C_artefacts/libAIFRED_c_SharedCode.a ../modules/advisory_layer/libdawai_advisory_layer.a ../modules/aifr3d_core/libdawai_aifr3d_core.a ../modules/reference_engine/libdawai_reference_engine.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

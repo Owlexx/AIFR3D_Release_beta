@@ -1,0 +1,20 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/json-build/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/catch2-build/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/catch2-build/src/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/modules/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/extras/Build/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/_deps/juce-build/extras/Build/juceaide/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/modules/reference_engine/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/modules/aifr3d_core/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/modules/advisory_layer/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/modules/audio_engine/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/modules/ui/cmake_install.cmake",
+		"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build-win-cross/Source/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

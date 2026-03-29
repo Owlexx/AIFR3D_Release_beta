@@ -1,0 +1,1 @@
+-I"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/modules/aifr3d_core/include" -I"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/modules/reference_engine/include" -I"/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/modules/reference_engine/../metering/include" -isystem "/home/north3rnlight3r/Projects/AifredVst-2.2.4-beta/build/_deps/json-src/include"

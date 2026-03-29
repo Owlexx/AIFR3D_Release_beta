@@ -1,0 +1,310 @@
+{
+  "created_utc": "2026-02-27T08:54:56.569-06:00",
+  "genres": [
+    "Multi-Genre"
+  ],
+  "pool_id": "archive-10x5",
+  "references": [
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_1_01-cowfish-2-junebug-dnb-set-live-at-cowfish",
+      "source_path": "assets/reference_intake/archive_10x5_wav/edm/01-cowfish-2_junebug-dnb-set-live-at-cowfish.wav",
+      "title": "01-cowfish-2_junebug-dnb-set-live-at-cowfish"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_2_01-turkey-day-cookin-2023-11-23-turkey-day-dnb-2023",
+      "source_path": "assets/reference_intake/archive_10x5_wav/edm/01-turkey-day-cookin-2023-11-23_turkey-day-dnb-2023.wav",
+      "title": "01-turkey-day-cookin-2023-11-23_turkey-day-dnb-2023"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_3_10-20210927-set-album",
+      "source_path": "assets/reference_intake/archive_10x5_wav/edm/10._20210927_set-album.wav",
+      "title": "10._20210927_set-album"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_4_1996-91-7-wkdu-politics-of-dancing-with-dj-roo-1996-91-7-wkdu-politics-of-dancing-with-dj-roo",
+      "source_path": "assets/reference_intake/archive_10x5_wav/edm/1996-91.7-wkdu-politics-of-dancing-with-dj-roo_1996-91-7-wkdu-politics-of-dancing-with-dj-roo.wav",
+      "title": "1996-91.7-wkdu-politics-of-dancing-with-dj-roo_1996-91-7-wkdu-politics-of-dancing-with-dj-roo"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_5_20211128-20211128-1832-tracks-from-the-inside-il-quarto",
+      "source_path": "assets/reference_intake/archive_10x5_wav/edm/20211128_20211128_1832_tracks-from-the-inside-il-quarto.wav",
+      "title": "20211128_20211128_1832_tracks-from-the-inside-il-quarto"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_6_3rd-strike-rock-april-2025-earth-day-show-3rd-strike-rock-april-2025-earth-day-show",
+      "source_path": "assets/reference_intake/archive_10x5_wav/edm/3rd-strike-rock-april-2025-earth-day-show_3rd-strike-rock-april-2025-earth-day-show.wav",
+      "title": "3rd-strike-rock-april-2025-earth-day-show_3rd-strike-rock-april-2025-earth-day-show"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_7_566770-duocore",
+      "source_path": "assets/reference_intake/archive_10x5_wav/edm/566770_duocore.wav",
+      "title": "566770_duocore"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_8_anythingbutbrokelivespringboardsouth2015-201507-anything-but-broke-live-springboard-south-2015",
+      "source_path": "assets/reference_intake/archive_10x5_wav/edm/AnythingButBrokeLiveSpringboardSouth2015_201507_anything-but-broke-live-springboard-south-2015.wav",
+      "title": "AnythingButBrokeLiveSpringboardSouth2015_201507_anything-but-broke-live-springboard-south-2015"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_9_azaelatacknoworiginalmix-azael-atack-now-original-mix",
+      "source_path": "assets/reference_intake/archive_10x5_wav/edm/AzaelAtackNowOriginalMix_azael-atack-now-original-mix.wav",
+      "title": "AzaelAtackNowOriginalMix_azael-atack-now-original-mix"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_10_bestnewelectrohouse2016march-best-new-electro-house-2016-march",
+      "source_path": "assets/reference_intake/archive_10x5_wav/edm/BestNewElectroHouse2016March_best-new-electro-house-2016-march.wav",
+      "title": "BestNewElectroHouse2016March_best-new-electro-house-2016-march"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_11_djiconsgangstabaybeez6-gangstabaybeez6",
+      "source_path": "assets/reference_intake/archive_10x5_wav/hip-hop/DJICONSgangstabaybeez6_gangstabaybeez6.wav",
+      "title": "DJICONSgangstabaybeez6_gangstabaybeez6"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_12_dreamlogicc-wuvstowies-dreamlogicc-wuv-stowies-live-middle-gallery-april-25-2009",
+      "source_path": "assets/reference_intake/archive_10x5_wav/hip-hop/Dreamlogicc-WuvStowies_dreamlogicc-wuv-stowies-live-middle-gallery-april-25-2009.wav",
+      "title": "Dreamlogicc-WuvStowies_dreamlogicc-wuv-stowies-live-middle-gallery-april-25-2009"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_13_easynite-easy-nite",
+      "source_path": "assets/reference_intake/archive_10x5_wav/hip-hop/EasyNite_easy-nite.wav",
+      "title": "EasyNite_easy-nite"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_14_haveahgoodtime-have-ah-good-time",
+      "source_path": "assets/reference_intake/archive_10x5_wav/hip-hop/HAVEAHGOODTIME_have-ah-good-time.wav",
+      "title": "HAVEAHGOODTIME_have-ah-good-time"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_15_kungkillclikkino-kungkillclikkino",
+      "source_path": "assets/reference_intake/archive_10x5_wav/hip-hop/KungKillclikKino_kungkillclikkino.wav",
+      "title": "KungKillclikKino_kungkillclikkino"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_16_loko-mc-grow-loko-mc-grow",
+      "source_path": "assets/reference_intake/archive_10x5_wav/hip-hop/LoKo_Mc_GrOw_loko-mc-grow.wav",
+      "title": "LoKo_Mc_GrOw_loko-mc-grow"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_17_oldmanraps-old-man-raps",
+      "source_path": "assets/reference_intake/archive_10x5_wav/hip-hop/OldManRaps_old-man-raps.wav",
+      "title": "OldManRaps_old-man-raps"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_18_plugsongforcomedybangbang-56-plug-song-for-comedy-bang-bang",
+      "source_path": "assets/reference_intake/archive_10x5_wav/hip-hop/PlugSongForComedyBangBang_56_plug-song-for-comedy-bang-bang.wav",
+      "title": "PlugSongForComedyBangBang_56_plug-song-for-comedy-bang-bang"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_19_puntodeinicioconlocozobeplana-punto-de-inicio-con-locozobe-plan-a",
+      "source_path": "assets/reference_intake/archive_10x5_wav/hip-hop/PuntoDeInicioConLocozobeplanA_punto-de-inicio-con-locozobe-plan-a.wav",
+      "title": "PuntoDeInicioConLocozobeplanA_punto-de-inicio-con-locozobe-plan-a"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_20_quizasseaporeso-quizas-sea-por-eso",
+      "source_path": "assets/reference_intake/archive_10x5_wav/hip-hop/QuizasSeaPorEso_quizas-sea-por-eso.wav",
+      "title": "QuizasSeaPorEso_quizas-sea-por-eso"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_21_10moresongsbythemoot-10-more-songs-by-the-moot",
+      "source_path": "assets/reference_intake/archive_10x5_wav/pop/10MoreSongsByTheMoot_10-more-songs-by-the-moot.wav",
+      "title": "10MoreSongsByTheMoot_10-more-songs-by-the-moot"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_22_2010-03-05liveatthejukebox-2010-03-05-live-at-the-jukebox",
+      "source_path": "assets/reference_intake/archive_10x5_wav/pop/2010-03-05LiveAtTheJukebox_2010-03-05-live-at-the-jukebox.wav",
+      "title": "2010-03-05LiveAtTheJukebox_2010-03-05-live-at-the-jukebox"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_23_20140418chroniquematinorailleurs-2014-04-18-chronique-matin-orailleurs",
+      "source_path": "assets/reference_intake/archive_10x5_wav/pop/20140418ChroniqueMatinOrailleurs_2014-04-18-chronique-matin-orailleurs.wav",
+      "title": "20140418ChroniqueMatinOrailleurs_2014-04-18-chronique-matin-orailleurs"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_24_20230112-tdc-drunken-prayer-drunken-prayer-live-from-the-double-crown",
+      "source_path": "assets/reference_intake/archive_10x5_wav/pop/20230112-tdc-drunken-prayer_drunken-prayer-live-from-the-double-crown.wav",
+      "title": "20230112-tdc-drunken-prayer_drunken-prayer-live-from-the-double-crown"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_25_3feetuplive-3-feet-up-live",
+      "source_path": "assets/reference_intake/archive_10x5_wav/pop/3FeetUpLive_3-feet-up-live.wav",
+      "title": "3FeetUpLive_3-feet-up-live"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_26_50popofeenenvelop1-12-1983-50-pop-of-een-envelop-1-12-1983",
+      "source_path": "assets/reference_intake/archive_10x5_wav/pop/50PopOfEenEnvelop1-12-1983_50-pop-of-een-envelop-1-12-1983.wav",
+      "title": "50PopOfEenEnvelop1-12-1983_50-pop-of-een-envelop-1-12-1983"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_27_630-brianna-tam-i-am-202308-brianna-tam-i-am",
+      "source_path": "assets/reference_intake/archive_10x5_wav/pop/630.-brianna-tam-i-am_202308_brianna-tam-i-am.wav",
+      "title": "630.-brianna-tam-i-am_202308_brianna-tam-i-am"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_28_7bluesky-7-bluesky",
+      "source_path": "assets/reference_intake/archive_10x5_wav/pop/7Bluesky_7-bluesky.wav",
+      "title": "7Bluesky_7-bluesky"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_29_abirdseldomseen-a-bird-seldom-seen",
+      "source_path": "assets/reference_intake/archive_10x5_wav/pop/ABirdSeldomSeen_a-bird-seldom-seen.wav",
+      "title": "ABirdSeldomSeen_a-bird-seldom-seen"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_30_algogss-algo-gss",
+      "source_path": "assets/reference_intake/archive_10x5_wav/pop/AlgoGss_algo-gss.wav",
+      "title": "AlgoGss_algo-gss"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_31_380motion-thisiswhatido-124-380-motion-this-is-what-i-do",
+      "source_path": "assets/reference_intake/archive_10x5_wav/rap/380motion-ThisIsWhatIDo_124_380-motion-this-is-what-i-do.wav",
+      "title": "380motion-ThisIsWhatIDo_124_380-motion-this-is-what-i-do"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_32_cassandrasgame-cassandra-s-game",
+      "source_path": "assets/reference_intake/archive_10x5_wav/rap/CassandrasGame_cassandra-s-game.wav",
+      "title": "CassandrasGame_cassandra-s-game"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_33_dwandmianimalcellrap-dw-and-mi-animal-cell-rap",
+      "source_path": "assets/reference_intake/archive_10x5_wav/rap/DwAndMiAnimalCellRap_dw-and-mi-animal-cell-rap.wav",
+      "title": "DwAndMiAnimalCellRap_dw-and-mi-animal-cell-rap"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_34_haveahgoodtime-have-ah-good-time",
+      "source_path": "assets/reference_intake/archive_10x5_wav/rap/HAVEAHGOODTIME_have-ah-good-time.wav",
+      "title": "HAVEAHGOODTIME_have-ah-good-time"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_35_interviewmitdiedrichdietrichsenuberamerikanischenrapundbrdpunk-interview-mit-diedrich-dietrichsen-uber-amerikanischen-rap-und-brd-pun",
+      "source_path": "assets/reference_intake/archive_10x5_wav/rap/InterviewMitDiedrichDietrichsenUberAmerikanischenRapUndBrdPunk_interview-mit-diedrich-dietrichsen-uber-amerikanischen-rap-und-brd-pun.wav",
+      "title": "InterviewMitDiedrichDietrichsenUberAmerikanischenRapUndBrdPunk_interview-mit-diedrich-dietrichsen-uber-amerikanischen-rap-und-brd-pun"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_36_lightsgoout-lights-go-out",
+      "source_path": "assets/reference_intake/archive_10x5_wav/rap/LightsGoOut_lights-go-out.wav",
+      "title": "LightsGoOut_lights-go-out"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_37_oldmanraps-old-man-raps",
+      "source_path": "assets/reference_intake/archive_10x5_wav/rap/OldManRaps_old-man-raps.wav",
+      "title": "OldManRaps_old-man-raps"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_38_piensa-685-piensa",
+      "source_path": "assets/reference_intake/archive_10x5_wav/rap/Piensa_685_piensa.wav",
+      "title": "Piensa_685_piensa"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_39_plugsongforcomedybangbang-56-plug-song-for-comedy-bang-bang",
+      "source_path": "assets/reference_intake/archive_10x5_wav/rap/PlugSongForComedyBangBang_56_plug-song-for-comedy-bang-bang.wav",
+      "title": "PlugSongForComedyBangBang_56_plug-song-for-comedy-bang-bang"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_40_rapdecasimirkubiacaliaskayzeekey-rap-de-casimir-kubiac-alias-kayzee-key",
+      "source_path": "assets/reference_intake/archive_10x5_wav/rap/RapDeCasimirKubiacAliasKayzeeKey_rap-de-casimir-kubiac-alias-kayzee-key.wav",
+      "title": "RapDeCasimirKubiacAliasKayzeeKey_rap-de-casimir-kubiac-alias-kayzee-key"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_41_audiotrap-audio-trap",
+      "source_path": "assets/reference_intake/archive_10x5_wav/trap/AudioTrap_audio-trap.wav",
+      "title": "AudioTrap_audio-trap"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_42_carnafex-mepresentoinstrumental-carnafex-me-presento-instrumental",
+      "source_path": "assets/reference_intake/archive_10x5_wav/trap/Carnafex-MePresentoINSTRUMENTAL_carnafex-me-presento-instrumental.wav",
+      "title": "Carnafex-MePresentoINSTRUMENTAL_carnafex-me-presento-instrumental"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_43_dufflebagboizalbum2-duffle-bag-boiz-bag-up-serve-em-vol-1",
+      "source_path": "assets/reference_intake/archive_10x5_wav/trap/DuffleBagBoizAlbum2_duffle-bag-boiz-bag-up-serve-em-vol-1.wav",
+      "title": "DuffleBagBoizAlbum2_duffle-bag-boiz-bag-up-serve-em-vol-1"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_44_fox72z-808-trap-synth-fox72z-808-trap-synth",
+      "source_path": "assets/reference_intake/archive_10x5_wav/trap/Fox72z-808-trap-synth_fox72z-808-trap-synth.wav",
+      "title": "Fox72z-808-trap-synth_fox72z-808-trap-synth"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_45_golazomezcla1-golazo-mezcla-1",
+      "source_path": "assets/reference_intake/archive_10x5_wav/trap/GolazoMezcla1_golazo-mezcla-1.wav",
+      "title": "GolazoMezcla1_golazo-mezcla-1"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_46_introducingcloudcitytrap-introducing-cloud-city-trap",
+      "source_path": "assets/reference_intake/archive_10x5_wav/trap/IntroducingCloudCityTrap_introducing-cloud-city-trap.wav",
+      "title": "IntroducingCloudCityTrap_introducing-cloud-city-trap"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_47_moskonitema2final1-moskoni-puto-bala",
+      "source_path": "assets/reference_intake/archive_10x5_wav/trap/MOSKONITEMA2FINAL1_moskoni-puto-bala.wav",
+      "title": "MOSKONITEMA2FINAL1_moskoni-puto-bala"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_48_trapbeatenventa-trap-beat-instrumental-prod-by-juan-beats-records",
+      "source_path": "assets/reference_intake/archive_10x5_wav/trap/TrapBeatEnVenta_trap-beat-instrumental-prod-by-juan-beats-records.wav",
+      "title": "TrapBeatEnVenta_trap-beat-instrumental-prod-by-juan-beats-records"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_49_trapbeat-201804-trap-beat-trap-instrumental-base-rap-trap-type-beat",
+      "source_path": "assets/reference_intake/archive_10x5_wav/trap/TrapBeat_201804_trap-beat-trap-instrumental-base-rap-trap-type-beat.wav",
+      "title": "TrapBeat_201804_trap-beat-trap-instrumental-base-rap-trap-type-beat"
+    },
+    {
+      "genre": "Multi-Genre",
+      "reference_id": "ref_50_aipol-ai-music-odio-la-trap-1-odio-la-trap-1",
+      "source_path": "assets/reference_intake/archive_10x5_wav/trap/aipol-ai-music-odio-la-trap-1_odio-la-trap-1.wav",
+      "title": "aipol-ai-music-odio-la-trap-1_odio-la-trap-1"
+    }
+  ],
+  "schema_version": "refpool-1.0.0"
+}

@@ -1,0 +1,70 @@
+version: 2.2.4
+surface: android_admin
+last_updated: 2026-03-02
+
+function_map:
+  - ui_element: Chat send
+    action_id: chat.send
+    endpoint: websocket /ws/chat
+    fallback: POST /api/v1/chat/ask
+    result: assistant response appended in chat transcript
+    status: complete
+
+  - ui_element: Upload (single button)
+    action_id: admin.soundpack.upload
+    endpoint: POST /api/v1/admin/soundpacks/upload
+    result: file uploaded using admin session
+    status: complete
+
+  - ui_element: Command run
+    action_id: command.exec
+    endpoint: POST /api/v1/command/run
+    result: command result pane shows exit/stdout/stderr/error
+    status: complete
+
+  - ui_element: Website files list
+    action_id: admin.files.list
+    endpoint: GET /api/v1/admin/files/list
+    result: directory listing shown on phone
+    status: complete
+
+  - ui_element: Website file read
+    action_id: admin.files.read
+    endpoint: POST /api/v1/admin/files/read
+    result: file content returned for edit
+    status: complete
+
+  - ui_element: Website file write
+    action_id: admin.files.write
+    endpoint: POST /api/v1/admin/files/write
+    result: remote file updated
+    status: complete
+
+  - ui_element: Website file delete
+    action_id: admin.files.delete
+    endpoint: POST /api/v1/admin/files/delete
+    result: remote file removed
+    status: complete
+
+  - ui_element: Catalog list/remove
+    action_id: admin.catalog.manage
+    endpoints:
+      - GET /api/v1/admin/catalog/list
+      - POST /api/v1/admin/catalog/remove
+    result: catalog administration from app
+    status: complete
+
+  - ui_element: Inquiries/logs/sales view
+    action_id: admin.ops.view
+    endpoints:
+      - GET /api/v1/admin/inquiries/list
+      - GET /api/v1/admin/logs/list
+      - GET /api/v1/admin/sales/list
+    result: operational views available in app
+    status: complete
+
+  - ui_element: Record sale
+    action_id: admin.sales.record
+    endpoint: POST /api/v1/admin/sales/record
+    result: sale logged and receipt generated
+    status: complete

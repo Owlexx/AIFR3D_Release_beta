@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdawai_metering.a CMakeFiles/dawai_metering.dir/src/fft_analyzer.cpp.o CMakeFiles/dawai_metering.dir/src/loudness_analyzer.cpp.o CMakeFiles/dawai_metering.dir/src/stereo_analyzer.cpp.o CMakeFiles/dawai_metering.dir/src/metering_engine.cpp.o
+/usr/bin/ranlib libdawai_metering.a

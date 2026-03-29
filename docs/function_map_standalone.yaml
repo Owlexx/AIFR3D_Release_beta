@@ -1,0 +1,115 @@
+version: 2.2.4-beta
+surface: standalone
+last_updated: 2026-03-06
+
+identity:
+  app_name: DawAI Standalone
+  entrypoint: modules/ui/src/main_view.cpp
+
+function_map:
+  - ui_element: Header Auto Genre label
+    action_id: standalone.genre.detect
+    source_signal: current metering snapshot + individual reference profiles + genre means
+    handler: reference_engine::GenreDetector::detect
+    result: displays detected genre label
+    status: complete
+
+  - ui_element: Header Reference Pool label
+    action_id: standalone.reference_pool.status
+    source_signal: manifest load state
+    handler: MainView::loadReferencePool
+    result: displays loaded reference count
+    status: complete
+
+  - ui_element: Play
+    action_id: transport.play
+    source_signal: button click
+    handler: PlaybackEngine::play
+    result: playback starts and metering updates
+    status: complete
+
+  - ui_element: Stop
+    action_id: transport.stop
+    source_signal: button click
+    handler: PlaybackEngine::stop
+    result: playback stops and position resets
+    status: complete
+
+  - ui_element: Pause
+    action_id: transport.pause
+    source_signal: button click
+    handler: PlaybackEngine::pause
+    result: playback paused at current position
+    status: complete
+
+  - ui_element: Load Track 1
+    action_id: transport.load_track_1
+    source_signal: file chooser
+    handler: PlaybackEngine::loadAudioToTrack(track=0)
+    result: audio clip loaded to track 1
+    status: complete
+
+  - ui_element: Meter Panel
+    action_id: metering.render
+    source_signal: PlaybackEngine::lastMeterSnapshot
+    handler: MeterPanel::setSnapshot
+    result: renders realtime metric values, explicit scales, and live nearest-reference/genre-target interpretation
+    status: complete
+
+  - ui_element: Startup Splash
+    action_id: standalone.splash.show
+    source_signal: app launch
+    handler: DawaiApplication::initialise + SplashWindow
+    result: shows mascot splash before first interactive window
+    status: complete
+
+  - ui_element: Insight Panel
+    action_id: advisory.refresh
+    source_signal: analysis update
+    handler: AdvisoryService::submit
+    result: shows summary and fix priorities using live in-memory analysis payloads
+    status: complete
+
+  - ui_element: Candlestick Memory
+    action_id: memory.candlestick.update
+    source_signal: alignment trend calculation
+    handler: MainView::pushCandle + CandlestickPanel::setCandles
+    result: persistent stock-style trajectory panel
+    status: complete
+
+  - ui_element: APPLY
+    action_id: standalone.apply
+    source_signal: button click
+    handler: MainView apply callback
+    result: conservative state adjustment with undo snapshot
+    status: complete
+
+  - ui_element: PREVIEW
+    action_id: standalone.preview.toggle
+    source_signal: button click
+    handler: MainView preview callback
+    result: preview mode toggle and status update
+    status: complete
+
+  - ui_element: UNDO
+    action_id: standalone.undo
+    source_signal: button click
+    handler: MainView undo callback
+    result: previous snapshot restored when available
+    status: complete
+
+persistence:
+  - key: analysis/session_memory/standalone_candles_v1.json
+    owner: standalone candlestick memory
+    write_policy: periodic dirty flush
+
+reference_pool_contract:
+  pool_id: pro_25x6
+  expected_total: 25
+  genres:
+    - rap
+    - hip-hop
+    - edm
+    - dubstep
+    - pop
+    - rock

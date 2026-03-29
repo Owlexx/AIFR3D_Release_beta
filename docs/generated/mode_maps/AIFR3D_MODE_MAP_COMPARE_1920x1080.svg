@@ -1,0 +1,288 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<rect width="1920" height="1080" fill="#080A0E"/>
+<rect x="60" y="56" width="1180" height="92" rx="20" fill="#10141C" stroke="#6F86A855" stroke-width="1.2"/>
+<circle cx="98" cy="102" r="22" fill="#0C1017" stroke="#DCA83E" stroke-width="2"/>
+<text x="132" y="92" fill="#00C6BA" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">
+<tspan x="132" dy="0">AIFR3D VST A</tspan>
+</text>
+<text x="132" y="118" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400">
+<tspan x="132" dy="0">Version 2.2.4 | status line | detected genre confidence</tspan>
+</text>
+<rect x="770" y="78" width="96" height="34" rx="12" fill="#0C1017" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="818.0" y="101.0" text-anchor="middle" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Analyze</text>
+<rect x="874" y="78" width="96" height="34" rx="12" fill="#0C1017" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="922.0" y="101.0" text-anchor="middle" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Reference</text>
+<rect x="978" y="78" width="96" height="34" rx="12" fill="#DCA83E" stroke="#DCA83E" stroke-width="1.2"/>
+<text x="1026.0" y="101.0" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Compare</text>
+<text x="1088" y="90" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400">
+<tspan x="1088" dy="0">Theme</tspan>
+</text>
+<rect x="1140" y="78" width="54" height="34" rx="12" fill="#DCA83E" stroke="#DCA83E" stroke-width="1.2"/>
+<text x="1167.0" y="101.0" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">A</text>
+<rect x="1018" y="114" width="156" height="24" rx="12" fill="#DCA83E" fill-opacity="0.14" stroke="#DCA83E" stroke-opacity="0.55"/>
+<text x="1065" y="132" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">
+<tspan x="1065" dy="0">COMPARE</tspan>
+</text>
+<rect x="60" y="168" width="684" height="514" rx="18" fill="#10141C" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="78" y="198" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">
+<tspan x="78" dy="0">MIX SIGNATURE (A/B DELTA)</tspan>
+</text>
+<text x="78" y="224" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400">
+<tspan x="78" dy="0">12-axis fingerprint, metric cards, and band rows</tspan>
+</text>
+<polygon points="332.0,311.4 378.6,337.3 416.6,369.2 417.8,418.0 411.5,463.9 383.1,506.4 332.0,502.4 292.0,487.2 253.8,463.1 226.9,418.0 250.0,370.6 281.7,330.8" fill="#DCA83E" fill-opacity="0.12" stroke="#DCA83E" stroke-opacity="0.95" stroke-width="3"/>
+<path d="M 164.61 363.61 A 176.00 176.00 0 0 0 156.00 418.00" fill="none" stroke="#B0BACE" stroke-width="1" stroke-linecap="round"/>
+<path d="M 214.23 287.21 A 176.00 176.00 0 0 0 179.58 330.00" fill="none" stroke="#B0BACE" stroke-width="1" stroke-linecap="round"/>
+<path d="M 295.41 245.85 A 176.00 176.00 0 0 0 244.00 265.58" fill="none" stroke="#B0BACE" stroke-width="1" stroke-linecap="round"/>
+<path d="M 386.39 250.61 A 176.00 176.00 0 0 0 332.00 242.00" fill="none" stroke="#B0BACE" stroke-width="1" stroke-linecap="round"/>
+<path d="M 462.79 300.23 A 176.00 176.00 0 0 0 420.00 265.58" fill="none" stroke="#B0BACE" stroke-width="1" stroke-linecap="round"/>
+<path d="M 504.15 381.41 A 176.00 176.00 0 0 0 484.42 330.00" fill="none" stroke="#B0BACE" stroke-width="1" stroke-linecap="round"/>
+<path d="M 499.39 472.39 A 176.00 176.00 0 0 0 508.00 418.00" fill="none" stroke="#B0BACE" stroke-width="1" stroke-linecap="round"/>
+<path d="M 449.77 548.79 A 176.00 176.00 0 0 0 484.42 506.00" fill="none" stroke="#B0BACE" stroke-width="1" stroke-linecap="round"/>
+<path d="M 368.59 590.15 A 176.00 176.00 0 0 0 420.00 570.42" fill="none" stroke="#B0BACE" stroke-width="1" stroke-linecap="round"/>
+<path d="M 277.61 585.39 A 176.00 176.00 0 0 0 332.00 594.00" fill="none" stroke="#B0BACE" stroke-width="1" stroke-linecap="round"/>
+<path d="M 201.21 535.77 A 176.00 176.00 0 0 0 244.00 570.42" fill="none" stroke="#B0BACE" stroke-width="1" stroke-linecap="round"/>
+<path d="M 159.85 454.59 A 176.00 176.00 0 0 0 179.58 506.00" fill="none" stroke="#B0BACE" stroke-width="1" stroke-linecap="round"/>
+<text x="110" y="592" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">
+<tspan x="110" dy="0">cards: Loudness | True Peak | Width | Punch</tspan>
+<tspan x="110" dy="21.6">bands: Sub Low Low-Mid Mid High-Mid High Air</tspan>
+</text>
+<rect x="60" y="694" width="684" height="226" rx="18" fill="#10141C" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="78" y="724" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">
+<tspan x="78" dy="0">LIVE CANDLE + LAST 10 DELTAS</tspan>
+</text>
+<text x="78" y="750" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400">
+<tspan x="78" dy="0">Realtime buffer candles on the left, last ten sessions on the right</tspan>
+</text>
+<rect x="78" y="752" width="177.84" height="140" rx="10" fill="#0C1017" stroke="#6F86A855" stroke-width="1"/>
+<rect x="271.84000000000003" y="752" width="454.15999999999997" height="140" rx="10" fill="#0C1017" stroke="#6F86A855" stroke-width="1"/>
+<text x="92" y="742" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">
+<tspan x="92" dy="0">REALTIME BUFFER CANDLES</tspan>
+</text>
+<text x="285.84000000000003" y="742" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">
+<tspan x="285.84000000000003" dy="0">LAST 10 DELTAS</tspan>
+</text>
+<line x1="104" y1="784" x2="104" y2="868" stroke="#B0BACE" stroke-opacity="0.28" stroke-width="1.2"/>
+<rect x="97" y="804" width="14" height="40" rx="4" fill="#39FF88" fill-opacity="0.78"/>
+<line x1="128" y1="784" x2="128" y2="868" stroke="#B0BACE" stroke-opacity="0.28" stroke-width="1.2"/>
+<rect x="121" y="818" width="14" height="50" rx="4" fill="#DCA83E" fill-opacity="0.78"/>
+<line x1="152" y1="784" x2="152" y2="868" stroke="#B0BACE" stroke-opacity="0.28" stroke-width="1.2"/>
+<rect x="145" y="804" width="14" height="60" rx="4" fill="#39FF88" fill-opacity="0.78"/>
+<line x1="176" y1="784" x2="176" y2="868" stroke="#B0BACE" stroke-opacity="0.28" stroke-width="1.2"/>
+<rect x="169" y="818" width="14" height="40" rx="4" fill="#DCA83E" fill-opacity="0.78"/>
+<line x1="200" y1="784" x2="200" y2="868" stroke="#B0BACE" stroke-opacity="0.28" stroke-width="1.2"/>
+<rect x="193" y="804" width="14" height="50" rx="4" fill="#39FF88" fill-opacity="0.78"/>
+<line x1="295.84000000000003" y1="782" x2="295.84000000000003" y2="866" stroke="#B0BACE" stroke-opacity="0.20" stroke-width="1"/>
+<rect x="289.84000000000003" y="802" width="12" height="34" rx="4" fill="#39FF88" fill-opacity="0.74"/>
+<line x1="336.456" y1="782" x2="336.456" y2="866" stroke="#B0BACE" stroke-opacity="0.20" stroke-width="1"/>
+<rect x="330.456" y="811" width="12" height="41" rx="4" fill="#E05252" fill-opacity="0.74"/>
+<line x1="377.072" y1="782" x2="377.072" y2="866" stroke="#B0BACE" stroke-opacity="0.20" stroke-width="1"/>
+<rect x="371.072" y="820" width="12" height="48" rx="4" fill="#DCA83E" fill-opacity="0.74"/>
+<line x1="417.68800000000005" y1="782" x2="417.68800000000005" y2="866" stroke="#B0BACE" stroke-opacity="0.20" stroke-width="1"/>
+<rect x="411.68800000000005" y="829" width="12" height="55" rx="4" fill="#39FF88" fill-opacity="0.74"/>
+<line x1="458.30400000000003" y1="782" x2="458.30400000000003" y2="866" stroke="#B0BACE" stroke-opacity="0.20" stroke-width="1"/>
+<rect x="452.30400000000003" y="802" width="12" height="62" rx="4" fill="#E05252" fill-opacity="0.74"/>
+<line x1="498.92" y1="782" x2="498.92" y2="866" stroke="#B0BACE" stroke-opacity="0.20" stroke-width="1"/>
+<rect x="492.92" y="811" width="12" height="39" rx="4" fill="#DCA83E" fill-opacity="0.74"/>
+<line x1="539.5360000000001" y1="782" x2="539.5360000000001" y2="866" stroke="#B0BACE" stroke-opacity="0.20" stroke-width="1"/>
+<rect x="533.5360000000001" y="820" width="12" height="46" rx="4" fill="#39FF88" fill-opacity="0.74"/>
+<line x1="580.152" y1="782" x2="580.152" y2="866" stroke="#B0BACE" stroke-opacity="0.20" stroke-width="1"/>
+<rect x="574.152" y="829" width="12" height="53" rx="4" fill="#E05252" fill-opacity="0.74"/>
+<line x1="620.768" y1="782" x2="620.768" y2="866" stroke="#B0BACE" stroke-opacity="0.20" stroke-width="1"/>
+<rect x="614.768" y="802" width="12" height="60" rx="4" fill="#DCA83E" fill-opacity="0.74"/>
+<line x1="661.384" y1="782" x2="661.384" y2="866" stroke="#B0BACE" stroke-opacity="0.20" stroke-width="1"/>
+<rect x="655.384" y="811" width="12" height="37" rx="4" fill="#39FF88" fill-opacity="0.74"/>
+<text x="78" y="900" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400">
+<tspan x="78" dy="0">Realtime candles stay live | history text shifts toward delta reading</tspan>
+</text>
+<rect x="752" y="168" width="282" height="392" rx="18" fill="#10141C" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="770" y="198" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">
+<tspan x="770" dy="0">A/B DELTA HALO</tspan>
+</text>
+<text x="770" y="224" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400">
+<tspan x="770" dy="0">Four-segment meter with pulse ring and inner spectrum</tspan>
+</text>
+<circle cx="893.0" cy="375.76" r="100.96000000000001" fill="none" stroke="#DCA83E" stroke-opacity="0.15" stroke-width="8"/>
+<circle cx="893.0" cy="375.76" r="78.96000000000001" fill="none" stroke="#B0BACE" stroke-opacity="0.15" stroke-width="16"/>
+<path d="M 865.99 301.56 A 78.96 78.96 0 0 0 814.81 364.77" fill="none" stroke="#1C7AD6" stroke-width="16" stroke-linecap="round"/>
+<text x="935.3466721550893" y="291.4193002709066" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">
+<tspan x="935.3466721550893" dy="0">TONE D</tspan>
+</text>
+<path d="M 967.20 348.75 A 78.96 78.96 0 0 0 903.99 297.57" fill="none" stroke="#DCA83E" stroke-width="16" stroke-linecap="round"/>
+<text x="952.3406997290933" y="453.1066721550893" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">
+<tspan x="952.3406997290933" dy="0">WIDTH D</tspan>
+</text>
+<path d="M 920.01 449.96 A 78.96 78.96 0 0 0 971.19 386.75" fill="none" stroke="#39FF88" stroke-width="16" stroke-linecap="round"/>
+<text x="790.6533278449107" y="470.1006997290934" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">
+<tspan x="790.6533278449107" dy="0">PEAK D</tspan>
+</text>
+<path d="M 818.80 402.77 A 78.96 78.96 0 0 0 882.01 453.95" fill="none" stroke="#E05252" stroke-width="16" stroke-linecap="round"/>
+<text x="773.6593002709067" y="308.41332784491067" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">
+<tspan x="773.6593002709067" dy="0">PUNCH D</tspan>
+</text>
+<circle cx="893.0" cy="375.76" r="60.96000000000001" fill="#0C1017" stroke="#DCA83E" stroke-opacity="0.25" stroke-width="2"/>
+<path d="M 794 413.76 C 847 357.76, 949 399.76, 992 363.76" stroke="#1C7AD6" stroke-width="3" fill="none" stroke-opacity="0.85"/>
+<text x="821.0" y="369.76" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">
+<tspan x="821.0" dy="0">A/B DELTA</tspan>
+</text>
+<text x="837.0" y="399.76" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400">
+<tspan x="837.0" dy="0">center readout</tspan>
+</text>
+<rect x="1042" y="168" width="198" height="392" rx="18" fill="#10141C" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="1060" y="198" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">
+<tspan x="1060" dy="0">SPATIAL FIELD (COMPARE)</tspan>
+</text>
+<text x="1060" y="224" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400">
+<tspan x="1060" dy="0">Measured WXYZ field plus stereo state</tspan>
+</text>
+<ellipse cx="1141.0" cy="383.6" rx="55.440000000000005" ry="70.56" fill="none" stroke="#B0BACE" stroke-opacity="0.20" stroke-width="2"/>
+<line x1="1141.0" y1="236" x2="1141.0" y2="532" stroke="#B0BACE" stroke-opacity="0.15"/>
+<line x1="1066" y1="383.6" x2="1216" y2="383.6" stroke="#B0BACE" stroke-opacity="0.15"/>
+<polygon points="1141.0,320.88 1184.56,383.6 1141.0,454.16 1105.36,383.6" fill="#1C7AD6" fill-opacity="0.16" stroke="#1C7AD6" stroke-width="3"/>
+<text x="1062" y="492" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400">
+<tspan x="1062" dy="0">W = mid  X = left  Y = right  Z = side</tspan>
+</text>
+<text x="1062" y="518" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">
+<tspan x="1062" dy="0">state: A/B FIELD DELTA</tspan>
+</text>
+<polygon points="1141.0,336.56 1192.48,383.6 1141.0,438.48 1109.32,383.6" fill="#7A5CE4" fill-opacity="0.08" stroke="#7A5CE4" stroke-width="2"/>
+<rect x="752" y="570" width="488" height="120" rx="18" fill="#10141C" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="770" y="600" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">
+<tspan x="770" dy="0">COMPARE MENU</tspan>
+</text>
+<text x="770" y="626" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400">
+<tspan x="770" dy="0">Capture Mix A / Mix B / Live B</tspan>
+</text>
+<rect x="772" y="624" width="120" height="30" rx="12" fill="#0C1017" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="832.0" y="645.0" text-anchor="middle" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Mix A</text>
+<rect x="900" y="624" width="112" height="30" rx="12" fill="#0C1017" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="956.0" y="645.0" text-anchor="middle" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Mix B</text>
+<rect x="1020" y="624" width="112" height="30" rx="12" fill="#0C1017" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="1076.0" y="645.0" text-anchor="middle" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Live B</text>
+<rect x="752" y="700" width="94" height="28" rx="12" fill="#1C7AD6" stroke="#1C7AD6" stroke-width="1.2"/>
+<text x="799.0" y="720.0" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Fix List</text>
+<rect x="852" y="700" width="94" height="28" rx="12" fill="#0C1017" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="899.0" y="720.0" text-anchor="middle" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Mix Tips</text>
+<rect x="752" y="734" width="488" height="170" rx="18" fill="#10141C" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="770" y="764" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">
+<tspan x="770" dy="0">FIX LIST</tspan>
+</text>
+<text x="770" y="790" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400">
+<tspan x="770" dy="0">Plain-English current issue cards</tspan>
+</text>
+<rect x="768" y="784" width="456" height="62" rx="12" fill="#0C1017" stroke="#6F86A855" stroke-width="1"/>
+<text x="782" y="806" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">
+<tspan x="782" dy="0">Low-mid masking clarity</tspan>
+</text>
+<text x="782" y="828" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400">
+<tspan x="782" dy="0">Why: dense 250-500 Hz energy</tspan>
+</text>
+<rect x="768" y="860" width="456" height="62" rx="12" fill="#0C1017" stroke="#6F86A855" stroke-width="1"/>
+<text x="782" y="882" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">
+<tspan x="782" dy="0">Stereo image pulling inward</tspan>
+</text>
+<text x="782" y="904" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400">
+<tspan x="782" dy="0">Next: reopen width safely</tspan>
+</text>
+<rect x="752" y="910" width="488" height="110" rx="18" fill="#10141C" stroke="#6F86A855" stroke-width="1.2"/>
+<text x="770" y="936" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">
+<tspan x="770" dy="0">INSIGHT CHAT</tspan>
+</text>
+<rect x="770" y="954" width="452" height="6" rx="10" fill="#0C1017" stroke="#6F86A855" stroke-width="1"/>
+<text x="782" y="982" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400">
+<tspan x="782" dy="0">AIFR3D: Live metrics are driving the current</tspan>
+<tspan x="782" dy="17.55">readout. Review the main issue first, then</tspan>
+<tspan x="782" dy="17.55">confirm it in the supporting meters.</tspan>
+</text>
+<rect x="770" y="974" width="368" height="28" rx="8" fill="#0C1017" stroke="#6F86A855" stroke-width="1"/>
+<rect x="1148" y="974" width="74" height="28" rx="12" fill="#00C6BA" stroke="#00C6BA" stroke-width="1.2"/>
+<text x="1185.0" y="994.0" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Ask AI</text>
+<circle cx="82" cy="190" r="18" fill="#DCA83E" stroke="#EEF2FA" stroke-width="1.4"/>
+<text x="82" y="196" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">1</text>
+<circle cx="82" cy="716" r="18" fill="#DCA83E" stroke="#EEF2FA" stroke-width="1.4"/>
+<text x="82" y="722" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">5</text>
+<circle cx="774" cy="190" r="18" fill="#DCA83E" stroke="#EEF2FA" stroke-width="1.4"/>
+<text x="774" y="196" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">3</text>
+<circle cx="1064" cy="190" r="18" fill="#DCA83E" stroke="#EEF2FA" stroke-width="1.4"/>
+<text x="1064" y="196" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">4</text>
+<circle cx="774" cy="756" r="18" fill="#DCA83E" stroke="#EEF2FA" stroke-width="1.4"/>
+<text x="774" y="762" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">6</text>
+<circle cx="82" cy="212" r="18" fill="#DCA83E" stroke="#EEF2FA" stroke-width="1.4"/>
+<text x="82" y="218" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">2</text>
+<rect x="1300" y="50" width="580" height="980" rx="22" fill="#10141C" stroke="#6F86A855" stroke-width="1.4"/>
+<text x="1328" y="88" fill="#DCA83E" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">
+<tspan x="1328" dy="0">COMPARE MODE MAP</tspan>
+</text>
+<text x="1328" y="114" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400">
+<tspan x="1328" dy="0">Code-derived schematic at 1920x1080. This is based on the current UI code and default layout A, not a live runtime capture.</tspan>
+</text>
+<text x="1328" y="166" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">
+<tspan x="1328" dy="0">HOW TO READ THIS MODE</tspan>
+</text>
+<text x="1328" y="196" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">
+<tspan x="1328" dy="0">Read signed differences first. Compare mode uses captured Mix A, captured Mix B, or Mix A versus live B and shifts the main panels into delta-reading behavior.</tspan>
+</text>
+<circle cx="1342" cy="238" r="18" fill="#DCA83E" stroke="#EEF2FA" stroke-width="1.4"/>
+<text x="1342" y="244" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">1</text>
+<text x="1372" y="244" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">
+<tspan x="1372" dy="0">Top bar. The active mode pill changes to</tspan>
+<tspan x="1372" dy="21.6">Compare. The current code keeps the same</tspan>
+<tspan x="1372" dy="21.6">overall layout but switches panel titles</tspan>
+<tspan x="1372" dy="21.6">and meanings to A versus B or A versus</tspan>
+<tspan x="1372" dy="21.6">live B.</tspan>
+</text>
+<circle cx="1342" cy="332" r="18" fill="#DCA83E" stroke="#EEF2FA" stroke-width="1.4"/>
+<text x="1342" y="338" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">2</text>
+<text x="1372" y="338" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">
+<tspan x="1372" dy="0">Mix Signature panel. Fingerprints overlay</tspan>
+<tspan x="1372" dy="21.6">Mix A and Mix B. The key question becomes:</tspan>
+<tspan x="1372" dy="21.6">what changed between the two sources, not</tspan>
+<tspan x="1372" dy="21.6">whether the live mix fits a target</tspan>
+<tspan x="1372" dy="21.6">corridor.</tspan>
+</text>
+<circle cx="1342" cy="426" r="18" fill="#DCA83E" stroke="#EEF2FA" stroke-width="1.4"/>
+<text x="1342" y="432" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">3</text>
+<text x="1372" y="432" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">
+<tspan x="1372" dy="0">A/B Delta Halo. The four segments become</tspan>
+<tspan x="1372" dy="21.6">TONE D, WIDTH D, PEAK D, and PUNCH D.</tspan>
+<tspan x="1372" dy="21.6">Segment size shows magnitude of</tspan>
+<tspan x="1372" dy="21.6">difference; color tells whether Mix B is</tspan>
+<tspan x="1372" dy="21.6">lower, similar, or hotter/wider than Mix</tspan>
+<tspan x="1372" dy="21.6">A.</tspan>
+</text>
+<circle cx="1342" cy="520" r="18" fill="#DCA83E" stroke="#EEF2FA" stroke-width="1.4"/>
+<text x="1342" y="526" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">4</text>
+<text x="1372" y="526" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">
+<tspan x="1372" dy="0">Spatial Field Compare. Purple represents</tspan>
+<tspan x="1372" dy="21.6">Mix A and cyan represents Mix B or live B.</tspan>
+<tspan x="1372" dy="21.6">This panel helps you see</tspan>
+<tspan x="1372" dy="21.6">left/right/center/side differences without</tspan>
+<tspan x="1372" dy="21.6">reference-pool logic.</tspan>
+</text>
+<circle cx="1342" cy="614" r="18" fill="#DCA83E" stroke="#EEF2FA" stroke-width="1.4"/>
+<text x="1342" y="620" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">5</text>
+<text x="1372" y="620" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">
+<tspan x="1372" dy="0">Compare candles. The candle panel keeps a</tspan>
+<tspan x="1372" dy="21.6">live side and a history side, but the mode</tspan>
+<tspan x="1372" dy="21.6">title and helper text shift toward delta</tspan>
+<tspan x="1372" dy="21.6">reading instead of pure live-session</tspan>
+<tspan x="1372" dy="21.6">coaching.</tspan>
+</text>
+<circle cx="1342" cy="708" r="18" fill="#DCA83E" stroke="#EEF2FA" stroke-width="1.4"/>
+<text x="1342" y="714" text-anchor="middle" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">6</text>
+<text x="1372" y="714" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">
+<tspan x="1372" dy="0">Compare menu. This mode uniquely exposes</tspan>
+<tspan x="1372" dy="21.6">Capture Mix A, Capture Mix B, and Use Live</tspan>
+<tspan x="1372" dy="21.6">B. Those controls appear above the</tspan>
+<tspan x="1372" dy="21.6">fix-list area in the current code.</tspan>
+</text>
+<text x="1328" y="782" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">
+<tspan x="1328" dy="0">MODE CUES</tspan>
+</text>
+<text x="1328" y="814" fill="#B0BACE" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">
+<tspan x="1328" dy="0">Look for the compare control block above the tabs, A/B wording in titles, and delta language in the halo and fingerprint explanations.</tspan>
+</text>
+<text x="1328" y="954" fill="#EEF2FA" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400">
+<tspan x="1328" dy="0">Current quick controls in code: Analyze / Compare / Reference, layout A-D, pulse mode, compare snapshot buttons, reference pinning, fix-list tab, mix-tips tab, API key controls, debug toggle.</tspan>
+</text>
+</svg>

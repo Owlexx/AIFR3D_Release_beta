@@ -1,0 +1,16 @@
+name = "north3rnlight3r-website"
+main = "cloudflare/website-worker.mjs"
+compatibility_date = "2026-03-01"
+workers_dev = false
+routes = [
+  { pattern = "www.north3rnlight3r.com/*", zone_name = "north3rnlight3r.com" },
+  { pattern = "north3rnlight3r.com/*", zone_name = "north3rnlight3r.com" },
+]
+
+[assets]
+directory = "./apps/website"
+binding = "ASSETS"
+
+[observability]
+enabled = true
+head_sampling_rate = 1

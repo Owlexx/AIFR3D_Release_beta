@@ -1,0 +1,11 @@
+AIFR3D 2.2.4 Beta User Manual
+
+Products:
+- VST3 Plugin
+- Standalone App
+
+Rules:
+- Linux installers are published from tracked repo files
+- Windows binaries are built locally on Windows
+- OpenAI key is required for AIFR3D chat
+- fix-list and chat history persist in-session

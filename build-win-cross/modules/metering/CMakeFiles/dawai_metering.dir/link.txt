@@ -1,0 +1,2 @@
+x86_64-w64-mingw32-ar qc libdawai_metering.a CMakeFiles/dawai_metering.dir/src/fft_analyzer.cpp.obj CMakeFiles/dawai_metering.dir/src/loudness_analyzer.cpp.obj CMakeFiles/dawai_metering.dir/src/stereo_analyzer.cpp.obj CMakeFiles/dawai_metering.dir/src/metering_engine.cpp.obj
+x86_64-w64-mingw32-ranlib libdawai_metering.a

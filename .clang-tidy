@@ -1,0 +1,11 @@
+Checks: >
+  -*,
+  bugprone-*,
+  performance-*,
+  readability-*,
+  modernize-*,-modernize-use-trailing-return-type,
+  cppcoreguidelines-*,-cppcoreguidelines-avoid-magic-numbers,
+  clang-analyzer-*
+WarningsAsErrors: ''
+HeaderFilterRegex: 'modules|apps|tests'
+FormatStyle: file
