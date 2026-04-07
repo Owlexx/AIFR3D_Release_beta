@@ -69,7 +69,7 @@ function(add_audiosynth_plugin_variant target suffix variant_num plugin_code)
         COPY_PLUGIN_AFTER_BUILD FALSE
         PLUGIN_MANUFACTURER_CODE N3L1
         PLUGIN_CODE ${plugin_code}
-        VERSION ${PROJECT_VERSION}
+        VERSION ${AIFR3D_Release_beta}
         FORMATS VST3 Standalone
         ICON_BIG "${AudioSuite_BRAND_ICON}"
         ICON_SMALL "${AudioSuite_BRAND_ICON}"
